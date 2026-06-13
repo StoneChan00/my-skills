@@ -1,59 +1,93 @@
 {
-  "国内火车票 + 国际旅行（推荐组合）": {
-    "mcpServers": {
+  "// 说明": "以下所有配置使用 OpenCode 的 `mcp` schema（非 Claude Desktop 的 mcpServers）。复制到 opencode.json 顶层 `mcp` 字段即可。",
+
+  "场景A: 国内火车票 + 国际旅行（推荐组合）": {
+    "mcp": {
       "12306": {
-        "command": "npx",
-        "args": ["-y", "12306-mcp"]
+        "type": "local",
+        "command": ["npx", "-y", "12306-mcp"],
+        "enabled": true,
+        "timeout": 30000,
+        "_comment": "国内火车票首选，v0.3.8 npm 实测可用"
       },
-      "trvl": {
-        "command": "npx",
-        "args": ["-y", "trvl"]
-      },
-      "nowah": {
-        "url": "https://mcp.nowah.travel/mcp"
+      "nowah-travel": {
+        "type": "remote",
+        "url": "https://claw.nowah.xyz/mcp",
+        "enabled": true,
+        "oauth": true,
+        "timeout": 30000,
+        "_comment": "国际航班/酒店/POI，首次使用需 `opencode mcp auth nowah-travel` 认证"
       }
     }
   },
-  "纯国内旅行（轻量方案）": {
-    "mcpServers": {
+
+  "场景B: 纯国内旅行（轻量）": {
+    "mcp": {
       "12306": {
-        "command": "npx",
-        "args": ["-y", "12306-mcp"]
+        "type": "local",
+        "command": ["npx", "-y", "12306-mcp"],
+        "enabled": true,
+        "timeout": 30000
       },
       "amap": {
-        "command": "npx",
-        "args": ["-y", "@modelcontextprotocol/server-amap"],
-        "env": {
+        "type": "local",
+        "command": ["npx", "-y", "@modelcontextprotocol/server-amap"],
+        "environment": {
           "AMAP_MAPS_API_KEY": "${AMAP_MAPS_API_KEY}"
-        }
+        },
+        "enabled": true
       }
     }
   },
-  "纯国际旅行": {
-    "mcpServers": {
-      "trvl": {
-        "command": "npx",
-        "args": ["-y", "trvl"]
+
+  "场景C: 纯国际旅行": {
+    "mcp": {
+      "nowah-travel": {
+        "type": "remote",
+        "url": "https://claw.nowah.xyz/mcp",
+        "enabled": true,
+        "oauth": true,
+        "timeout": 30000
       },
-      "nowah": {
-        "url": "https://mcp.nowah.travel/mcp"
-      },
-      "moltravel": {
-        "url": "https://mcp.moltravel.com/mcp"
+      "google-maps": {
+        "type": "local",
+        "command": ["npx", "-y", "@modelcontextprotocol/server-google-maps"],
+        "environment": {
+          "GOOGLE_MAPS_API_KEY": "${GOOGLE_MAPS_API_KEY}"
+        },
+        "enabled": true
       }
     }
   },
-  "飞猪 Skill 接入（通过 OpenClaw）": {
-    "说明": "需要 OpenClaw 客户端支持，在 OpenClaw 中执行:",
-    "安装命令": "clawhub install flyai",
-    "备选": "npx skills add alibaba-flyai/flyai-skill"
-  },
-  "12306 Docker 部署（高频查询推荐）": {
-    "mcpServers": {
+
+  "场景D: 高频 12306 查询（Docker 长驻）": {
+    "docker 启动命令": "docker run -d -p 8000:8000 --name mcp-12306 drfccv/mcp-server-12306:latest",
+    "mcp": {
       "12306": {
-        "url": "http://localhost:8000/mcp"
+        "type": "remote",
+        "url": "http://localhost:8000/mcp",
+        "enabled": true,
+        "timeout": 60000
       }
-    },
-    "docker": "docker run -d -p 8000:8000 --name mcp-server-12306 drfccv/mcp-server-12306:latest"
+    }
+  },
+
+  "场景E: 临时禁用某个 MCP": {
+    "mcp": {
+      "nowah-travel": {
+        "type": "remote",
+        "url": "https://claw.nowah.xyz/mcp",
+        "enabled": false,
+        "_comment": "临时关闭，节省 context 空间"
+      }
+    }
+  },
+
+  "场景F: 飞猪 Skill 接入（通过 OpenClaw，不是 MCP）": {
+    "说明": "飞猪 FlyAI 不是 MCP server，而是 OpenClaw 的 Skill 包",
+    "前置条件": "需要先安装 OpenClaw 客户端",
+    "安装命令 1": "clawhub install flyai",
+    "安装命令 2": "npx skills add alibaba-flyai/flyai-skill",
+    "限制": "API Key 需企业认证，个人通过 OpenClaw 额度低"
   }
 }
