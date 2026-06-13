@@ -1,0 +1,59 @@
+{
+  "国内火车票 + 国际旅行（推荐组合）": {
+    "mcpServers": {
+      "12306": {
+        "command": "npx",
+        "args": ["-y", "12306-mcp"]
+      },
+      "trvl": {
+        "command": "npx",
+        "args": ["-y", "trvl"]
+      },
+      "nowah": {
+        "url": "https://mcp.nowah.travel/mcp"
+      }
+    }
+  },
+  "纯国内旅行（轻量方案）": {
+    "mcpServers": {
+      "12306": {
+        "command": "npx",
+        "args": ["-y", "12306-mcp"]
+      },
+      "amap": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-amap"],
+        "env": {
+          "AMAP_MAPS_API_KEY": "${AMAP_MAPS_API_KEY}"
+        }
+      }
+    }
+  },
+  "纯国际旅行": {
+    "mcpServers": {
+      "trvl": {
+        "command": "npx",
+        "args": ["-y", "trvl"]
+      },
+      "nowah": {
+        "url": "https://mcp.nowah.travel/mcp"
+      },
+      "moltravel": {
+        "url": "https://mcp.moltravel.com/mcp"
+      }
+    }
+  },
+  "飞猪 Skill 接入（通过 OpenClaw）": {
+    "说明": "需要 OpenClaw 客户端支持，在 OpenClaw 中执行:",
+    "安装命令": "clawhub install flyai",
+    "备选": "npx skills add alibaba-flyai/flyai-skill"
+  },
+  "12306 Docker 部署（高频查询推荐）": {
+    "mcpServers": {
+      "12306": {
+        "url": "http://localhost:8000/mcp"
+      }
+    },
+    "docker": "docker run -d -p 8000:8000 --name mcp-server-12306 drfccv/mcp-server-12306:latest"
+  }
+}

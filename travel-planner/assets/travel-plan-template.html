@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{DESTINATION}} · {{DATES_DISPLAY}} 行程规划</title>
+<style>
+  :root {
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+    --accent: #f59e0b;
+    --accent-light: #fef3c7;
+    --surface: #ffffff;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+    --shadow-md: 0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+
+  /* Header */
+  .header { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; border-radius: var(--radius); padding: 32px 28px; margin-bottom: 24px; position: relative; overflow: hidden; }
+  .header::after { content: "✈"; position: absolute; right: 28px; top: 50%; transform: translateY(-50%); font-size: 64px; opacity: .15; }
+  .header h1 { font-size: 28px; font-weight: 700; }
+  .header .subtitle { opacity: .85; margin-top: 4px; font-size: 15px; }
+
+  /* Overview cards */
+  .overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .ov-card { background: var(--surface); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); text-align: center; }
+  .ov-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; }
+  .ov-card .value { font-size: 22px; font-weight: 700; margin-top: 4px; color: var(--primary); }
+  .ov-card .value.budget { color: var(--accent); }
+
+  /* Section */
+  .section { margin-bottom: 32px; }
+  .section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title .icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+
+  /* Day card */
+  .day-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 16px; overflow: hidden; }
+  .day-header { background: var(--primary); color: #fff; padding: 12px 20px; font-weight: 600; font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
+  .day-header .day-date { font-size: 13px; opacity: .85; font-weight: 400; }
+  .day-body { padding: 16px 20px; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ""; position: absolute; left: 7px; top: 4px; bottom: 4px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 18px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot { position: absolute; left: -24px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--primary-light); border: 2px solid var(--primary); }
+  .tl-dot.food { background: var(--accent-light); border-color: var(--accent); }
+  .tl-time { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+  .tl-content { margin-top: 2px; }
+  .tl-name { font-weight: 600; font-size: 15px; }
+  .tl-detail { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+  .tl-cost { display: inline-block; background: var(--accent-light); color: #92400e; border-radius: 6px; padding: 1px 8px; font-size: 12px; font-weight: 600; margin-left: 6px; }
+
+  /* Transport table */
+  .transport-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .transport-table th { background: var(--primary-light); color: var(--primary); text-align: left; padding: 10px 12px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }
+  .transport-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  .transport-table tr:last-child td { border-bottom: none; }
+  .transport-table .price { font-weight: 700; color: var(--accent); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+  .badge.train { background: #dbeafe; color: #1e40af; }
+  .badge.flight { background: #fce7f3; color: #9d174d; }
+  .badge.bus { background: #d1fae5; color: #065f46; }
+
+  /* Hotel cards */
+  .hotel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .hotel-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .hotel-banner { height: 8px; }
+  .hotel-banner.economy { background: #94a3b8; }
+  .hotel-banner.comfort { background: var(--primary); }
+  .hotel-banner.luxury { background: var(--accent); }
+  .hotel-info { padding: 14px 16px; }
+  .hotel-tier { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); font-weight: 600; }
+  .hotel-name { font-size: 16px; font-weight: 700; margin: 4px 0; }
+  .hotel-meta { font-size: 13px; color: var(--text-muted); }
+  .hotel-price { font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 8px; }
+  .hotel-price span { font-size: 12px; font-weight: 400; color: var(--text-muted); }
+
+  /* Budget chart (pure CSS) */
+  .budget-bar { display: flex; flex-direction: column; gap: 10px; }
+  .bb-row { display: flex; align-items: center; gap: 12px; }
+  .bb-label { width: 64px; font-size: 13px; font-weight: 600; text-align: right; }
+  .bb-track { flex: 1; height: 28px; background: var(--border); border-radius: 6px; overflow: hidden; position: relative; }
+  .bb-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 12px; font-weight: 700; color: #fff; transition: width .6s ease; }
+  .bb-fill.transport { background: #2563eb; }
+  .bb-fill.hotel { background: #7c3aed; }
+  .bb-fill.food { background: #f59e0b; }
+  .bb-fill.ticket { background: #10b981; }
+  .bb-fill.other { background: #64748b; }
+  .bb-amount { font-size: 13px; font-weight: 600; min-width: 80px; }
+  .budget-total { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-top: 2px solid var(--text); margin-top: 12px; }
+  .budget-total .label { font-size: 16px; font-weight: 700; }
+  .budget-total .amount { font-size: 24px; font-weight: 800; color: var(--accent); }
+
+  /* Map links */
+  .map-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .map-link { display: inline-flex; align-items: center; gap: 4px; padding: 6px 14px; background: var(--primary-light); color: var(--primary); border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600; }
+  .map-link:hover { background: var(--primary); color: #fff; }
+
+  /* Footer */
+  .footer { text-align: center; color: var(--text-muted); font-size: 12px; margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 22px; }
+    .ov-card .value { font-size: 18px; }
+    .hotel-grid { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .header { box-shadow: none; }
+    .day-card, .hotel-card, .ov-card { box-shadow: none; border: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>{{DESTINATION}} · 行程规划</h1>
+    <div class="subtitle">{{DATES_DISPLAY}} ｜ {{TRAVELERS}} 人出行 ｜ 共 {{DAYS_COUNT}} 天</div>
+  </div>
+
+  <!-- Overview -->
+  <div class="overview">
+    <div class="ov-card"><div class="label">目的地</div><div class="value">{{DESTINATION}}</div></div>
+    <div class="ov-card"><div class="label">天数</div><div class="value">{{DAYS_COUNT}} 天</div></div>
+    <div class="ov-card"><div class="label">出行人数</div><div class="value">{{TRAVELERS}} 人</div></div>
+    <div class="ov-card"><div class="label">总预算</div><div class="value budget">¥{{BUDGET_TOTAL}}</div></div>
+  </div>
+
+  <!-- Daily Itinerary -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:var(--primary-light);color:var(--primary);">📅</span> 每日行程</div>
+
+    <!-- DAY START — 复制此 block 为每一天 -->
+    <div class="day-card">
+      <div class="day-header">
+        Day {{DAY_NUM}} · {{DAY_TITLE}}
+        <span class="day-date">{{DAY_DATE}}</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">{{TIME}}</div>
+            <div class="tl-content">
+              <div class="tl-name">{{ACTIVITY_NAME}}</div>
+              <div class="tl-detail">{{ACTIVITY_DETAIL}}</div>
+              <!-- <span class="tl-cost">¥{{COST}}</span> -->
+            </div>
+          </div>
+          <!-- 重复 tl-item 为每个活动 -->
+        </div>
+
+        <!-- 地图链接 -->
+        <div class="map-links" style="margin-top:14px;">
+          <a class="map-link" href="https://www.google.com/maps/search/{{MAP_QUERY_ENCODED}}" target="_blank">🗺 Google Maps</a>
+          <a class="map-link" href="https://uri.amap.com/search?keyword={{MAP_QUERY_ENCODED}}" target="_blank">📍 高德地图</a>
+        </div>
+      </div>
+    </div>
+    <!-- DAY END -->
+  </div>
+
+  <!-- Transport -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#dbeafe;color:#2563eb;">🚄</span> 交通方案</div>
+    <div class="day-card" style="padding:0;">
+      <table class="transport-table">
+        <thead>
+          <tr>
+            <th>类型</th>
+            <th>车次/航班</th>
+            <th>出发</th>
+            <th>到达</th>
+            <th>时长</th>
+            <th>价格</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- TRANSPORT_ROW START -->
+          <tr>
+            <td><span class="badge train">高铁</span></td>
+            <td>{{TRAIN_NUMBER}}</td>
+            <td>{{DEPARTURE}}</td>
+            <td>{{ARRIVAL}}</td>
+            <td>{{DURATION}}</td>
+            <td class="price">¥{{PRICE}}</td>
+          </tr>
+          <!-- TRANSPORT_ROW END -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Hotels -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#ede9fe;color:#7c3aed;">🏨</span> 住宿推荐</div>
+    <div class="hotel-grid">
+
+      <!-- HOTEL_CARD START -->
+      <div class="hotel-card">
+        <div class="hotel-banner economy"></div>
+        <div class="hotel-info">
+          <div class="hotel-tier">经济</div>
+          <div class="hotel-name">{{HOTEL_NAME}}</div>
+          <div class="hotel-meta">⭐ {{RATING}} ｜ {{LOCATION}}</div>
+          <div class="hotel-price">¥{{PRICE}} <span>/ 晚</span></div>
+        </div>
+      </div>
+      <!-- HOTEL_CARD END -->
+
+      <!-- 重复 hotel-card，tier 切换 comfort / luxury，颜色切换 comfort / luxury -->
+    </div>
+  </div>
+
+  <!-- Budget -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:var(--accent-light);color:#92400e;">💰</span> 预算明细</div>
+    <div class="day-card" style="padding:20px;">
+      <div class="budget-bar">
+        <div class="bb-row">
+          <div class="bb-label">交通</div>
+          <div class="bb-track"><div class="bb-fill transport" style="width:{{TRANSPORT_PCT}}%">¥{{TRANSPORT_COST}}</div></div>
+          <div class="bb-amount">¥{{TRANSPORT_COST}}</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">住宿</div>
+          <div class="bb-track"><div class="bb-fill hotel" style="width:{{HOTEL_PCT}}%">¥{{HOTEL_COST}}</div></div>
+          <div class="bb-amount">¥{{HOTEL_COST}}</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">餐饮</div>
+          <div class="bb-track"><div class="bb-fill food" style="width:{{FOOD_PCT}}%">¥{{FOOD_COST}}</div></div>
+          <div class="bb-amount">¥{{FOOD_COST}}</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">门票</div>
+          <div class="bb-track"><div class="bb-fill ticket" style="width:{{TICKET_PCT}}%">¥{{TICKET_COST}}</div></div>
+          <div class="bb-amount">¥{{TICKET_COST}}</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">其他</div>
+          <div class="bb-track"><div class="bb-fill other" style="width:{{OTHER_PCT}}%">¥{{OTHER_COST}}</div></div>
+          <div class="bb-amount">¥{{OTHER_COST}}</div>
+        </div>
+      </div>
+      <div class="budget-total">
+        <div class="label">合计</div>
+        <div class="amount">¥{{BUDGET_TOTAL}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated by travel-planner · {{GENERATED_AT}} · 价格数据来源于 MCP 实时查询
+  </div>
+</div>
+</body>
+</html>
