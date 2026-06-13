@@ -1,0 +1,220 @@
+{
+  "destination": "济州岛",
+  "destination_en": "Jeju Island, Korea",
+  "dates": ["2026-07-03", "2026-07-06"],
+  "departure_city": "南京",
+  "travelers": 2,
+  "budget": {
+    "per_person": 2450,
+    "total": 4900,
+    "currency": "CNY",
+    "currency_display": "¥",
+    "exchange_note": "1 CNY ≈ 190 KRW，1 USD ≈ 1,370 KRW（2026.06 参考值）"
+  },
+  "days": [
+    {
+      "date": "2026-07-03",
+      "label": "Day 0 · 出发夜",
+      "theme": "启程",
+      "activities": [
+        {"time": "17:30", "type": "prep", "name": "抵达南京禄口机场 T2", "detail": "提前 2 小时到达，办理春秋 9C6149 值机（7kg 随身行李）", "cost": 0},
+        {"time": "19:45", "type": "flight", "name": "✈ 春秋 9C6149 起飞", "detail": "南京 NKG → 济州 CJU，飞行约 1.5h", "cost": 700},
+        {"time": "22:30", "type": "land", "name": "抵达济州国际机场", "detail": "韩国当地时间，比北京快 1 小时；过海关约 30 分钟", "cost": 0},
+        {"time": "23:15", "type": "transport", "name": "机场打车/公交前往酒店", "detail": "济州市区酒店约 10-15 分钟车程，打车 ≈ ₩10,000（≈¥52）", "cost": 26},
+        {"time": "23:30", "type": "hotel", "name": "入住济州市区酒店", "detail": "建议莲洞/宝健路商圈，靠近东门市场和交通枢纽", "cost": 125}
+      ]
+    },
+    {
+      "date": "2026-07-04",
+      "label": "Day 1 · 济州东线",
+      "theme": "火山海景 + 牛岛果冻蓝",
+      "activities": [
+        {"time": "07:30", "type": "attraction", "name": "城山日出峰 성산일출봉", "detail": "UNESCO 世界遗产，登顶 30 分钟俯瞰火山口+果冻海，门票 ₩5,000", "cost": 26},
+        {"time": "10:30", "type": "attraction", "name": "牛岛 우도 环岛游", "detail": "城山港乘渡轮 15 分钟，租电动车 ₩20,000/3h，打卡下牛牧洞+灯塔+西滨白沙海滩", "cost": 130},
+        {"time": "12:30", "type": "food", "name": "牛岛午餐 · 花生冰淇淋+海鲜锅", "detail": "牛岛必吃三宝：花生冰淇淋+鲍鱼粥+海鲜锅，人均 ₩15,000", "cost": 80},
+        {"time": "15:30", "type": "attraction", "name": "月汀里海边 월정리해변", "detail": "韩式 ins 风咖啡街+白风车+果冻海，网红打卡必到", "cost": 0},
+        {"time": "17:30", "type": "attraction", "name": "咸德海水浴场 함덕해수욕장", "detail": "翡翠色浅滩，本地人常去的海滩，适合踏浪+日落", "cost": 0},
+        {"time": "19:30", "type": "food", "name": "黑猪肉烤肉晚餐 🐷", "detail": "济州必吃！推荐熟成黑猪肉+橘子酱，人均 ₩25,000", "cost": 130},
+        {"time": "21:00", "type": "hotel", "name": "返回酒店休息", "detail": "济州市区酒店", "cost": 125}
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "label": "Day 2 · 济州西线",
+      "theme": "咖啡海岸 + 地质奇观",
+      "activities": [
+        {"time": "08:30", "type": "attraction", "name": "龙头岩 용두암", "detail": "汉拿山熔岩形成的天然龙头造型，免费参观", "cost": 0},
+        {"time": "09:30", "type": "attraction", "name": "神奇之路 도깨비도로", "detail": "视觉错觉上坡路，拍照打卡点，免费", "cost": 0},
+        {"time": "11:00", "type": "attraction", "name": "O'sulloc 雪绿茶博物馆 오설록", "detail": "济州绿茶田+绿茶冰淇淋（₩5,000 必吃），周边拍照超出片", "cost": 26},
+        {"time": "12:30", "type": "food", "name": "午餐 · 带皮五花肉+冷面", "detail": "中文旅游区附近韩餐馆，人均 ₩12,000", "cost": 65},
+        {"time": "14:30", "type": "attraction", "name": "柱状节理带 주상절리대", "detail": "玄武岩六边形石柱+汹涌波涛，世界地质奇观，门票 ₩2,000", "cost": 11},
+        {"time": "16:00", "type": "attraction", "name": "挾才海水浴场 협재해수욕장", "detail": "济州最美白沙海滩+汉拿山眺望+日落琥珀海", "cost": 0},
+        {"time": "18:00", "type": "attraction", "name": "涯月邑咖啡街 애월해안도로", "detail": "GD 咖啡馆 Monsant+海景落地窗+粉紫晚霞", "cost": 30},
+        {"time": "20:00", "type": "food", "name": "东门市场 동문시장 夜市", "detail": "海鲜锅+打糕+橘子汁+伴手礼，人均 ₩15,000", "cost": 80},
+        {"time": "21:30", "type": "hotel", "name": "返回酒店收拾行李", "detail": "早睡！第二天 05:00 起床赶早班飞机", "cost": 125}
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "label": "Day 3 · 返程",
+      "theme": "清晨返航",
+      "activities": [
+        {"time": "05:00", "type": "prep", "name": "起床退房", "detail": "提前打包行李，前台寄存或直接带走", "cost": 0},
+        {"time": "05:30", "type": "transport", "name": "打车前往济州机场", "detail": "济州市区到机场 10 分钟，打车 ₩8,000-10,000", "cost": 26},
+        {"time": "06:20", "type": "flight", "name": "到达机场办理值机", "detail": "国际航班建议提前 2 小时，过海关+免税提货", "cost": 0},
+        {"time": "07:30", "type": "flight", "name": "✈ 春秋 9C6150 起飞", "detail": "济州 CJU → 南京 NKG，飞行约 1.5h", "cost": 700},
+        {"time": "08:15", "type": "land", "name": "抵达南京禄口机场", "detail": "北京时间，结束愉快旅程 🎉", "cost": 0}
+      ]
+    }
+  ],
+  "transport": [
+    {
+      "type": "flight",
+      "airline": "春秋航空",
+      "number": "9C6149",
+      "route": "南京 NKG → 济州 CJU",
+      "departure": "2026-07-03 19:45 北京时间",
+      "arrival": "2026-07-03 22:30 韩国时间",
+      "duration": "1h45m",
+      "price_per_person": 700,
+      "class": "经济舱",
+      "note": "含 7kg 随身行李，无托运行李额（可另购 20kg ≈ ¥200）",
+      "booking_url": "https://flights.ch.com/flight-date/NKG-CJU/"
+    },
+    {
+      "type": "flight",
+      "airline": "吉祥航空",
+      "number": "HO1631",
+      "route": "南京 NKG → 济州 CJU",
+      "departure": "2026-07-03 14:40 北京时间",
+      "arrival": "2026-07-03 17:40 韩国时间",
+      "duration": "2h",
+      "price_per_person": 1100,
+      "class": "经济舱",
+      "note": "含 20kg 托运行李 + 机上餐食，可选下午出发方案",
+      "booking_url": "https://flights.ctrip.com/international/Schedule/nkg-cju.html"
+    },
+    {
+      "type": "flight",
+      "airline": "春秋航空",
+      "number": "9C6150",
+      "route": "济州 CJU → 南京 NKG",
+      "departure": "2026-07-06 07:30 韩国时间",
+      "arrival": "2026-07-06 08:15 北京时间",
+      "duration": "1h45m",
+      "price_per_person": 700,
+      "class": "经济舱",
+      "note": "完美匹配'7.6早上回'需求",
+      "booking_url": "https://flights.ch.com/flight-date/CJU-NKG/"
+    },
+    {
+      "type": "flight",
+      "airline": "吉祥航空",
+      "number": "HO1632",
+      "route": "济州 CJU → 南京 NKG",
+      "departure": "2026-07-06 18:40 韩国时间",
+      "arrival": "2026-07-06 19:25 北京时间",
+      "duration": "1h45m",
+      "price_per_person": 1100,
+      "class": "经济舱",
+      "note": "备选：晚上回，可多玩半天",
+      "booking_url": "https://flights.ctrip.com/international/Schedule/cju-nkg.html"
+    }
+  ],
+  "hotels": [
+    {
+      "tier": "economy",
+      "name": "Hanra Guesthouse 汉拏民宿",
+      "price_per_night": 120,
+      "rating": "8.2/10",
+      "location": "济州市区莲洞，步行 8min 到东门市场",
+      "amenities": ["免费早餐", "WiFi", "中文前台"],
+      "note": "2 晚 2 人共 ¥480（含早餐）"
+    },
+    {
+      "tier": "comfort",
+      "name": "LOTTE City Hotel 乐天城市酒店",
+      "price_per_night": 420,
+      "rating": "8.4/10",
+      "location": "莲洞商圈核心，近宝健路步行街",
+      "amenities": ["室内泳池", "健身房", "中文前台", "机场巴士直达"],
+      "note": "2 晚 2 人共 ¥840，性价比极高"
+    },
+    {
+      "tier": "luxury",
+      "name": "Grand Hyatt Jeju 济州君悦酒店",
+      "price_per_night": 780,
+      "rating": "9.0/10",
+      "location": "济州梦塔综合度假村，近机场",
+      "amenities": ["无边泳池", "5 星餐饮", "免税店", "机场免费接驳"],
+      "note": "超出经济型预算，可作升级参考"
+    }
+  ],
+  "budget_breakdown": {
+    "transport": {
+      "items": [
+        {"name": "往返机票（春秋航空）", "cost": 1400, "count": "2人×700"},
+        {"name": "济州岛内打车/公交", "cost": 100, "count": "3天均摊"},
+        {"name": "牛岛渡轮", "cost": 50, "count": "往返 ₩11,000/人"}
+      ],
+      "total_per_person": 1550
+    },
+    "hotel": {
+      "items": [
+        {"name": "济州市区经济酒店", "cost": 240, "count": "2晚×¥120/晚/人"}
+      ],
+      "total_per_person": 240
+    },
+    "food": {
+      "items": [
+        {"name": "正餐（黑猪肉/海鲜/韩式套餐）", "cost": 220, "count": "4顿"},
+        {"name": "咖啡+甜品+小吃", "cost": 80, "count": "多次"},
+        {"name": "便利店+市场", "cost": 80, "count": "多次"}
+      ],
+      "total_per_person": 380
+    },
+    "ticket": {
+      "items": [
+        {"name": "城山日出峰", "cost": 26, "count": "₩5,000"},
+        {"name": "O'sulloc 博物馆", "cost": 26, "count": "₩5,000（含冰淇淋）"},
+        {"name": "柱状节理带", "cost": 11, "count": "₩2,000"},
+        {"name": "牛岛电动车租赁", "cost": 50, "count": "₩20,000/3h 均摊"}
+      ],
+      "total_per_person": 113
+    },
+    "other": {
+      "items": [
+        {"name": "旅行保险", "cost": 50, "count": "境外旅行险"},
+        {"name": "伴手礼/免税店", "cost": 120, "count": "橘子巧克力/面膜"},
+        {"name": "SIM 卡/eSIM", "cost": 30, "count": "3天不限流量"}
+      ],
+      "total_per_person": 200
+    },
+    "total_per_person": 2483,
+    "total_all": 4966
+  },
+  "tips": [
+    "【签证】中国护照济州岛免签 30 天，但入境时需出示往返机票+酒店订单",
+    "【货币】韩国使用韩元（KRW），建议提前在国内换少量；支付宝/微信在便利店可用，餐厅大多收现金",
+    "【汇率】1 CNY ≈ 190 KRW，1 USD ≈ 1,370 KRW（2026.06）",
+    "【时差】韩国 UTC+9，比北京时间快 1 小时，航班时间均已换算",
+    "【7月天气】平均 23-29℃，偶有台风/阵雨，带防晒+薄外套+雨伞",
+    "【交通】济州岛内公交车 ₩1,250 起，打车起步 ₩3,800；建议下载 KakaoTaxi 打车 App",
+    "【必备 APP】Naver Map（韩国最好用地图）、Papago（翻译）、KakaoTaxi（打车）、KakaoMetro（公交）",
+    "【网络】机场购买 SKT/KT eSIM，约 ₩15,000/3 天不限流量，或提前国内买 eSIM 二维码",
+    "【插头】韩国使用德标双圆孔插座，需自备转换头",
+    "【免税】返程时可在机场提货乐天/新罗免税店商品，建议提前官网下单"
+  ],
+  "packing_list": [
+    "护照 + 复印件（免签入境需要）",
+    "往返机票行程单（打印或电子版）",
+    "酒店预订确认单（入境可能会查）",
+    "防晒霜 SPF50+ + 防晒衣",
+    "夏季衣物 + 薄外套（海风凉）",
+    "雨伞/雨衣（7月偶阵雨）",
+    "舒适运动步鞋 + 拖鞋",
+    "充电宝 + 数据线",
+    "韩国德标转换插头",
+    "现金（建议换 ₩200,000 起步）+ Visa/Mastercard 信用卡"
+  ]
+}
