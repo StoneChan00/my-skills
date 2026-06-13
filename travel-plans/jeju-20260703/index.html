@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>济州岛 · 2026.07.03-07.06 行程规划</title>
+<style>
+  :root {
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+    --accent: #f59e0b;
+    --accent-light: #fef3c7;
+    --surface: #ffffff;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+    --shadow-md: 0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+
+  .header { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; border-radius: var(--radius); padding: 32px 28px; margin-bottom: 24px; position: relative; overflow: hidden; }
+  .header::after { content: "🏝"; position: absolute; right: 28px; top: 50%; transform: translateY(-50%); font-size: 64px; opacity: .18; }
+  .header h1 { font-size: 28px; font-weight: 700; }
+  .header .subtitle { opacity: .85; margin-top: 4px; font-size: 15px; }
+
+  .overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .ov-card { background: var(--surface); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); text-align: center; }
+  .ov-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; }
+  .ov-card .value { font-size: 22px; font-weight: 700; margin-top: 4px; color: var(--primary); }
+  .ov-card .value.budget { color: var(--accent); }
+
+  .section { margin-bottom: 32px; }
+  .section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title .icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+
+  .day-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 16px; overflow: hidden; }
+  .day-header { background: var(--primary); color: #fff; padding: 12px 20px; font-weight: 600; font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
+  .day-header .day-date { font-size: 13px; opacity: .85; font-weight: 400; }
+  .day-header .day-theme { font-size: 12px; opacity: .9; font-weight: 400; margin-left: 8px; padding: 2px 10px; background: rgba(255,255,255,.2); border-radius: 10px; }
+  .day-body { padding: 16px 20px; }
+
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ""; position: absolute; left: 7px; top: 4px; bottom: 4px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 18px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot { position: absolute; left: -24px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--primary-light); border: 2px solid var(--primary); }
+  .tl-dot.food { background: var(--accent-light); border-color: var(--accent); }
+  .tl-dot.flight { background: #fce7f3; border-color: #ec4899; }
+  .tl-dot.hotel { background: #ede9fe; border-color: #7c3aed; }
+  .tl-dot.prep { background: #d1fae5; border-color: #059669; }
+  .tl-dot.transport { background: #dbeafe; border-color: #2563eb; }
+  .tl-time { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+  .tl-content { margin-top: 2px; }
+  .tl-name { font-weight: 600; font-size: 15px; }
+  .tl-detail { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+  .tl-cost { display: inline-block; background: var(--accent-light); color: #92400e; border-radius: 6px; padding: 1px 8px; font-size: 12px; font-weight: 600; margin-left: 6px; }
+
+  .transport-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .transport-table th { background: var(--primary-light); color: var(--primary); text-align: left; padding: 10px 12px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }
+  .transport-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  .transport-table tr:last-child td { border-bottom: none; }
+  .transport-table .price { font-weight: 700; color: var(--accent); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+  .badge.train { background: #dbeafe; color: #1e40af; }
+  .badge.flight { background: #fce7f3; color: #9d174d; }
+  .badge.bus { background: #d1fae5; color: #065f46; }
+  .recommend { background: #dcfce7; color: #166534; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 6px; margin-left: 6px; }
+
+  .hotel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .hotel-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .hotel-banner { height: 8px; }
+  .hotel-banner.economy { background: #94a3b8; }
+  .hotel-banner.comfort { background: var(--primary); }
+  .hotel-banner.luxury { background: var(--accent); }
+  .hotel-info { padding: 14px 16px; }
+  .hotel-tier { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); font-weight: 600; }
+  .hotel-name { font-size: 16px; font-weight: 700; margin: 4px 0; }
+  .hotel-meta { font-size: 13px; color: var(--text-muted); }
+  .hotel-price { font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 8px; }
+  .hotel-price span { font-size: 12px; font-weight: 400; color: var(--text-muted); }
+
+  .budget-bar { display: flex; flex-direction: column; gap: 10px; }
+  .bb-row { display: flex; align-items: center; gap: 12px; }
+  .bb-label { width: 64px; font-size: 13px; font-weight: 600; text-align: right; }
+  .bb-track { flex: 1; height: 28px; background: var(--border); border-radius: 6px; overflow: hidden; position: relative; }
+  .bb-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 12px; font-weight: 700; color: #fff; transition: width .6s ease; }
+  .bb-fill.transport { background: #2563eb; }
+  .bb-fill.hotel { background: #7c3aed; }
+  .bb-fill.food { background: #f59e0b; }
+  .bb-fill.ticket { background: #10b981; }
+  .bb-fill.other { background: #64748b; }
+  .bb-amount { font-size: 13px; font-weight: 600; min-width: 80px; }
+  .budget-total { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-top: 2px solid var(--text); margin-top: 12px; }
+  .budget-total .label { font-size: 16px; font-weight: 700; }
+  .budget-total .amount { font-size: 24px; font-weight: 800; color: var(--accent); }
+
+  .map-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .map-link { display: inline-flex; align-items: center; gap: 4px; padding: 6px 14px; background: var(--primary-light); color: var(--primary); border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600; }
+  .map-link:hover { background: var(--primary); color: #fff; }
+
+  .tip-card { background: #fef3c7; border-left: 4px solid var(--accent); padding: 12px 16px; margin-bottom: 10px; border-radius: 0 8px 8px 0; font-size: 14px; }
+  .tip-card strong { color: #92400e; }
+
+  .pack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; margin-top: 12px; }
+  .pack-item { background: var(--surface); border-radius: 8px; padding: 8px 14px; font-size: 14px; box-shadow: var(--shadow); }
+  .pack-item::before { content: "✅ "; margin-right: 4px; }
+
+  .footer { text-align: center; color: var(--text-muted); font-size: 12px; margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 22px; }
+    .ov-card .value { font-size: 18px; }
+    .hotel-grid { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .header { box-shadow: none; }
+    .day-card, .hotel-card, .ov-card { box-shadow: none; border: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>🏝 济州岛 · 4天3晚 行程规划</h1>
+    <div class="subtitle">2026.07.03（晚）— 07.06（早） ｜ 2 人同行 ｜ 经济型预算 ｜ 免签直飞</div>
+  </div>
+
+  <div class="overview">
+    <div class="ov-card"><div class="label">目的地</div><div class="value">济州岛</div></div>
+    <div class="ov-card"><div class="label">天数</div><div class="value">4 天</div></div>
+    <div class="ov-card"><div class="label">出行</div><div class="value">2 人</div></div>
+    <div class="ov-card"><div class="label">人均预算</div><div class="value budget">¥2,483</div></div>
+  </div>
+
+  <!-- ===== Daily Itinerary ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:var(--primary-light);color:var(--primary);">📅</span> 每日行程</div>
+
+    <!-- Day 0 -->
+    <div class="day-card">
+      <div class="day-header">
+        Day 0 · 出发夜 <span class="day-theme">✈ 启程</span>
+        <span class="day-date">2026-07-03 周五</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot prep"></div>
+            <div class="tl-time">17:30</div>
+            <div class="tl-content">
+              <div class="tl-name">抵达南京禄口机场 T2</div>
+              <div class="tl-detail">提前 2 小时到，办理春秋 9C6149 值机（7kg 随身）</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot flight"></div>
+            <div class="tl-time">19:45 北京时间</div>
+            <div class="tl-content">
+              <div class="tl-name">✈ 春秋 9C6149 起飞 <span class="tl-cost">¥700/人</span></div>
+              <div class="tl-detail">南京 NKG → 济州 CJU，飞行约 1h45m</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot flight"></div>
+            <div class="tl-time">22:30 韩国时间</div>
+            <div class="tl-content">
+              <div class="tl-name">抵达济州国际机场 🇰🇷</div>
+              <div class="tl-detail">韩国 UTC+9，比北京快 1 小时；过海关约 30 分钟</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">23:15</div>
+            <div class="tl-content">
+              <div class="tl-name">打车前往酒店</div>
+              <div class="tl-detail">济州市区约 10-15 分钟，打车 ₩10,000（≈¥52 两人均摊¥26/人）</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot hotel"></div>
+            <div class="tl-time">23:30</div>
+            <div class="tl-content">
+              <div class="tl-name">入住济州市区酒店 <span class="tl-cost">¥120/人</span></div>
+              <div class="tl-detail">推荐莲洞/宝健路商圈，靠近东门市场和交通枢纽</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-links" style="margin-top:14px;">
+          <a class="map-link" href="https://www.google.com/maps/search/Jeju+International+Airport" target="_blank">🗺 济州机场</a>
+          <a class="map-link" href="https://www.google.com/maps/search/Yeon-dong+Jeju" target="_blank">🏨 莲洞商圈</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 1 -->
+    <div class="day-card">
+      <div class="day-header">
+        Day 1 · 济州东线 <span class="day-theme">🌋 火山海景 + 牛岛果冻蓝</span>
+        <span class="day-date">2026-07-04 周六</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">07:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🌋 城山日出峰 성산일출봉 <span class="tl-cost">¥26</span></div>
+              <div class="tl-detail">UNESCO 世界遗产，登顶 30 分钟俯瞰火山口+果冻海（门票 ₩5,000）</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">10:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🐄 牛岛 우도 环岛游 <span class="tl-cost">¥130</span></div>
+              <div class="tl-detail">城山港渡轮 15 分钟；租电动车 ₩20,000/3h，打卡下牛牧洞+海女之家+西滨白沙</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">12:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🍦 牛岛午餐 · 花生冰淇淋+海鲜锅 <span class="tl-cost">¥80</span></div>
+              <div class="tl-detail">牛岛必吃三宝：花生冰淇淋+鲍鱼粥+海鲜锅，人均 ₩15,000</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">15:30</div>
+            <div class="tl-content">
+              <div class="tl-name">☕ 月汀里海边 월정리해변</div>
+              <div class="tl-detail">韩式 ins 风咖啡街+白风车+果冻海，网红打卡必到</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">17:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🏖 咸德海水浴场 함덕해수욕장</div>
+              <div class="tl-detail">翡翠色浅滩，本地人常去的海滩，日落超美</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">19:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🐷 黑猪肉烤肉晚餐 <span class="tl-cost">¥130</span></div>
+              <div class="tl-detail">济州必吃！推荐熟成黑猪肉+橘子酱，人均 ₩25,000</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot hotel"></div>
+            <div class="tl-time">21:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🏨 返回酒店休息 <span class="tl-cost">¥120/人</span></div>
+              <div class="tl-detail">济州市区酒店</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-links" style="margin-top:14px;">
+          <a class="map-link" href="https://www.google.com/maps/search/Seongsan+Ilchulbong+Jeju" target="_blank">🌋 城山日出峰</a>
+          <a class="map-link" href="https://www.google.com/maps/search/Udo+Island+Jeju" target="_blank">🐄 牛岛</a>
+          <a class="map-link" href="https://www.google.com/maps/search/Woljeongri+Beach+Jeju" target="_blank">☕ 月汀里</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card">
+      <div class="day-header">
+        Day 2 · 济州西线 <span class="day-theme">☕ 咖啡海岸 + 地质奇观</span>
+        <span class="day-date">2026-07-05 周日</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">08:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🐲 龙头岩 용두암</div>
+              <div class="tl-detail">汉拿山熔岩形成的天然龙头造型，免费参观</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">09:30</div>
+            <div class="tl-content">
+              <div class="tl-name">✨ 神奇之路 도깨비도로</div>
+              <div class="tl-detail">视觉错觉上坡路（下坡看起来像上坡），拍照打卡点，免费</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">11:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🍵 O'sulloc 雪绿茶博物馆 <span class="tl-cost">¥26</span></div>
+              <div class="tl-detail">济州绿茶田+网红绿茶冰淇淋（₩5,000 必吃）</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">12:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🍜 午餐 · 带皮五花肉+冷面 <span class="tl-cost">¥65</span></div>
+              <div class="tl-detail">中文旅游区附近韩餐馆，人均 ₩12,000</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">14:30</div>
+            <div class="tl-content">
+              <div class="tl-name">⛰ 柱状节理带 주상절리대 <span class="tl-cost">¥11</span></div>
+              <div class="tl-detail">玄武岩六边形石柱+汹涌波涛，世界地质奇观（门票 ₩2,000）</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">16:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🏝 挾才海水浴场 협재</div>
+              <div class="tl-detail">济州最美白沙海滩+远眺汉拿山+日落琥珀海</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">18:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🌅 涯月邑咖啡街 애월해안도로 <span class="tl-cost">¥30</span></div>
+              <div class="tl-detail">GD 咖啡馆 Monsant+海景落地窗+粉紫晚霞</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">20:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🦐 东门市场 동문시장 夜市 <span class="tl-cost">¥80</span></div>
+              <div class="tl-detail">海鲜锅+打糕+橘子汁+伴手礼，人均 ₩15,000</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot hotel"></div>
+            <div class="tl-time">21:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🏨 返回酒店收拾行李 <span class="tl-cost">¥120/人</span></div>
+              <div class="tl-detail">早睡！第二天 05:00 起床赶早班飞机</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-links" style="margin-top:14px;">
+          <a class="map-link" href="https://www.google.com/maps/search/Yongduam+Rock+Jeju" target="_blank">🐲 龙头岩</a>
+          <a class="map-link" href="https://www.google.com/maps/search/Osullocc+Tea+Museum+Jeju" target="_blank">🍵 O'sulloc</a>
+          <a class="map-link" href="https://www.google.com/maps/search/Jusangjeolli+Cliff+Jeju" target="_blank">⛰ 柱状节理带</a>
+          <a class="map-link" href="https://www.google.com/maps/search/Aewol+cafe+street+Jeju" target="_blank">🌅 涯月咖啡街</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card">
+      <div class="day-header">
+        Day 3 · 清晨返程 <span class="day-theme">✈ 返航</span>
+        <span class="day-date">2026-07-06 周一</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot prep"></div>
+            <div class="tl-time">05:00</div>
+            <div class="tl-content">
+              <div class="tl-name">⏰ 起床退房</div>
+              <div class="tl-detail">提前打包行李，直接带走</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">05:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🚕 打车前往济州机场 <span class="tl-cost">¥26</span></div>
+              <div class="tl-detail">济州市区到机场 10 分钟，打车 ₩8,000-10,000</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot prep"></div>
+            <div class="tl-time">06:20</div>
+            <div class="tl-content">
+              <div class="tl-name">🛂 办理值机 + 免税提货</div>
+              <div class="tl-detail">国际航班提前 2 小时，过海关+在提货点领乐天/新罗免税店商品</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot flight"></div>
+            <div class="tl-time">07:30 韩国时间</div>
+            <div class="tl-content">
+              <div class="tl-name">✈ 春秋 9C6150 起飞 <span class="tl-cost">¥700/人</span></div>
+              <div class="tl-detail">济州 CJU → 南京 NKG，飞行约 1h45m</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot flight"></div>
+            <div class="tl-time">08:15 北京时间</div>
+            <div class="tl-content">
+              <div class="tl-name">🎉 抵达南京禄口机场</div>
+              <div class="tl-detail">完美结束 4 天 3 晚的济州岛之旅 👋</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-links" style="margin-top:14px;">
+          <a class="map-link" href="https://www.google.com/maps/search/Jeju+International+Airport" target="_blank">✈ 济州机场</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Transport ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#dbeafe;color:#2563eb;">✈</span> 交通方案</div>
+    <div class="day-card" style="padding:0;">
+      <table class="transport-table">
+        <thead>
+          <tr>
+            <th>类型</th>
+            <th>航空公司 · 航班号</th>
+            <th>出发</th>
+            <th>到达</th>
+            <th>时长</th>
+            <th>价格/人</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge flight">去程</span></td>
+            <td>春秋航空 · 9C6149 <span class="recommend">✓ 推荐</span></td>
+            <td>07-03 19:45<br><small>南京 NKG 北京时</small></td>
+            <td>07-03 22:30<br><small>济州 CJU 韩国时</small></td>
+            <td>1h45m</td>
+            <td class="price">¥700</td>
+          </tr>
+          <tr>
+            <td><span class="badge flight">去程备选</span></td>
+            <td>吉祥航空 · HO1631</td>
+            <td>07-03 14:40</td>
+            <td>07-03 17:40</td>
+            <td>2h</td>
+            <td class="price">¥1,100</td>
+          </tr>
+          <tr>
+            <td><span class="badge flight">回程</span></td>
+            <td>春秋航空 · 9C6150 <span class="recommend">✓ 推荐</span></td>
+            <td>07-06 07:30<br><small>济州 CJU 韩国时</small></td>
+            <td>07-06 08:15<br><small>南京 NKG 北京时</small></td>
+            <td>1h45m</td>
+            <td class="price">¥700</td>
+          </tr>
+          <tr>
+            <td><span class="badge flight">回程备选</span></td>
+            <td>吉祥航空 · HO1632</td>
+            <td>07-06 18:40</td>
+            <td>07-06 19:25</td>
+            <td>1h45m</td>
+            <td class="price">¥1,100</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="padding: 12px 16px; background: #f1f5f9; font-size: 13px; color: var(--text-muted);">
+        💡 <strong>春秋航空</strong>最便宜，含 7kg 随身行李，托运行李需另购（约 ¥200/20kg）；<strong>吉祥航空</strong>含 20kg 托运+机上餐食。建议去程选春秋省钱，回程选 9C6150 早班机完美匹配"早上回"。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Hotels ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#ede9fe;color:#7c3aed;">🏨</span> 住宿推荐（济州市区 2 晚连住）</div>
+    <div class="hotel-grid">
+
+      <div class="hotel-card">
+        <div class="hotel-banner economy"></div>
+        <div class="hotel-info">
+          <div class="hotel-tier">经济 · 推荐</div>
+          <div class="hotel-name">Hanra Guesthouse 汉拏民宿</div>
+          <div class="hotel-meta">⭐ 8.2/10 ｜ 莲洞·近东门市场</div>
+          <div class="hotel-meta" style="margin-top:4px;font-size:12px;">免费早餐 · WiFi · 中文前台</div>
+          <div class="hotel-price">¥120 <span>/ 人 / 晚 · 双人间</span></div>
+          <div class="hotel-meta" style="margin-top:6px;font-size:12px;">2 晚 2 人合计：¥480</div>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-banner comfort"></div>
+        <div class="hotel-info">
+          <div class="hotel-tier">舒适 · 性价比优选</div>
+          <div class="hotel-name">LOTTE City Hotel 乐天城市酒店</div>
+          <div class="hotel-meta">⭐ 8.4/10 ｜ 莲洞商圈核心</div>
+          <div class="hotel-meta" style="margin-top:4px;font-size:12px;">泳池 · 健身房 · 机场巴士直达</div>
+          <div class="hotel-price">¥420 <span>/ 双人房 / 晚</span></div>
+          <div class="hotel-meta" style="margin-top:6px;font-size:12px;">2 晚 2 人合计：¥840</div>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-banner luxury"></div>
+        <div class="hotel-info">
+          <div class="hotel-tier">豪华 · 升级参考</div>
+          <div class="hotel-name">Grand Hyatt Jeju 济州君悦酒店</div>
+          <div class="hotel-meta">⭐ 9.0/10 ｜ 济州梦塔度假村</div>
+          <div class="hotel-meta" style="margin-top:4px;font-size:12px;">无边泳池 · 免税店 · 机场接驳</div>
+          <div class="hotel-price">¥780 <span>/ 双人房 / 晚</span></div>
+          <div class="hotel-meta" style="margin-top:6px;font-size:12px;">2 晚 2 人合计：¥1,560</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== Budget ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:var(--accent-light);color:#92400e;">💰</span> 人均预算明细</div>
+    <div class="day-card" style="padding:20px;">
+      <div class="budget-bar">
+        <div class="bb-row">
+          <div class="bb-label">交通</div>
+          <div class="bb-track"><div class="bb-fill transport" style="width:62%">¥1,550</div></div>
+          <div class="bb-amount">¥1,550 · 62%</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">住宿</div>
+          <div class="bb-track"><div class="bb-fill hotel" style="width:10%">¥240</div></div>
+          <div class="bb-amount">¥240 · 10%</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">餐饮</div>
+          <div class="bb-track"><div class="bb-fill food" style="width:15%">¥380</div></div>
+          <div class="bb-amount">¥380 · 15%</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">门票</div>
+          <div class="bb-track"><div class="bb-fill ticket" style="width:5%">¥113</div></div>
+          <div class="bb-amount">¥113 · 5%</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">其他</div>
+          <div class="bb-track"><div class="bb-fill other" style="width:8%">¥200</div></div>
+          <div class="bb-amount">¥200 · 8%</div>
+        </div>
+      </div>
+      <div class="budget-total">
+        <div class="label">人均合计</div>
+        <div class="amount">¥2,483</div>
+      </div>
+      <div style="font-size: 13px; color: var(--text-muted); margin-top: 12px; padding: 10px; background:#f8fafc; border-radius:8px;">
+        💡 两人合计 ¥4,966，完美控制在人均 ≤3000 元经济型预算内。汇率按 1 CNY ≈ 190 KRW 换算。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Tips ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#fef3c7;color:#92400e;">💡</span> 实用贴士</div>
+    <div class="tip-card"><strong>🛂 免签入境：</strong>中国护照济州岛免签 30 天，但入境时需出示<strong>往返机票行程单</strong>+<strong>酒店订单</strong>（海关可能抽查）</div>
+    <div class="tip-card"><strong>💴 货币汇率：</strong>韩国使用韩元（KRW），1 CNY ≈ 190 KRW。建议国内换少量现金，支付宝/微信在便利店可用；餐厅大多只收现金。建议换 ₩200,000 起步（≈ ¥1,050）</div>
+    <div class="tip-card"><strong>🕐 时差提醒：</strong>韩国 UTC+9，比北京快 1 小时。本行程中航班时刻都已换算为当地时间，手机会自动同步</div>
+    <div class="tip-card"><strong>🌤 7 月天气：</strong>平均 23-29℃，炎热偶有台风/阵雨；必带防晒+薄外套+雨伞。紫外线强烈，海边务必涂防晒霜</div>
+    <div class="tip-card"><strong>🚌 岛内交通：</strong>公交车 ₩1,250 起（支持 T-money 卡），打车起步 ₩3,800。下载 <strong>KakaoTaxi</strong> 打车超方便；建议两人包车 1 天约 ₩150,000 也可</div>
+    <div class="tip-card"><strong>📱 必备 APP：</strong><u>Naver Map</u>（韩国最好用地图，比 Google 准确）、<u>Papago</u>（中韩翻译）、<u>KakaoTaxi</u>（打车）、<u>KakaoMetro</u>（公交）</div>
+    <div class="tip-card"><strong>📶 上网方案：</strong>机场买 SKT/KT SIM 卡 ₩20,000/3 天不限流量；或提前在国内淘宝买 <strong>eSIM 二维码</strong>更省钱（约 ¥30）</div>
+    <div class="tip-card"><strong>🔌 插头标准：</strong>韩国使用<strong>德标双圆孔插座</strong>（C/F 型），需自备转换头，酒店一般不提供</div>
+    <div class="tip-card"><strong>🛍 免税购物：</strong>乐天/新罗免税店提前官网下单，<strong>返程时在机场提货</strong>省时省力；橘子巧克力+面膜是热门伴手礼</div>
+    <div class="tip-card"><strong>⚠ 避坑提醒：</strong>牛岛租电动车前检查电量避免半路没电；路边海鲜加工先问清价格（加工费 ≤ ₩5,000/斤合理）</div>
+  </div>
+
+  <!-- ===== Packing ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#d1fae5;color:#065f46;">🎒</span> 行李清单</div>
+    <div class="pack-grid">
+      <div class="pack-item">护照 + 复印件</div>
+      <div class="pack-item">往返机票行程单</div>
+      <div class="pack-item">酒店确认单</div>
+      <div class="pack-item">防晒霜 SPF50+</div>
+      <div class="pack-item">夏季衣物 + 薄外套</div>
+      <div class="pack-item">雨伞 / 轻便雨衣</div>
+      <div class="pack-item">舒适运动鞋 + 拖鞋</div>
+      <div class="pack-item">充电宝 + 数据线</div>
+      <div class="pack-item">德标转换插头</div>
+      <div class="pack-item">现金 ₩200,000 + Visa 卡</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated by travel-planner · 2026-06-13 · 航班数据来自春秋航空/携程 · 价格实时查询，建议出发前再次确认
+  </div>
+</div>
+</body>
+</html>
