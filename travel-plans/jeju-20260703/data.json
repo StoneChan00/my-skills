@@ -5,11 +5,12 @@
   "departure_city": "南京",
   "travelers": 2,
   "budget": {
-    "per_person": 2450,
-    "total": 4900,
+    "per_person": 2903,
+    "total": 5806,
     "currency": "CNY",
     "currency_display": "¥",
-    "exchange_note": "1 CNY ≈ 190 KRW，1 USD ≈ 1,370 KRW（2026.06 参考值）"
+    "exchange_note": "1 CNY ≈ 190 KRW，1 USD ≈ 1,370 KRW（2026.06 参考值）",
+    "price_source": "春秋航空官网 + Trip.com 实时数据（2026-06-13 抓取）"
   },
   "days": [
     {
@@ -18,7 +19,7 @@
       "theme": "启程",
       "activities": [
         {"time": "17:30", "type": "prep", "name": "抵达南京禄口机场 T2", "detail": "提前 2 小时到达，办理春秋 9C6149 值机（7kg 随身行李）", "cost": 0},
-        {"time": "19:45", "type": "flight", "name": "✈ 春秋 9C6149 起飞", "detail": "南京 NKG → 济州 CJU，飞行约 1.5h", "cost": 700},
+          {"time": "19:45", "type": "flight", "name": "✈ 春秋 9C6149 起飞", "detail": "南京 NKG → 济州 CJU，飞行约 1.5h（往返价 ¥1820 含回程）", "cost": 910},
         {"time": "22:30", "type": "land", "name": "抵达济州国际机场", "detail": "韩国当地时间，比北京快 1 小时；过海关约 30 分钟", "cost": 0},
         {"time": "23:15", "type": "transport", "name": "机场打车/公交前往酒店", "detail": "济州市区酒店约 10-15 分钟车程，打车 ≈ ₩10,000（≈¥52）", "cost": 26},
         {"time": "23:30", "type": "hotel", "name": "入住济州市区酒店", "detail": "建议莲洞/宝健路商圈，靠近东门市场和交通枢纽", "cost": 125}
@@ -62,7 +63,7 @@
         {"time": "05:00", "type": "prep", "name": "起床退房", "detail": "提前打包行李，前台寄存或直接带走", "cost": 0},
         {"time": "05:30", "type": "transport", "name": "打车前往济州机场", "detail": "济州市区到机场 10 分钟，打车 ₩8,000-10,000", "cost": 26},
         {"time": "06:20", "type": "flight", "name": "到达机场办理值机", "detail": "国际航班建议提前 2 小时，过海关+免税提货", "cost": 0},
-        {"time": "07:30", "type": "flight", "name": "✈ 春秋 9C6150 起飞", "detail": "济州 CJU → 南京 NKG，飞行约 1.5h", "cost": 700},
+          {"time": "07:30", "type": "flight", "name": "✈ 春秋 9C6150 起飞", "detail": "济州 CJU → 南京 NKG，飞行约 1h45m（已含在往返价 ¥1820 中）", "cost": 910},
         {"time": "08:15", "type": "land", "name": "抵达南京禄口机场", "detail": "北京时间，结束愉快旅程 🎉", "cost": 0}
       ]
     }
@@ -71,54 +72,37 @@
     {
       "type": "flight",
       "airline": "春秋航空",
-      "number": "9C6149",
-      "route": "南京 NKG → 济州 CJU",
-      "departure": "2026-07-03 19:45 北京时间",
-      "arrival": "2026-07-03 22:30 韩国时间",
-      "duration": "1h45m",
-      "price_per_person": 700,
+      "numbers": ["9C6149(去)", "9C6150(回)"],
+      "route": "南京 NKG ⇆ 济州 CJU（往返直飞）",
+      "outbound": {"flight": "9C6149", "departure": "2026-07-03 19:45 北京时", "arrival": "2026-07-03 22:30 韩国时"},
+      "inbound": {"flight": "9C6150", "departure": "2026-07-06 07:30 韩国时", "arrival": "2026-07-06 08:15 北京时"},
+      "duration": "1h45m 单程",
+      "price_real": {
+        "round_trip_total": 1820,
+        "round_trip_note": "春秋航空官网(www.ch.com)往返含税实价（2026-06-13 抓取）",
+        "per_leg": 910,
+        "flash_sale": {"per_leg": 309, "note": "限时秒杀，限特定日期，全价 ¥1,000 的 3.1折"}
+      },
       "class": "经济舱",
-      "note": "含 7kg 随身行李，无托运行李额（可另购 20kg ≈ ¥200）",
-      "booking_url": "https://flights.ch.com/flight-date/NKG-CJU/"
+      "includes": ["7kg 随身行李", "免费选座"],
+      "excludes": ["托运行李（另购 20kg ≈ ¥200/程）", "机上餐食"],
+      "booking_url": "https://pages.ch.com/Activitiesall/SecondKillDetail/NKG-CJU/"
     },
     {
       "type": "flight",
       "airline": "吉祥航空",
-      "number": "HO1631",
-      "route": "南京 NKG → 济州 CJU",
-      "departure": "2026-07-03 14:40 北京时间",
-      "arrival": "2026-07-03 17:40 韩国时间",
-      "duration": "2h",
-      "price_per_person": 1100,
+      "numbers": ["HO1631(去)", "HO1632(回)"],
+      "route": "南京 NKG ⇆ 济州 CJU（往返直飞）",
+      "outbound": {"flight": "HO1631", "departure": "2026-07-03 14:40 北京时", "arrival": "2026-07-03 17:40 韩国时"},
+      "inbound": {"flight": "HO1632", "departure": "2026-07-06 19:40 韩国时", "arrival": "2026-07-06 20:40 北京时"},
+      "duration": "2h 单程",
+      "price_real": {
+        "per_leg_trip_com": 650,
+        "trip_com_note": "Trip.com 7 月单程参考价（HK$700 ≈ ¥650）",
+        "note": "含 20kg 托运行李 + 机上餐食，价格高于春秋但服务更全"
+      },
       "class": "经济舱",
-      "note": "含 20kg 托运行李 + 机上餐食，可选下午出发方案",
-      "booking_url": "https://flights.ctrip.com/international/Schedule/nkg-cju.html"
-    },
-    {
-      "type": "flight",
-      "airline": "春秋航空",
-      "number": "9C6150",
-      "route": "济州 CJU → 南京 NKG",
-      "departure": "2026-07-06 07:30 韩国时间",
-      "arrival": "2026-07-06 08:15 北京时间",
-      "duration": "1h45m",
-      "price_per_person": 700,
-      "class": "经济舱",
-      "note": "完美匹配'7.6早上回'需求",
-      "booking_url": "https://flights.ch.com/flight-date/CJU-NKG/"
-    },
-    {
-      "type": "flight",
-      "airline": "吉祥航空",
-      "number": "HO1632",
-      "route": "济州 CJU → 南京 NKG",
-      "departure": "2026-07-06 18:40 韩国时间",
-      "arrival": "2026-07-06 19:25 北京时间",
-      "duration": "1h45m",
-      "price_per_person": 1100,
-      "class": "经济舱",
-      "note": "备选：晚上回，可多玩半天",
-      "booking_url": "https://flights.ctrip.com/international/Schedule/cju-nkg.html"
+      "booking_url": "https://flights.ctrip.com/international/search/schedule/nkg-cju.html"
     }
   ],
   "hotels": [
@@ -153,11 +137,11 @@
   "budget_breakdown": {
     "transport": {
       "items": [
-        {"name": "往返机票（春秋航空）", "cost": 1400, "count": "2人×700"},
+        {"name": "往返机票（春秋航空 NKG⇆CJU，官网实价）", "cost": 1820, "count": "往返含税/人", "note": "春秋官网 www.ch.com 实时查询，2026-06-13 抓取"},
         {"name": "济州岛内打车/公交", "cost": 100, "count": "3天均摊"},
         {"name": "牛岛渡轮", "cost": 50, "count": "往返 ₩11,000/人"}
       ],
-      "total_per_person": 1550
+      "total_per_person": 1970
     },
     "hotel": {
       "items": [
@@ -190,8 +174,8 @@
       ],
       "total_per_person": 200
     },
-    "total_per_person": 2483,
-    "total_all": 4966
+    "total_per_person": 2903,
+    "total_all": 5806
   },
   "tips": [
     "【签证】中国护照济州岛免签 30 天，但入境时需出示往返机票+酒店订单",
