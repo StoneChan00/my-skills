@@ -109,29 +109,73 @@
     {
       "tier": "economy",
       "name": "Hanra Guesthouse 汉拏民宿",
-      "price_per_night": 120,
-      "rating": "8.2/10",
-      "location": "济州市区莲洞，步行 8min 到东门市场",
-      "amenities": ["免费早餐", "WiFi", "中文前台"],
-      "note": "2 晚 2 人共 ¥480（含早餐）"
+      "price_per_night_per_person": 65,
+      "price_per_night_per_room": 130,
+      "price_range": "USD 11-18/房晚 ≈ ¥80-130",
+      "rating": "N/A",
+      "location": "7F, 278 Seogwang-ro, Jeju City (步行 8min 到东门市场)",
+      "amenities": ["共用厨房", "WiFi", "电脑区", "行李寄存", "洗衣房", "免费停车"],
+      "note": "2 晚 2 人共约 ¥260（双床房或拼床位）。2023 年开业，20 房规模。",
+      "price_source": "Trip.com international (us.trip.com) + jejuhotels24.com，2026-06-13 抓取",
+      "price_source_note": "7 月旺季参考价 USD18/晚起，淡季 USD11/晚起。年度均价 USD25/晚（budgetyourtrip 数据）。",
+      "caveats": [
+        "⚠️ 这家是 Guesthouse（民宿/青旅），在携程/飞猪上通常搜不到（中国 OTA 不收录小型民宿）",
+        "如需在携程预订，请搜'济州市区经济型酒店'，筛选 2-3 星 ¥300-500/晚"
+      ],
+      "booking_urls": {
+        "Trip.com (international)": "https://us.trip.com/hotels/jeju-hotel-detail-114433599/guesthouse-hanra/",
+        "jejuhotels24": "https://hanra-guesthouse.jejuhotels24.com/en/",
+        "Klook": "https://www.klook.com/hotels/detail/1313719-hanra-guesthouse/",
+        "Booking.com 搜索同档": "https://www.booking.com/searchresults.html?ss=jeju+city+guesthouse&nflt=price%3DCNY-min-200-max-500"
+      }
     },
     {
       "tier": "comfort",
       "name": "LOTTE City Hotel 乐天城市酒店",
-      "price_per_night": 420,
-      "rating": "8.4/10",
-      "location": "莲洞商圈核心，近宝健路步行街",
-      "amenities": ["室内泳池", "健身房", "中文前台", "机场巴士直达"],
-      "note": "2 晚 2 人共 ¥840，性价比极高"
+      "price_per_night_per_person": 500,
+      "price_per_night_per_room": 1000,
+      "price_range": "¥700-1,400/双人房晚（7 月旺季）",
+      "rating": "8.4/10 · 4.4⭐ 携程分",
+      "location": "83 Doryeong-ro, 济州市 (机场 5km，免费班车)",
+      "amenities": ["室内恒温泳池 (¥另付费)", "7层健身房 (免费)", "中文前台", "机场免费巴士", "楼下 7-11/乐天免税店", "2014 年开业 255 房"],
+      "note": "2 晚 2 人共约 ¥2,000（均价 ¥1000/晚/2人）。携程评价提到旺季房价约 ¥1200/晚。",
+      "price_source": "携程 + Agoda + Trip.com 综合，2026-06-13 抓取",
+      "price_source_note": "Trip.com 显示 TWD3,180 起（≈¥705），均价 TWD5,773（≈¥1,270）；Agoda 显示 USD151-200/晚（≈¥1,087-1,440）；真实用户评论'還要 1200 多'。",
+      "caveats": [
+        "7 月是韩国暑期旺季，建议提前 1 个月预订锁价",
+        "携程价格含税全价；Booking 价格通常不含 10% 服务费",
+        "泳池是另付费的（¥约 80/人），非免费"
+      ],
+      "booking_urls": {
+        "携程 (中文全价)": "https://hotels.ctrip.com/hotels/1385458.html",
+        "Trip.com (international)": "https://tw.trip.com/hotels/jeju-hotel-detail-1385458/lotte-city-hotel-jeju-airport/",
+        "Agoda (中文)": "https://www.agoda.com/zh-cn/lotte-city-hotel-jeju/hotel/jeju-island-kr.html",
+        "Booking.com": "https://www.booking.com/searchresults.html?ss=LOTTE+City+Hotel+Jeju"
+      }
     },
     {
       "tier": "luxury",
       "name": "Grand Hyatt Jeju 济州君悦酒店",
-      "price_per_night": 780,
-      "rating": "9.0/10",
-      "location": "济州梦塔综合度假村，近机场",
-      "amenities": ["无边泳池", "5 星餐饮", "免税店", "机场免费接驳"],
-      "note": "超出经济型预算，可作升级参考"
+      "price_per_night_per_person": 900,
+      "price_per_night_per_room": 1800,
+      "price_range": "₩235,000-463,000 ≈ ¥1,200-2,400/双人房晚（7 月旺季）",
+      "rating": "9.2/10 · 4.5⭐ 携程分 (2180 评论)",
+      "location": "12 Noyeon-ro, 济州梦塔度假村 (机场 2.6km 直线，10min 车程)",
+      "amenities": ["8层天际无边泳池 (温水)", "14 家餐厅酒吧", "韩式汗蒸", "5 星餐饮含樟园(黑猪烤肉)", "免税购物中心", "2020 年开业 1600 房，65㎡起"],
+      "note": "2 晚 2 人共约 ¥3,600（均价 ¥1800/晚/2人）。超出经济型预算，仅作升级参考。",
+      "price_source": "HotelsCombined.kr (韩元实时) + 携程 + Agoda，2026-06-13 抓取",
+      "price_source_note": "HotelsCombined.kr 显示 7 月 King Room 最低 ₩234,812 起（≈¥1,200）；年度均价 ₩378,233/晚（≈¥1,930），1 月淡季 ₩55,978/晚（≈¥285）。",
+      "caveats": [
+        "房型差异极大：King Room ¥1,200 / Grand Suite ¥2,000+ / 海景套房 ¥3,000+",
+        "自助餐早餐 ₩60,000/人 ≈ ¥300/人，建议在外吃",
+        "7 月旺季建议提前 1-2 个月预订锁低价房"
+      ],
+      "booking_urls": {
+        "携程 (中文全价)": "https://hotels.ctrip.com/hotels/64242246.html",
+        "Agoda (繁体中文)": "https://www.agoda.com/zh-hk/grand-hyatt-jeju/hotel/jeju-island-kr.html",
+        "HotelsCombined.kr (韩元实时)": "https://www.hotelscombined.co.kr/Hotel/Grand_Hyatt_Jeju.htm",
+        "ezTravel 易游网": "https://hotel.eztravel.com.tw/detail-jeju-737-64242246/grand-hyatt-jeju/"
+      }
     }
   ],
   "budget_breakdown": {
@@ -145,9 +189,13 @@
     },
     "hotel": {
       "items": [
-        {"name": "济州市区经济酒店", "cost": 240, "count": "2晚×¥120/晚/人"}
+        {"name": "济州市区经济酒店 2 晚", "cost": 130, "count": "2晚×¥130/晚/人(均摊)", "note": "Hanra Guesthouse 双床房 ¥130/晚/2人"}
       ],
-      "total_per_person": 240
+      "alternatives": [
+        {"tier": "comfort", "name": "LOTTE City", "per_person": 1000, "note": "2晚×¥1000/晚/人"},
+        {"tier": "luxury", "name": "Grand Hyatt", "per_person": 1800, "note": "2晚×¥1800/晚/人"}
+      ],
+      "total_per_person": 130
     },
     "food": {
       "items": [
@@ -174,8 +222,8 @@
       ],
       "total_per_person": 200
     },
-    "total_per_person": 2903,
-    "total_all": 5806
+    "total_per_person": 2793,
+    "total_all": 5586
   },
   "tips": [
     "【签证】中国护照济州岛免签 30 天，但入境时需出示往返机票+酒店订单",
