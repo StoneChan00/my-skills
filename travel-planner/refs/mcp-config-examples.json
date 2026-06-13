@@ -89,5 +89,53 @@
     "安装命令 1": "clawhub install flyai",
     "安装命令 2": "npx skills add alibaba-flyai/flyai-skill",
     "限制": "API Key 需企业认证，个人通过 OpenClaw 额度低"
+  },
+
+  "场景G: 小红书攻略参考（CLI + 12306 + nowah 推荐组合）": {
+    "说明": "redbook 是 npm CLI 工具（非 MCP server），通过 bash 调用搜索小红书的真实攻略帖，补充行程灵感",
+    "安装命令": "npm install -g @lucasygu/redbook",
+    "验证命令": "redbook whoami",
+    "前置条件": "Chrome 浏览器已登录 xiaohongshu.com（Cookie 认证，无需 API Key）",
+    "典型用法": {
+      "搜索攻略": "redbook search '成都3天攻略' --sort popular --json",
+      "搜索美食": "redbook search '成都必吃美食' --sort popular --json",
+      "阅读笔记": "redbook read <笔记URL>",
+      "查看评论": "redbook comments <笔记URL> --all --json"
+    },
+    "Windows 注意": "Chrome 127+ 需先关闭 Chrome 再运行 redbook whoami（App-Bound Encryption），或用 --cookie-string 手动传入",
+    "mcp": {
+      "12306": {
+        "type": "local",
+        "command": ["npx", "-y", "12306-mcp"],
+        "enabled": true,
+        "timeout": 30000
+      },
+      "nowah-travel": {
+        "type": "remote",
+        "url": "https://claw.nowah.xyz/mcp",
+        "enabled": true,
+        "oauth": true,
+        "timeout": 30000
+      }
+    },
+    "_comment": "redbook 不是 MCP，不需写在 mcp 字段里；Agent 直接 bash 调用即可"
+  },
+
+  "场景H: 小红书 MCP 直连（openclaw-xhs，功能更全但依赖更重）": {
+    "说明": "openclaw-xhs 封装了 xiaohongshu-mcp 为 MCP tools，支持搜索/推荐/评论/发布等",
+    "GitHub": "https://github.com/zhiyingxia/openclaw-xhs",
+    "前置条件 1": "安装 xiaohongshu-mcp 二进制（需从该仓库单独下载）",
+    "前置条件 2": "安装 openclaw-xhs 脚本",
+    "MCP tools": ["search_feeds", "list_feeds", "get_feed_detail", "post_comment_to_feed", "user_profile", "like_feed", "favorite_feed"],
+    "注意": "依赖链较重（需单独下载二进制 + 配置），轻量场景推荐 场景G 的 redbook CLI",
+    "mcp": {
+      "xiaohongshu": {
+        "type": "remote",
+        "url": "http://localhost:18060/mcp",
+        "enabled": true,
+        "timeout": 30000,
+        "_comment": "需先启动 xiaohongshu-mcp 服务，具体端口以实际为准"
+      }
+    }
   }
 }

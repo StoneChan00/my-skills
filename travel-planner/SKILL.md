@@ -34,6 +34,7 @@ description: >
 |------|---------|---------|------|
 | **国际航班/酒店/POI** | **nowah** | 远程 HTTP + OAuth | 免费额度 |
 | **国内火车票** | **12306-mcp** | 本地 `npx -y 12306-mcp` | 零 key |
+| **攻略/美食参考** | **redbook CLI** | `npm i -g @lucasygu/redbook` → bash 调用 | 零 key（Chrome Cookie） |
 | **兜底方案** | webfetch + 官网 | 直接抓取 | 无需配置 |
 | 国内酒店 | webfetch 携程/Booking | HTTP 抓取 | — |
 | 签证/汇率/天气 | nowah 工具集 | `get_visa_requirements` 等 | 免费 |
@@ -41,6 +42,7 @@ description: >
 **优先级规则**：
 - 国内火车票 → 12306-mcp（本地）
 - 国际航班/酒店 → nowah（远程）
+- 攻略/美食灵感 → redbook CLI 搜索小红书真实帖子（可选，显著提升实用性）
 - MCP 不可用 → webfetch + 携程/春秋/Booking/Agoda 官网抓取
 
 ## 接入配置（OpenCode 格式）
@@ -103,6 +105,45 @@ opencode mcp auth nowah-travel       # 首次 OAuth 认证（打开浏览器）
 - **POI 攻略**：`websearch` 搜索 "X 地 3 天行程 2026"
 
 **所有价格必须有来源标注**（MCP 实时 / 哪个官网抓取 / 攻略站估算），不要只写一个数字。
+
+**2C. 小红书攻略搜索（行程灵感 + 美食参考）**：
+
+用 `redbook` CLI 从小红书获取真实用户攻略，作为行程安排和美食推荐的参考来源。
+**这不是必须的步骤**，但能显著提升行程方案的实用性和真实感。
+
+前置检查：
+```bash
+# 检查 redbook 是否安装
+which redbook || npm list -g @lucasygu/redbook
+# 验证连接
+redbook whoami --json
+```
+若未安装 → `npm install -g @lucasygu/redbook`，若连接失败 → 提示用户在 Chrome 登录 xiaohongshu.com。
+
+搜索示例（全部加 `--json` 获取结构化数据）：
+```bash
+# 目的地行程攻略（按互动量排序，取最热门的）
+redbook search "<目的地><天数>天攻略" --sort popular --json
+# 例如: redbook search "成都3天攻略" --sort popular --json
+
+# 美食推荐
+redbook search "<目的地>必吃美食" --sort popular --json
+# 例如: redbook search "成都必吃美食推荐" --sort popular --json
+
+# 特定景点/餐厅的详细笔记
+redbook read https://www.xiaohongshu.com/explore/<noteId>
+
+# 笔记评论（看用户真实反馈、避坑信息）
+redbook comments https://www.xiaohongshu.com/explore/<noteId> --json
+```
+
+**如何使用搜索结果**：
+- 从热门笔记中提取：**具体餐厅名/景点名、推荐菜品、人均价格、避坑建议**
+- 将提取的信息融入行程方案的 `activities` 和餐饮推荐中
+- HTML 行程中的美食/景点旁标注 `📕 小红书参考` + 笔记链接，增强可信度
+- ⚠️ 小红书价格是 UGC 内容，可能过时。标注时写 `小红书用户反馈（参考）`，不要当精确价格
+
+**搜索间隔 ≥ 3s**，避免触发限流。每轮搜索取 top 3-5 条足够，不用翻页。
 
 ### 3. 生成旅行计划文件夹
 
@@ -213,6 +254,9 @@ travel-plans/<目的地拼音或英文>-<出发日期>/
 | 输出纯文字行程无预算 | 用户无法判断可行性 | 每个方案必须附预算明细表 + 来源 |
 | HTML 用外部 CDN 依赖 | 离线/弱网下页面崩坏 | 模板必须全部内联，零外部依赖 |
 | 目录名用中文 | 某些系统/工具路径解析异常 | 目录名只用小写英文/拼音 + 日期 |
+| Windows redbook 报 `-101` 错误 | Chrome 127+ App-Bound Encryption 阻止 Cookie 读取 | 先关闭 Chrome 再运行 redbook，或用 `--cookie-string "a1=值; web_session=值"` 手动传入 |
+| 把小红书 UGC 价格当精确价格 | 用户帖子可能几个月前发布，价格已变 | 标注 `📕 小红书参考`，不作为精确预算，让用户自行验证 |
+| 频繁搜索 redbook 被限流 | 搜索间隔太短触发风控 | 搜索间隔 ≥ 3s，每轮取 top 3-5 条即够 |
 
 ## 中国旅行平台现状（2026.06）
 
@@ -224,6 +268,7 @@ travel-plans/<目的地拼音或英文>-<出发日期>/
 - **春秋航空**：官网 `www.ch.com` 有时会有秒杀价（实际抓取到南京⇄济州 3.1 折 ¥309 起），但限特定日期。
 - **Trip.com**（携程国际版）：webfetch 能抓到部分平均价格数据（如 HK$793 单程），但需二次计算汇率。
 - **RollingGo**：个人开发者友好，机票+酒店 MCP，`rollinggo.store` 免费申请 Key。
+- **小红书（攻略参考）**：无官方旅游攻略 API，但 UGC 内容极丰富。推荐用 `@lucasygu/redbook` CLI 搜索真实用户攻略帖（行程 + 美食），作为行程灵感的参考来源。Chrome Cookie 认证，零 API Key。备选方案 `openclaw-xhs` 提供完整 MCP 集成，但依赖链更重。
 
 ## Related skills (disambiguation)
 

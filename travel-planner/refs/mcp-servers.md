@@ -163,6 +163,76 @@
 
 ---
 
+## 小红书攻略参考（CLI，非 MCP）
+
+### ✅ @lucasygu/redbook — 小红书 CLI（**旅游推荐首选**）
+- **GitHub**: https://github.com/lucasygu/redbook
+- **npm 包**: `@lucasygu/redbook` ✅ 可用
+- **安装**: `npm install -g @lucasygu/redbook`（需 Node.js >= 22）
+- **认证**: Chrome 浏览器 Cookie（先登录 xiaohongshu.com），无需 API Key
+- **验证**: `redbook whoami`
+- **定位**: 为 AI Agent 设计的 CLI 工具，已内置 Claude Code / OpenClaw SKILL.md
+- **旅游场景命令**:
+  ```bash
+  # 搜索目的地攻略（按互动量排序）
+  redbook search "成都3天攻略" --sort popular --json
+
+  # 搜索美食推荐
+  redbook search "成都必吃美食推荐" --sort popular --json
+
+  # 阅读某篇高赞笔记全文
+  redbook read https://www.xiaohongshu.com/explore/<noteId>
+
+  # 获取笔记评论（看用户真实反馈）
+  redbook comments <url> --all --json
+
+  # 搜索话题标签（了解热门话题）
+  redbook topics "日本自由行"
+  ```
+- **通用选项**: `--json`（机器可读）、`--sort general|popular|latest`、`--type all|video|image`
+- **Windows 注意**:
+  - Chrome 127+ 使用 App-Bound Encryption，需**先关闭 Chrome** 再运行 redbook（CLI 自动启动 headless 读取 Cookie）
+  - 如果仍失败，用 `--cookie-string "a1=值; web_session=值"` 手动传入（从 Chrome F12 → Application → Cookies 复制）
+- **限流**: 搜索间隔建议 ≥ 3s，避免频繁调用
+- **输出**: `--json` 返回结构化数组，含标题、正文、互动数据（点赞/评论/收藏数）、图片 URL 等
+
+### ❓ openclaw-xhs — 小红书 MCP 封装（功能更全但依赖重于 redbook）
+- **GitHub**: https://github.com/zhiyingxia/openclaw-xhs
+- **特点**: 封装 `xiaohongshu-mcp` 二进制为 MCP tools（search_feeds / list_feeds / get_feed_detail / user_profile 等）
+- **MCP tools**:
+  | 工具 | 用途 |
+  |------|------|
+  | `search_feeds` | 搜索笔记 |
+  | `list_feeds` | 首页推荐 |
+  | `get_feed_detail` | 笔记详情 + 评论 |
+  | `user_profile` | 用户信息 |
+  | `like_feed` / `favorite_feed` | 点赞/收藏 |
+- **安装步骤**:
+  1. 从仓库下载 `xiaohongshu-mcp` 二进制
+  2. 安装 openclaw-xhs 脚本
+  3. 启动 MCP server → `http://localhost:18060/mcp`
+- **OpenCode 配置**:
+  ```json
+  {
+    "mcp": {
+      "xiaohongshu": {
+        "type": "remote",
+        "url": "http://localhost:18060/mcp",
+        "enabled": true,
+        "timeout": 30000
+      }
+    }
+  }
+  ```
+- **建议**: 依赖链较重，轻量搜索场景优先用 redbook CLI
+
+### xhs-cli（不推荐，与 redbook 功能重叠）
+- **GitHub**: https://github.com/hammershock/xhs-cli
+- **类型**: Python CLI（pip 安装），4 个依赖
+- **不推荐原因**: 与 redbook 功能高度重叠，且需 Python 环境 + pip 安装，不如 redbook 的 npm 一键安装方便
+
+---
+
 ## 辅助 MCP
 
 | MCP | 用途 | OpenCode 配置 | 备注 |
@@ -239,3 +309,5 @@ opencode mcp debug <name>            # 调试
 | Google Maps MCP | `npm view @modelcontextprotocol/server-google-maps` | 显示版本号 |
 | ❌ trvl | `npm view trvl` | `Error 404: Unpublished` |
 | ❌ moltravel | `npm view @navifare/moltravel-mcp` | `Error 404: Not Found` |
+| ✅ redbook CLI | `npm view @lucasygu/redbook` | 显示版本号（需 Node >= 22） |
+| ✅ redbook 连接 | `redbook whoami` | 显示用户名（需 Chrome 已登录小红书） |
