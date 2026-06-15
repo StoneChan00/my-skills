@@ -89,6 +89,11 @@ desired_mcp = {
         "type": "local",
         "command": ["npx", "-y", "12306-mcp"],
         "timeout": 30000
+    },
+    "geocode": {
+        "type": "local",
+        "command": ["npx", "-y", "geocode-mcp"],
+        "timeout": 30000
     }
 }
 
@@ -115,6 +120,12 @@ CANONICAL_JSONC = '''\
       "type": "remote",
       "url": "https://claw.nowah.xyz/mcp",
       "oauth": {},
+      "timeout": 30000
+    },
+    // 地理编码（地名 → 经纬度，用于地图路线，零 key）
+    "geocode": {
+      "type": "local",
+      "command": ["npx", "-y", "geocode-mcp"],
       "timeout": 30000
     }
   }

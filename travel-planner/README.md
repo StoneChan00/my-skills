@@ -56,3 +56,19 @@ npm install -g @lucasygu/redbook
 ```
 帮我规划 5 天日本大阪行程，参考小红书攻略
 ```
+
+## 地图路线可视化（Leaflet + geocode）
+
+生成的行程 HTML 会内嵌 **Leaflet.js + OpenStreetMap** 交互地图，展示每日路线：
+- 彩色 marker 标注景点 / 餐厅 / 酒店
+- polyline 连接当天路线顺序
+- 点击 marker 弹出名称 + 时间
+
+**依赖**：`geocode-mcp`（已在 `init.sh` 自动配置，零 API Key）
+
+**数据流**：
+1. 行程规划完成后，agent 用 `geocode-mcp` 把景点名 → 经纬度坐标
+2. 坐标写入 `data.json` 的 `locations` 数组
+3. `index.html` 重新渲染时嵌入 Leaflet 地图
+
+⚠️ Leaflet/OSM 瓦片是唯一需要加载外部 CDN 的部分（地图瓦片）。离线打开 HTML 时地图不可用，但 marker 坐标仍保留在 data.json 中。
