@@ -203,7 +203,72 @@ if command -v redbook &>/dev/null; then
 else
   warn "redbook CLI not installed (optional — for Xiaohongshu travel tips)"
   echo "    Install: npm install -g @lucasygu/redbook"
-  echo "    After install, login to xiaohongshu.com in Chrome first"
+  echo "    After install, login to xiaohongshu.com in Chrome or Edge first"
+fi
+
+# ---- 5. Redbook cookie config ---------------------------------
+
+step "Checking redbook cookie config"
+
+RED_BOOK_CONFIG="$SKILLS_DIR/travel-planner/config.json"
+
+if [ -f "$RED_BOOK_CONFIG" ]; then
+  # config.json exists — validate cookie is non-empty
+  cookie_val="$(python3 -c "import json; c=json.load(open('$RED_BOOK_CONFIG','r',encoding='utf-8')); print(c.get('redbook_cookie',''))" 2>/dev/null || true)"
+  if [ -n "$cookie_val" ] && [ "$cookie_val" != "null" ]; then
+    ok "redbook cookie config found: $RED_BOOK_CONFIG"
+
+    # Quick connectivity check (non-blocking, 5s timeout)
+    if command -v redbook &>/dev/null; then
+      whoami_out="$(timeout 8 redbook whoami --cookie-string "$cookie_val" --json 2>&1 || true)"
+      if echo "$whoami_out" | grep -qi "nick_name\|user_id\|stone"; then
+        ok "redbook connection verified"
+      else
+        warn "redbook cookie may be expired — re-run init.sh with --cookie to update"
+      fi
+    fi
+  else
+    warn "redbook config exists but cookie is empty"
+  fi
+else
+  warn "redbook cookie not configured (optional — for Xiaohongshu travel tips)"
+  echo "    To configure, run: bash init.sh --cookie"
+  echo "    Or create .opencode/skills/travel-planner/config.json manually"
+fi
+
+# Interactive cookie setup when --cookie flag is passed
+if [[ "${1:-}" == "--cookie" ]]; then
+  echo ""
+  echo "  📕 Redbook Cookie Setup"
+  echo "  ───────────────────────"
+  echo "  1. 打开 Chrome 或 Edge，访问 xiaohongshu.com 并登录"
+  echo "  2. F12 → Application → Cookies → xiaohongshu.com"
+  echo "  3. 复制 a1 和 web_session 的值"
+  echo ""
+  printf "  请粘贴 a1 值: "
+  read -r A1_VAL
+  printf "  请粘贴 web_session 值: "
+  read -r SESSION_VAL
+  TODAY="$(date +%Y-%m-%d)"
+  mkdir -p "$(dirname "$RED_BOOK_CONFIG")"
+  cat > "$RED_BOOK_CONFIG" <<COOKEOF
+{
+  "redbook_cookie": "a1=${A1_VAL}; web_session=${SESSION_VAL}",
+  "_note": "Cookie 有效期: a1 约6-12月, web_session 约2-4周。过期后运行 bash init.sh --cookie 更新。",
+  "_updated": "${TODAY}"
+}
+COOKEOF
+  ok "cookie saved → $RED_BOOK_CONFIG"
+
+  # Verify immediately
+  if command -v redbook &>/dev/null; then
+    verify_output="$(timeout 10 redbook whoami --cookie-string "a1=${A1_VAL}; web_session=${SESSION_VAL}" --json 2>&1 || true)"
+    if echo "$verify_output" | grep -qi "nick_name\|user_id"; then
+      ok "redbook connection verified!"
+    else
+      warn "connection test failed — cookie may be incorrect"
+    fi
+  fi
 fi
 
 if command -v npx &>/dev/null; then
