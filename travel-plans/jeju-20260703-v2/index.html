@@ -165,6 +165,16 @@
     .day-card, .hotel-card, .ov-card { box-shadow: none; border: 1px solid var(--border); }
   }
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<style>
+  /* Leaflet map container */
+  .day-map { width: 100%; height: 360px; border-radius: var(--radius); margin: 14px 0; box-shadow: var(--shadow); border: 1px solid var(--border); }
+  .day-map-section { margin-top: 18px; }
+  .day-map-section .map-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--primary); }
+  .leaflet-popup-content { font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif; font-size: 13px; line-height: 1.5; }
+  .leaflet-popup-content strong { color: var(--primary); }
+</style>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
 <div class="container">
@@ -339,6 +349,12 @@
           <a class="map-link" href="https://m.place.naver.com/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89" target="_blank">🔍 Naver Map</a>
         </div>
       </div>
+
+      <!-- Day 2 Route Map -->
+      <div class="day-map-section">
+        <div class="map-title">🗺️ Day 2 东线路线地图</div>
+        <div id="map-day2" class="day-map"></div>
+      </div>
     </div>
 
     <!-- ===== DAY 3: 西线 ===== -->
@@ -463,6 +479,12 @@
           <a class="map-link" href="https://m.place.naver.com/search/%EC%A3%BC%EC%83%81%EC%A0%88%EB%A6%AC%EB%8C%80" target="_blank">🔍 Naver Map</a>
         </div>
       </div>
+
+      <!-- Day 3 Route Map -->
+      <div class="day-map-section">
+        <div class="map-title">🗺️ Day 3 西线路线地图</div>
+        <div id="map-day3" class="day-map"></div>
+      </div>
     </div>
 
     <!-- ===== DAY 4: 免税店 + 返程 ===== -->
@@ -535,7 +557,7 @@
             <td>南京 T2<br>19:45 CST</td>
             <td>济州 CJU<br>22:30 KST</td>
             <td>1h45m</td>
-            <td class="price" rowspan="2" style="vertical-align:middle;">¥1,722/人 往返<br><small style="color:var(--green);font-weight:700;">✅ 已购实价</small><br><small style="color:var(--text-muted)">含税含行李</small></td>
+            <td class="price" rowspan="2" style="vertical-align:middle;">¥1,722/人 往返<br><small style="color:var(--green);font-weight:700;">✅ 已购实价</small><br><small style="color:var(--text-muted)">含税不含行李</small></td>
           </tr>
           <tr>
             <td><span class="badge flight">✈ 回程</span></td>
@@ -555,7 +577,7 @@
         </tbody>
       </table>
       <div style="padding:12px 14px;font-size:12px;color:var(--text-muted);">
-        <strong>✅ 已购实价：</strong>春秋航空 9C6149+9C6150 往返含税含行李 <strong style="color:var(--green);">¥1,722/人</strong>（2人共 ¥3,444）。<br>
+        <strong>✅ 已购实价：</strong>春秋航空 9C6149+9C6150 往返含税不含行李 <strong style="color:var(--green);">¥1,722/人</strong>（2人共 ¥3,444）。<br>
         <strong>💡 对比参考：</strong>Trip.com 7月往返参考价 HK$1,088≈¥990 起（限特定日期），7月旺季实际约 ¥1,500-2,000/人。
       </div>
     </div>
@@ -675,7 +697,12 @@
         <span class="detail">牛肉烤肉无限畅吃！₩31,900/人≈¥170。自助吧超丰富（炸鸡/辣炒年糕/披萨/鱼板汤）。就在蓮洞商圈。小学二年级以下₩17,900。<br>
         📍 蚕丘路（努韦马路步行街） ｜ ⏰ 晚餐时间人多，建议17:30前到</span>
       </div>
-      <div class="tip">💡 高端韩牛选「복성한우」体验感最佳；性价比之选选「牛火」吃到饱</div>
+      <div class="restaurant" style="margin-top:8px;">
+        <span class="name">숙성도（熟成到）涯月店</span><br>
+        <span class="detail">📕 韩国三大烤肉店之一！960熟成排骨里脊每天限量80份，专业店员代烤。涯月店排队较短，老衡本店需提前1.5h。<br>
+        📍 涯月 ｜ 💰 人均₩30,000-50,000 ≈ ¥150-250</span>
+      </div>
+      <div class="tip">💡 高端韩牛选「복성한우」体验感最佳；性价比之选选「牛火」吃到饱；「숙성도」适合西线回程顺路打卡</div>
     </div>
 
     <!-- #2 生鱼片 -->
@@ -695,6 +722,16 @@
         <span class="name">西码头生鱼片一条街</span><br>
         <span class="detail">近黑猪肉街步行10min，可现捞活鱼（石斑鱼/鲷鱼/比目鱼），配烧酒🍶氛围绝配</span>
       </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">기회횟집（机会生鱼片）</span><br>
+        <span class="detail">📕 摆盘精致到像艺术品！济州名物青花鱼/白带鱼生鱼片+生甜虾拼盘，鲜甜弹口，适合约会。<br>
+        📍 济州市区 ｜ 💰 人均₩30,000-40,000 ≈ ¥150-200</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">쌍둥이횟집（双胞胎生鱼片·西归浦本店）</span><br>
+        <span class="detail">📕 前菜自助10+道（粥/烤鲍鱼/炸物/酱料炸鸡）→ 主菜生鱼片 → 辣鱼汤面疙瘩收尾。双人套餐₩70,000 分量超足。<br>
+        📍 西归浦 ｜ 💰 人均₩35,000 ≈ ¥185</span>
+      </div>
       <div class="tip">💡 鯖鱼生鱼片是济州名物，其他城市很难吃到同等新鲜度，一定要试！</div>
     </div>
 
@@ -713,6 +750,21 @@
       <div class="restaurant" style="margin-top:6px;">
         <span class="name">李子炒码面 이자짬뽕</span> <span class="detail">— 济州市老字号海鲜面，大虾+鲍鱼浇头，汤底清淡又辣，当地人午餐排队名店</span>
       </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">제주순풍해장국（顺丰醒酒汤）</span><br>
+        <span class="detail">📕 明星签名墙汤饭店！4-5种汤饭可选，石锅沸腾上桌，距咸德海水浴场2km，适合东线午餐。<br>
+        📍 咸德附近 ｜ 💰 人均₩9,000 ≈ ¥48</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">신설오름（新设吾乐）</span><br>
+        <span class="detail">📕 韩国人50次济州岛推荐榜单！济州岛式醒酒汤，本地人深夜食堂，暖胃一绝。<br>
+        📍 济州市区 ｜ 💰 人均₩9,000 ≈ ¥48</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">짬뽕에 취한날（醉海鲜面）</span><br>
+        <span class="detail">📕 韩国人推荐44家之一！排骨海鲜面，甜辣口味用料足，一碗下肚超满足。<br>
+        💰 人均₩12,000 ≈ ¥63</span>
+      </div>
       <div class="tip">💡 汤饭/面类适合作为午餐，价格实惠（₩8K-15K≈¥42-80）、饱腹感强</div>
     </div>
 
@@ -729,7 +781,17 @@
         <span class="detail">🌟 <strong>推荐点套餐：</strong>章鱼综合套餐（熟章鱼+生鱼片+烤串+凉拌+蟹肉饭隐藏作弊器）<br>
         午餐推荐「蒙盖亚套餐」：章鱼酱+虾酱+鯛鱼生鱼片+辣炒猪肉+迷你蟹饭石锅，性价比之王</span>
       </div>
-      <div class="tip">💡 蟹肉饭是用鲍鱼内脏做的酱拌饭，与章鱼料理梦幻搭配！隐藏菜单</div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">삼성혈해물탕（三姓穴海鲜锅·莲洞店）</span><br>
+        <span class="detail">📕 小红书超高人气！活章鱼+活鲍鱼+螃蟹海鲜锅，服务员帮剪帮挖。凉拌活章鱼₩30,000可单点。<br>
+        📍 莲洞 ｜ 💰 活章鱼¥160 / 海鲜锅人均¥150</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">뱅디</span><br>
+        <span class="detail">📕 韩国人推荐44家之一！章鱼盖饭专门店，酱汁浓郁，米饭吸满章鱼鲜味。<br>
+        📍 西归浦区 ｜ 💰 人均₩12,000 ≈ ¥63</span>
+      </div>
+      <div class="tip">💡 蟹肉饭是用鲍鱼内脏做的酱拌饭，与章鱼料理梦幻搭配！隐藏菜单。莲洞「三姓穴海鲜锅」适合海鲜控聚餐</div>
     </div>
 
     <!-- #5 生牛肉 -->
@@ -742,10 +804,15 @@
         📍 老衡洞 ｜ 💰 人均₩30,000-60,000 ≈ ¥160-320</span>
       </div>
       <div class="restaurant" style="margin-top:6px;">
+        <span class="name">복성한우（福成韩牛）육회</span><br>
+        <span class="detail">📕 福成展示不同部位油花，可加单点一份육회（生拌牛肉），搭配济州海盐，作为烤韩牛的开胃前菜。<br>
+        📍 福成韩牛店内 ｜ 💰 单点约¥80-120</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
         <span class="name">济州黑猪/韩牛综合肉铺+烤肉店</span><br>
         <span class="detail">先在冷藏柜选肉部位，自行烤。份量透明。露台位可看飞机起降🛫</span>
       </div>
-      <div class="tip">💡 韩式生牛肉육회配香油+大蒜+辣酱，口感像鞑靼牛肉。建议配烧酒🍶</div>
+      <div class="tip">💡 韩式生牛肉육회配香油+大蒜+辣酱，口感像鞑靼牛肉。建议配烧酒🍶。在福成吃韩牛时顺手加一份육회最方便</div>
     </div>
 
     <!-- #6 酱蟹 -->
@@ -761,7 +828,17 @@
       <div class="restaurant" style="margin-top:6px;">
         <span class="detail">同时推荐：蕨菜辣牛肉汤（浓稠醇厚，泡白饭更好吃）</span>
       </div>
-      <div class="tip">💡 酱蟹+蟹壳拌饭被称为"饭小偷"（让人停不下来的饭杀手），是韩国人最爱的下饭菜</div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">이게밥도둑（新济州酱油蟹）</span><br>
+        <span class="detail">📕 酱蟹果冻口感+蟹黄拌饭超满足！生腌虾也鲜。可加点黑猪肉烤着吃。<br>
+        📍 新济州 ｜ 💰 人均₩20,000-30,000 ≈ ¥100-150</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">문쏘（螃蟹咖哩）</span><br>
+        <span class="detail">📕 韩国人推荐44家之一！创意酱蟹料理，独创螃蟹咖哩——整只酱蟹泡在浓郁咖哩汤里，绝配！<br>
+        💰 人均₩15,000-20,000</span>
+      </div>
+      <div class="tip">💡 酱蟹+蟹壳拌饭被称为"饭小偷"（让人停不下来的饭杀手），是韩国人最爱的下饭菜。「문쏘」的螃蟹咖哩是独门创意菜</div>
     </div>
 
     <!-- #7 黑猪肉 -->
@@ -1101,10 +1178,64 @@
 
   <!-- Footer -->
   <div class="footer">
-    Generated by travel-planner · 2026-06-15（v5 更新：小红书热门攻略优化 · 新增黑猪肉/鲍鱼石锅饭/炸鸡 + XHS贴士）<br>
+    Generated by travel-planner · 2026-06-15（v6 更新：新增 Leaflet 交互地图 + 景点坐标）<br>
     ✈ 机票：春秋航空实购 ¥1,722/人往返 ｜ 🏨 酒店：Best Western 实订 ¥1,480/3晚<br>
     景点/美食来源：VisitJeju/小红书攻略/Trip.com/KKday ｜ 其他价格为预估参考
   </div>
 </div>
+<script>
+(function() {
+  // --- Day 2 东线 ---
+  var day2Points = [
+    {name: "🐄 牛岛",      lat: 33.4967, lng: 126.9508, time: "09:30"},
+    {name: "🌋 城山日出峰", lat: 33.4587, lng: 126.9423, time: "14:00"},
+    {name: "🌊 涉地可支",   lat: 33.4572, lng: 126.9317, time: "15:30"},
+    {name: "🏖️ 月汀里海边", lat: 33.5447, lng: 126.7528, time: "17:00"}
+  ];
+  initMap("map-day2", day2Points, "#10b981");
+
+  // --- Day 3 西线 ---
+  var day3Points = [
+    {name: "🍵 O'sulloc",    lat: 33.2417, lng: 126.3844, time: "09:30"},
+    {name: "🪨 柱状节理带",   lat: 33.2378, lng: 126.5088, time: "10:45"},
+    {name: "🌈 天帝渊瀑布",   lat: 33.2533, lng: 126.4944, time: "11:30"},
+    {name: "🐷 豚乐园",      lat: 33.2448, lng: 126.4227, time: "12:30"},
+    {name: "⛰️ 山房山",      lat: 33.2433, lng: 126.3207, time: "14:00"},
+    {name: "🏖️ 挟才海滩",    lat: 33.3909, lng: 126.2400, time: "15:30"},
+    {name: "☕ 涯月咖啡街",   lat: 33.4608, lng: 126.3835, time: "17:00"}
+  ];
+  initMap("map-day3", day3Points, "#7c3aed");
+
+  function initMap(divId, points, color) {
+    var el = document.getElementById(divId);
+    if (!el) return;
+    var map = L.map(divId, {scrollWheelZoom: false}).setView([points[0].lat, points[0].lng], 11);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 18
+    }).addTo(map);
+
+    var latlngs = [];
+    points.forEach(function(p, i) {
+      var ll = [p.lat, p.lng];
+      latlngs.push(ll);
+      var colorIcon = L.divIcon({
+        className: "custom-marker",
+        html: '<div style="background:' + color + ';color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.3);">' + (i+1) + '</div>',
+        iconSize: [26, 26],
+        iconAnchor: [13, 13]
+      });
+      L.marker(ll, {icon: colorIcon}).addTo(map)
+        .bindPopup("<strong>" + p.name + "</strong><br>⏰ " + p.time);
+    });
+
+    L.polyline(latlngs, {color: color, weight: 3, opacity: .7, dashArray: "6,6"}).addTo(map);
+    map.fitBounds(L.latLngBounds(latlngs).pad(0.15));
+
+    // Fix rendering glitch when map is inside hidden/scrolled parent
+    setTimeout(function() { map.invalidateSize(); }, 300);
+  }
+})();
+</script>
 </body>
 </html>
