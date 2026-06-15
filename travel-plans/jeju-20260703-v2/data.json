@@ -1,0 +1,355 @@
+{
+  "destination": "济州岛",
+  "destination_en": "Jeju Island, Korea",
+  "dates": ["2026-07-03", "2026-07-06"],
+  "departure_city": "南京",
+  "travelers": 2,
+  "budget": {
+    "total_per_person": 4462,
+    "currency": "CNY",
+    "price_source": "实际购买价格(机票/酒店) + 预估(餐饮/门票/其他) 2026-06-15",
+    "breakdown": {
+      "transport": 1922,
+      "hotel": 740,
+      "food": 800,
+      "tickets": 200,
+      "other": 800
+    },
+    "note": "不含免税购物支出 · 机票¥1,722/人实购 · 酒店¥1,480/3晚实订"
+  },
+  "route_plan": {
+    "day1_fri": "抵达",
+    "day2_sat": "东线一日游",
+    "day3_sun": "西线一日游",
+    "day4_mon": "机场免税店+返程"
+  },
+  "transport": [
+    {
+      "type": "flight",
+      "direction": "outbound",
+      "airline": "春秋航空",
+      "flight_number": "9C6149",
+      "from": "南京禄口 T2",
+      "to": "济州国际机场",
+      "departure_time": "19:45 CST",
+      "arrival_time": "22:30 KST",
+      "duration": "1h45m",
+      "actual_price_per_person": 861,
+      "notes": "已购，往返总价含在¥1,722/人中",
+      "purchase_source": "春秋航空实购"
+    },
+    {
+      "type": "flight",
+      "direction": "return",
+      "airline": "春秋航空",
+      "flight_number": "9C6150",
+      "from": "济州国际机场",
+      "to": "南京禄口 T2",
+      "departure_time": "07:30 KST",
+      "arrival_time": "08:15 CST",
+      "duration": "1h45m",
+      "actual_price_per_person": 861,
+      "notes": "已购，往返总价含在¥1,722/人中",
+      "purchase_source": "春秋航空实购"
+    },
+    {
+      "type": "boat",
+      "direction": "round_trip",
+      "name": "城山港→牛岛渡轮",
+      "duration": "15min",
+      "price": "₩10,000 ≈ ¥55",
+      "note": "每小时1-2班"
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-07-03",
+      "day_label": "Day 1 周五",
+      "theme": "抵达济州",
+      "activities": [
+        { "time": "19:45", "type": "transport", "name": "南京出发 9C6149" },
+        { "time": "22:30", "type": "transport", "name": "抵达济州机场" },
+        { "time": "23:00", "type": "hotel", "name": "入住酒店" },
+        { "time": "23:30", "type": "food", "name": "宵夜：올래국수 猪肉面", "cost": 48 }
+      ]
+    },
+    {
+      "date": "2026-07-04",
+      "day_label": "Day 2 周六",
+      "theme": "东线一日游",
+      "route": "牛岛 → 城山日出峰 → 涉地可支 → 月汀里",
+      "activities": [
+        { "time": "07:30", "type": "food", "name": "早餐" },
+        { "time": "08:30", "type": "transport", "name": "出发东线（包车/一日游）" },
+        { "time": "09:30", "type": "attraction", "name": "牛岛", "detail": "城山港乘船15min，电动自行车环岛，花生冰淇淋", "cost": 165 },
+        { "time": "12:30", "type": "food", "name": "午餐：城山港海鲜一条街", "cost": 125 },
+        { "time": "14:00", "type": "attraction", "name": "城山日出峰", "detail": "世界自然遗产，免费路线或收费登顶₩5000", "cost": 28 },
+        { "time": "15:30", "type": "attraction", "name": "涉地可支", "detail": "东海岸岬角，韩剧取景地，灯塔+仙石", "cost": 0 },
+        { "time": "17:00", "type": "attraction", "name": "月汀里海边", "detail": "网红海滩+海景咖啡厅", "cost": 30 },
+        { "time": "18:30", "type": "transport", "name": "返回市区" },
+        { "time": "19:30", "type": "food", "name": "晚餐：烤韩牛（美食#1）", "detail": "복성한우 或 우화 吃到饱", "cost": 210 }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "day_label": "Day 3 周日",
+      "theme": "西线一日游",
+      "route": "O'sulloc → 柱状节理带 → 天帝渊瀑布 → 山房山/龙头海岸 → 挟才海滩 → 涯月咖啡街",
+      "activities": [
+        { "time": "08:00", "type": "food", "name": "早餐" },
+        { "time": "08:30", "type": "transport", "name": "出发西线" },
+        { "time": "09:30", "type": "attraction", "name": "O'sulloc 雪绿茶博物馆", "detail": "免费入场，试饮绿茶，绿茶伴手礼", "cost": 60 },
+        { "time": "10:45", "type": "attraction", "name": "柱状节理带", "detail": "六边形火山石柱+海浪，₩2000", "cost": 11 },
+        { "time": "11:30", "type": "attraction", "name": "天帝渊瀑布", "detail": "三段式瀑布+仙临桥，₩2500", "cost": 14 },
+        { "time": "12:30", "type": "food", "name": "午餐：中文旅游区", "detail": "豚乐园/满足商会", "cost": 125 },
+        { "time": "14:00", "type": "attraction", "name": "山房山·龙头海岸", "detail": "巨石如龙头入海，注意潮汐", "cost": 0 },
+        { "time": "15:30", "type": "attraction", "name": "挟才海水浴场", "detail": "9公里白沙滩，济州最美", "cost": 0 },
+        { "time": "17:00", "type": "attraction", "name": "涯月咖啡街", "detail": "悬崖咖啡厅看海", "cost": 30 },
+        { "time": "18:30", "type": "transport", "name": "返回市区" },
+        { "time": "19:30", "type": "food", "name": "晚餐：生鱼片大餐（美食#2）", "cost": 200 }
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "day_label": "Day 4 周一",
+      "theme": "机场免税店 + 返程",
+      "activities": [
+        { "time": "04:30", "type": "hotel", "name": "起床退房" },
+        { "time": "05:00", "type": "transport", "name": "打车去机场" },
+        { "time": "05:30-06:45", "type": "shopping", "name": "机场免税店提货+最后扫货" },
+        { "time": "07:30", "type": "transport", "name": "济州起飞 9C6150" },
+        { "time": "08:15", "type": "transport", "name": "抵达南京" }
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "tier": "booked",
+      "name": "济州贝斯特韦斯特酒店 Best Western Jeju Hotel",
+      "name_en": "Best Western Jeju Hotel",
+      "rating_agoda": 8.5,
+      "rating_trip": 8.7,
+      "rating_ctrip": 4.3,
+      "location": "道令路27号，莲洞五岔路口",
+      "distance_airport": "2.4km / 打车10min",
+      "distance_shopping": "乐天免税店步行10min / 新罗免税店步行15min",
+      "star": 4,
+      "year_opened": 2015,
+      "total_rooms": 338,
+      "floors": 16,
+      "room_type": "豪华大小床房 (1 Double + 1 Single)",
+      "room_size": "30㎡",
+      "nights": 3,
+      "total_price": 1480,
+      "price_per_night": 493,
+      "price_per_person": 740,
+      "currency": "CNY",
+      "status": "已订",
+      "highlights": [
+        "国际四星连锁品牌",
+        "大小床房型适合2人",
+        "楼下星巴克",
+        "秀一炸鸡300m",
+        "Olive Young步行可达",
+        "前台会中文",
+        "入住押金¥500或₩100,000"
+      ],
+      "booking_urls": {
+        "携程": "https://hotels.ctrip.com/hotels/2098321.html",
+        "Agoda": "https://www.agoda.com/zh-cn/best-western-jeju-hotel/hotel/jeju-island-kr.html",
+        "Trip.com": "https://hk.trip.com/hotels/jeju-hotel-detail-2098321/best-western-jeju-hotel/",
+        "Booking.com": "https://www.booking.com/hotel/kr/best-western-jeju.html"
+      }
+    },
+    {
+      "tier": "comparison",
+      "name": "君临海域 Gloucester",
+      "rating": 8.5,
+      "price_3nights_july": "¥750-1200",
+      "price_source": "Booking/Agoda 2026-06-15 参考价"
+    },
+    {
+      "tier": "comparison",
+      "name": "乐天城市饭店",
+      "rating": 8.9,
+      "price_3nights_july": "¥1200-1950",
+      "price_source": "Booking/Agoda 2026-06-15 参考价"
+    },
+    {
+      "tier": "comparison",
+      "name": "博尔顿 Bolton (2025新开)",
+      "rating": "9.0+",
+      "price_3nights_july": "¥1200-2100",
+      "price_source": "Booking/Agoda 2026-06-15 参考价"
+    },
+    {
+      "tier": "comparison",
+      "name": "帕纳斯 Parnas (中文区·五星)",
+      "rating": 9.2,
+      "price_3nights_july": "¥3600-6600",
+      "price_source": "Booking/Agoda 2026-06-15 参考价"
+    }
+  ],
+  "food_priorities": [
+    {
+      "priority": 1,
+      "emoji": "🥩",
+      "name": "烤韩牛",
+      "restaurants": [
+        { "name": "복성한우（福成韩牛）", "desc": "A++级韩牛，桌边代烤", "price_per_person": "¥210-420" },
+        { "name": "우화（牛火）", "desc": "牛肉烤肉吃到饱", "price_per_person": "¥170" }
+      ],
+      "scheduled": "Day 2 晚餐"
+    },
+    {
+      "priority": 2,
+      "emoji": "🐟",
+      "name": "生鱼片",
+      "restaurants": [
+        { "name": "노도 고등어회", "desc": "濟州鯖鱼生鱼片名店" },
+        { "name": "바다술상", "desc": "当季渔获韩式海鲜套餐" },
+        { "name": "西码头生鱼片一条街", "desc": "现捞活鱼配烧酒" }
+      ],
+      "scheduled": "Day 3 晚餐"
+    },
+    {
+      "priority": 3,
+      "emoji": "🍲",
+      "name": "汤饭",
+      "restaurants": [
+        { "name": "올래국수", "desc": "济州第一名物猪肉面 ₩9,000" },
+        { "name": "미풍해장국", "desc": "醒酒汤+白饭" },
+        { "name": "어도식당", "desc": "海胆汤+海螺汤" },
+        { "name": "李子炒码面", "desc": "海鲜面老字号" }
+      ],
+      "scheduled": "Day 1宵夜 或 Day2/3午餐"
+    },
+    {
+      "priority": 4,
+      "emoji": "🐙",
+      "name": "生章鱼",
+      "restaurants": [
+        { "name": "문어집（章鱼屋）", "desc": "在地名店，章鱼综合套餐含蟹肉饭隐藏菜单" }
+      ],
+      "scheduled": "随缘"
+    },
+    {
+      "priority": 5,
+      "emoji": "🐄",
+      "name": "生牛肉",
+      "restaurants": [
+        { "name": "우심 노형동점（牛心）", "desc": "1++级韩牛生牛肉，铜铁板烤" }
+      ],
+      "scheduled": "随缘"
+    },
+    {
+      "priority": 6,
+      "emoji": "🦀",
+      "name": "酱蟹",
+      "restaurants": [
+        { "name": "정선할매 곤드레밥（旌善奶奶）", "desc": "酱蟹+蟹壳拌饭+辣牛肉汤" }
+      ],
+      "scheduled": "随缘"
+    },
+    {
+      "priority": 7,
+      "emoji": "🐷",
+      "name": "黑猪肉（흑돼지）",
+      "xhs_ref": "📕 小红书参考：秋瓷炫 3.3万赞 / 多条高互动帖推荐",
+      "restaurants": [
+        { "name": "돈사돈（豚乐园·中文旅游区）", "desc": "济州黑猪肉名店，中文旅游区必打卡", "price_per_person": "¥100-150" },
+        { "name": "흑돼지거리（黑猪肉一条街）", "desc": "济州市区传统黑猪肉聚集地，现切现烤，本地人也来吃的店", "price_per_person": "¥100-200" }
+      ],
+      "scheduled": "Day 3 午餐（替代中文旅游区套餐）"
+    },
+    {
+      "priority": 8,
+      "emoji": "🍚",
+      "name": "鲍鱼石锅饭（전복돌솥밥）",
+      "xhs_ref": "📕 小红书参考：秋瓷炫 3.3万赞「8年了还是每次都要来」",
+      "restaurants": [
+        { "name": "삼시세끼（三食石锅饭）", "desc": "整只鲜鲍鱼+石锅焖饭，掀盖拌匀香气爆发，济州本地人回购率极高", "price_per_person": "¥60-90" }
+      ],
+      "scheduled": "Day 3 午餐备选"
+    },
+    {
+      "priority": 9,
+      "emoji": "🍗",
+      "name": "韩式炸鸡（치킨）",
+      "xhs_ref": "📕 小红书参考：秋瓷炫 1万赞夜宵炸鸡帖",
+      "restaurants": [
+        { "name": "秀一炸鸡（호텔 근처 300m）", "desc": "就在酒店旁边！韩国国民炸鸡，外卖送到房间，BHC/BBQ/教村炸鸡都推荐", "price_per_person": "¥40-80" }
+      ],
+      "scheduled": "Day 1 宵夜备选（或 Day 2 晚回酒店加餐）"
+    }
+  ],
+  "duty_free_guide": {
+    "stores": [
+      {
+        "name": "新罗免税店",
+        "address": "济州市老连路69号",
+        "hours": "10:00-19:00",
+        "highlight": "济州最大，4层楼500+品牌，唯一有LV/Hermes/Tiffany"
+      },
+      {
+        "name": "乐天免税店",
+        "address": "济州市道陵路83号（乐天城市酒店1-4F）",
+        "hours": "10:00-19:00",
+        "highlight": "品牌最全，中文导购，有LV/Chanel/Gucci/Hermes/Cartier"
+      },
+      {
+        "name": "机场免税店（乐天/JDC/GALLERIA）",
+        "address": "济州机场出境大厅，过安检后",
+        "hours": "依航班",
+        "highlight": "网上预订提货+机场限定+济州特产"
+      }
+    ],
+    "top_picks": [
+      "Innisfree 绿茶籽精华套装（济州限定）",
+      "雪花秀 润燥精华套组",
+      "HERA 黑气垫粉底",
+      "Tamburins/Tamb 济州限定香氛",
+      "韩国设计师品牌包",
+      "济州风味巧克力礼盒",
+      "O'sulloc 绿茶+柑橘茶礼盒",
+      "TimeVallée 时光天地手表",
+      "济州威士忌 / Omegi米酒",
+      "巴黎贝甜·济州机场限定面包"
+    ],
+    "saving_tips": [
+      "出发前在JTO/JDC线上免税店下单，比实体店便宜5-15%",
+      "到服务台凭银联卡换优惠券",
+      "办会员卡积分可当场抵扣",
+      "高端品免税店买，开架去Olive Young",
+      "限额：每次$800，全年6次，酒2瓶+烟200支+其他≤$800"
+    ],
+    "online_urls": {
+      "JTO": "https://www.jtodutyfree.com",
+      "JDC": "https://www.jdc-dfs.com"
+    }
+  },
+  "travel_tips": {
+    "visa": "济州岛对中国护照免签30天",
+    "currency": "KRW韩元，1 CNY ≈ 190 KRW",
+    "timezone": "韩国比中国快1小时（KST = CST + 1）",
+    "weather_july": "23-30°C，湿度高，偶阵雨，紫外线强",
+    "essential_apps": ["Naver Map", "Papago", "Kakao T"],
+    "connectivity": "机场取随身WiFi或买韩国eSIM",
+    "xhs_insights": {
+      "source": "小红书热门攻略采集 2026-06-15（500+条笔记分析，top 热门帖互动量 1万-11万赞）",
+      "top_tips": [
+        "入境卡：济州岛免签但仍需填写入境卡（飞机上发或落地区取），如实填写酒店地址",
+        "T-money 卡：便利店购买₩2,500（≈¥13），坐公交/地铁/出租通用，充值₩10,000够用4天",
+        "Olive Young 必逛：开架韩妆比免税店便宜，3CE/Clio/Rom&nd 本土彩妆价格最优，步行街就能买",
+        "MLB 帽子免税价仅¥67：小红书爆款单品，免税店必入",
+        "7月是旺季：热门餐厅/渡轮/城山日出峰停车位紧张，建议预约或早出门",
+        "牛岛末班船：7月旺季渡轮运营至19:00左右，但末班时间不固定，上岛时先确认回程时间"
+      ],
+      "shopping_beyond_duty_free": [
+        "Olive Young（OY）：莲洞步行街有多家，开架韩妆/面膜/防晒/日用品，部分满₩30,000退税",
+        "便利店CU/GS25/7-Eleven：买零食/面膜小样/T-money卡/换汇",
+        "乐天百货/新罗免税店对面商场：非免税但韩系品牌折扣力度大"
+      ]
+    }
+  }
+}
