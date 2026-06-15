@@ -47,23 +47,21 @@ description: >
 
 ## 接入配置（OpenCode 格式）
 
-在 `~/.config/opencode/opencode.json`（全局）或项目 `.opencode/opencode.json` 添加：
+在 `~/.config/opencode/opencode.jsonc`（全局）或项目 `.opencode/opencode.jsonc` 添加：
 
-```json
+```jsonc
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
     "nowah-travel": {
       "type": "remote",
       "url": "https://claw.nowah.xyz/mcp",
-      "enabled": true,
-      "oauth": true,
+      "oauth": {},      // 空对象 = 自动 OAuth 发现；不要写成 `true`（schema 不认）
       "timeout": 30000
     },
     "12306": {
       "type": "local",
       "command": ["npx", "-y", "12306-mcp"],
-      "enabled": true,
       "timeout": 30000
     }
   }

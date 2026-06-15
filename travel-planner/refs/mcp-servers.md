@@ -36,8 +36,7 @@
       "nowah-travel": {
         "type": "remote",
         "url": "https://claw.nowah.xyz/mcp",
-        "enabled": true,
-        "oauth": true,
+        "oauth": {},
         "timeout": 30000
       }
     }
@@ -280,9 +279,8 @@
     "my-remote": {
       "type": "remote",
       "url": "https://example.com/mcp",
-      "enabled": true,
       "headers": { "Authorization": "Bearer xxx" },
-      "oauth": true
+      "oauth": {}
     }
   }
 }

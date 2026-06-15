@@ -13,10 +13,9 @@
       "nowah-travel": {
         "type": "remote",
         "url": "https://claw.nowah.xyz/mcp",
-        "enabled": true,
-        "oauth": true,
+        "oauth": {},
         "timeout": 30000,
-        "_comment": "国际航班/酒店/POI，首次使用需 `opencode mcp auth nowah-travel` 认证"
+        "_comment": "oauth:{} 触发自动 OAuth 发现，不要写 true（schema 不认）"
       }
     }
   },
@@ -45,8 +44,7 @@
       "nowah-travel": {
         "type": "remote",
         "url": "https://claw.nowah.xyz/mcp",
-        "enabled": true,
-        "oauth": true,
+        "oauth": {},
         "timeout": 30000
       },
       "google-maps": {
@@ -113,8 +111,7 @@
       "nowah-travel": {
         "type": "remote",
         "url": "https://claw.nowah.xyz/mcp",
-        "enabled": true,
-        "oauth": true,
+        "oauth": {},
         "timeout": 30000
       }
     },

@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>济州岛 · 2026.07.03-06 行程规划</title>
+<style>
+  :root {
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+    --accent: #f59e0b;
+    --accent-light: #fef3c7;
+    --surface: #ffffff;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+    --shadow-md: 0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+    --green: #10b981;
+    --green-light: #d1fae5;
+    --pink-light: #fce7f3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 16px; }
+
+  /* Header */
+  .header { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; border-radius: var(--radius); padding: 36px 32px; margin-bottom: 24px; position: relative; overflow: hidden; }
+  .header::after { content: "🏝️"; position: absolute; right: 28px; top: 50%; transform: translateY(-50%); font-size: 72px; opacity: .15; }
+  .header h1 { font-size: 30px; font-weight: 800; }
+  .header .subtitle { opacity: .85; margin-top: 6px; font-size: 15px; line-height: 1.7; }
+  .header .route-tag { display: inline-block; background: rgba(255,255,255,.2); padding: 3px 12px; border-radius: 20px; font-size: 13px; margin-top: 8px; }
+
+  /* Overview */
+  .overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .ov-card { background: var(--surface); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); text-align: center; }
+  .ov-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; }
+  .ov-card .value { font-size: 22px; font-weight: 700; margin-top: 4px; color: var(--primary); }
+  .ov-card .value.budget { color: var(--accent); }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+  .section-title { font-size: 22px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-title .icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+
+  /* Day card */
+  .day-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 16px; overflow: hidden; }
+  .day-header { color: #fff; padding: 14px 22px; font-weight: 600; font-size: 17px; display: flex; justify-content: space-between; align-items: center; }
+  .day-header.east { background: linear-gradient(135deg, #065f46 0%, #10b981 100%); }
+  .day-header.west { background: linear-gradient(135deg, #1e3a5f 0%, #7c3aed 100%); }
+  .day-header.arrive { background: linear-gradient(135deg, #92400e 0%, #f59e0b 100%); }
+  .day-header.leave { background: linear-gradient(135deg, #6b7280 0%, #374151 100%); }
+  .day-header.shop { background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%); }
+  .day-header .day-date { font-size: 13px; opacity: .85; font-weight: 400; }
+  .day-body { padding: 18px 22px; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 20px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot { position: absolute; left: -28px; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--primary-light); border: 2px solid var(--primary); }
+  .tl-dot.food { background: var(--accent-light); border-color: var(--accent); }
+  .tl-dot.shop { background: #fce7f3; border-color: #ec4899; }
+  .tl-dot.transport { background: #d1fae5; border-color: var(--green); }
+  .tl-time { font-size: 13px; color: var(--accent); font-weight: 700; }
+  .tl-content { margin-top: 2px; }
+  .tl-name { font-weight: 700; font-size: 15px; }
+  .tl-detail { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+  .tl-cost { display: inline-block; background: var(--accent-light); color: #92400e; border-radius: 6px; padding: 1px 8px; font-size: 12px; font-weight: 600; margin-left: 6px; }
+  .tl-tag { display: inline-block; padding: 1px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; margin-left: 4px; }
+  .tl-tag.free { background: var(--green-light); color: #065f46; }
+  .tl-tag.krw { background: var(--accent-light); color: #92400e; }
+  .tl-tag.rec { background: #fce7f3; color: #9d174d; }
+
+  /* Transport table */
+  .transport-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .transport-table th { background: var(--primary-light); color: var(--primary); text-align: left; padding: 10px 14px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }
+  .transport-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  .transport-table tr:last-child td { border-bottom: none; }
+  .transport-table .price { font-weight: 700; color: var(--accent); }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+  .badge.flight { background: #fce7f3; color: #9d174d; }
+  .badge.boat { background: #dbeafe; color: #1e40af; }
+
+  /* Hotel cards */
+  .hotel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .hotel-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .hotel-banner { height: 8px; }
+  .hotel-banner.economy { background: #94a3b8; }
+  .hotel-banner.comfort { background: var(--primary); }
+  .hotel-banner.luxury { background: var(--accent); }
+  .hotel-info { padding: 16px 18px; }
+  .hotel-tier { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); font-weight: 600; }
+  .hotel-name { font-size: 16px; font-weight: 700; margin: 4px 0; }
+  .hotel-meta { font-size: 13px; color: var(--text-muted); }
+  .hotel-price { font-size: 20px; font-weight: 700; color: var(--accent); margin-top: 8px; }
+  .hotel-price span { font-size: 12px; font-weight: 400; color: var(--text-muted); }
+  .hotel-links { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .hotel-links a { display: inline-block; padding: 4px 12px; background: var(--primary-light); color: var(--primary); border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600; }
+  .hotel-links a:hover { background: var(--primary); color: #fff; }
+
+  /* Budget chart */
+  .budget-bar { display: flex; flex-direction: column; gap: 10px; }
+  .bb-row { display: flex; align-items: center; gap: 12px; }
+  .bb-label { width: 72px; font-size: 13px; font-weight: 600; text-align: right; }
+  .bb-track { flex: 1; height: 30px; background: var(--border); border-radius: 6px; overflow: hidden; position: relative; }
+  .bb-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 12px; font-weight: 700; color: #fff; transition: width .6s ease; }
+  .bb-fill.transport { background: #2563eb; }
+  .bb-fill.hotel { background: #7c3aed; }
+  .bb-fill.food { background: #f59e0b; }
+  .bb-fill.ticket { background: #10b981; }
+  .bb-fill.other { background: #64748b; }
+  .bb-amount { font-size: 13px; font-weight: 600; min-width: 85px; }
+  .budget-total { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-top: 2px solid var(--text); margin-top: 14px; }
+  .budget-total .label { font-size: 16px; font-weight: 700; }
+  .budget-total .amount { font-size: 26px; font-weight: 800; color: var(--accent); }
+
+  /* Food Guide */
+  .food-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 24px; margin-bottom: 14px; border-left: 5px solid var(--accent); }
+  .food-card.priority-1 { border-left-color: #ef4444; }
+  .food-card h4 { font-size: 16px; margin-bottom: 8px; }
+  .food-card h4 .emoji { font-size: 20px; margin-right: 6px; }
+  .food-card .restaurant { font-size: 14px; margin-bottom: 6px; }
+  .food-card .restaurant .name { font-weight: 700; color: var(--primary); }
+  .food-card .restaurant .detail { color: var(--text-muted); }
+  .food-card .tip { font-size: 12px; color: var(--accent); background: var(--accent-light); padding: 4px 10px; border-radius: 6px; display: inline-block; margin-top: 6px; }
+
+  /* Duty-free guide */
+  .dfs-guide { background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%); border-radius: var(--radius); padding: 24px 28px; margin-bottom: 16px; border: 1px solid #f9a8d4; }
+  .dfs-guide h3 { color: #9d174d; margin-bottom: 12px; font-size: 18px; }
+  .dfs-guide h4 { color: #831843; margin-top: 14px; margin-bottom: 8px; font-size: 15px; }
+  .dfs-guide ul { padding-left: 20px; font-size: 14px; }
+  .dfs-guide li { margin-bottom: 6px; }
+  .dfs-guide .item-card { background: #fff; border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; display: flex; gap: 12px; align-items: flex-start; }
+  .dfs-guide .item-card .item-emoji { font-size: 24px; flex-shrink: 0; }
+  .dfs-guide .item-card .item-info { flex: 1; }
+  .dfs-guide .item-card .item-name { font-weight: 700; font-size: 14px; }
+  .dfs-guide .item-card .item-desc { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+  .dfs-guide .item-card .item-price { font-size: 13px; color: var(--accent); font-weight: 600; }
+
+  /* Map links */
+  .map-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .map-link { display: inline-flex; align-items: center; gap: 4px; padding: 6px 14px; background: var(--primary-light); color: var(--primary); border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600; }
+  .map-link:hover { background: var(--primary); color: #fff; }
+
+  /* Tips */
+  .tips-box { background: var(--green-light); border-radius: var(--radius); padding: 18px 22px; margin-top: 12px; }
+  .tips-box h4 { color: #065f46; margin-bottom: 8px; }
+  .tips-box ul { padding-left: 18px; font-size: 13px; color: #065f46; }
+  .tips-box li { margin-bottom: 4px; }
+
+  /* Responsive & Print */
+  @media (max-width: 600px) {
+    .header h1 { font-size: 24px; }
+    .ov-card .value { font-size: 18px; }
+    .hotel-grid { grid-template-columns: 1fr; }
+    .container { padding: 16px 12px; }
+  }
+  @media print {
+    body { background: #fff; }
+    .header { box-shadow: none; }
+    .day-card, .hotel-card, .ov-card { box-shadow: none; border: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ==================== HEADER ==================== -->
+  <div class="header">
+    <h1>🇰🇷 济州岛 · 제주도 行程规划</h1>
+    <div class="subtitle">2026.07.03（周五）晚 → 07.06（周一）早 ｜ 南京直飞 ｜ 3晚4天</div>
+    <span class="route-tag">✈ 春秋航空 9C6149 / 9C6150 直飞 2h</span>
+  </div>
+
+  <!-- ==================== OVERVIEW ==================== -->
+  <div class="overview">
+    <div class="ov-card"><div class="label">目的地</div><div class="value">济州岛</div></div>
+    <div class="ov-card"><div class="label">天数</div><div class="value">4 天</div></div>
+    <div class="ov-card"><div class="label">住宿</div><div class="value">3 晚</div></div>
+    <div class="ov-card"><div class="label">路线</div><div class="value" style="font-size:16px;">周六东·周日西</div></div>
+    <div class="ov-card"><div class="label">人均预算</div><div class="value budget">¥4,462</div></div>
+  </div>
+
+  <!-- ==================== 每日行程 ==================== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:var(--primary-light);color:var(--primary);">📅</span> 每日行程</div>
+
+    <!-- ===== DAY 1: 抵达 ===== -->
+    <div class="day-card">
+      <div class="day-header arrive">
+        Day 1 · 抵达济州 ✈
+        <span class="day-date">7月3日 周五</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">19:45 (CST)</div>
+            <div class="tl-content">
+              <div class="tl-name">🛫 南京禄口机场 T2 出发</div>
+              <div class="tl-detail">春秋航空 <strong>9C6149</strong> · 空客A320 · 直飞约2小时</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">22:30 (KST)</div>
+            <div class="tl-content">
+              <div class="tl-name">🛬 抵达济州国际机场</div>
+              <div class="tl-detail">过海关、取行李约30分钟。机场到市区打车约15分钟（₩8,000≈¥42）</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">23:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🏨 入住酒店</div>
+              <div class="tl-detail">推荐莲洞商圈（新城区），距新罗/乐天免税店步行可达，出行东线西线方便</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">23:30（可选）</div>
+            <div class="tl-content">
+              <div class="tl-name">🍜 宵夜：莲洞觅食</div>
+              <div class="tl-detail">推荐「<strong>올래국수</strong>」（来吃面）—— 济州第一名物猪肉面，深夜也排队！₩9,000≈¥48</div>
+              <span class="tl-cost">~¥48</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== DAY 2: 东线 ===== -->
+    <div class="day-card">
+      <div class="day-header east">
+        Day 2 · 东线一日游 🌊 周六精华
+        <span class="day-date">7月4日 周六</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">07:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🍳 早餐</div>
+              <div class="tl-detail">酒店早餐或在酒店附近便利店/面包房解决。推荐「연미관 延味馆」猪肉汤饭，08:00 开门</div>
+              <span class="tl-cost">~¥35</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">08:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🚗 出发 → 东线</div>
+              <div class="tl-detail">建议包车或一日游拼团（约¥200-350/人含中文司机，市区酒店接送），车程约50min到城山港</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">09:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🐄 牛岛（우도 Udo Island）</div>
+              <div class="tl-detail">城山港乘船15分钟（往返₩10,000≈¥55）。岛上租电动自行车环岛（₩20,000≈¥110/2h），打卡：<br>
+              🏖️ 西滨白沙海滩 · 🗼 牛岛灯塔 · 🐄 下牛牧洞<br>
+              必吃：<strong>牛岛花生冰淇淋</strong>🥜（济州岛 No.1 网红甜品）+ 海鲜拉面</div>
+              <span class="tl-tag krw">船票¥55 + 环岛¥110</span>
+              <span class="tl-cost">游玩 3h</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">12:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🍽️ 午餐：城山港海鲜</div>
+              <div class="tl-detail">回到城山港「海鲜一条街」，现捞现做。推荐海鲜锅、石斑鱼火锅、烤章鱼</div>
+              <span class="tl-cost">~¥100-150/人</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">14:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🌋 城山日出峰（성산일출봉）</div>
+              <div class="tl-detail"><strong>世界自然遗产</strong>！海拔182米海底火山锥。<br>
+              📸 <strong>免费路线</strong>（左侧）：经典济州明信片视角，30分钟走完<br>
+              🧗 <strong>收费登顶</strong>（右侧）：₩5,000≈¥28，来回约1h，山顶可看火山口全景+海面<br>
+              7月注意防晒+穿运动鞋</div>
+              <span class="tl-tag free">免费路线也能出大片</span>
+              <span class="tl-cost">登顶¥28</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">15:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🌊 涉地可支（섭지코지 Seopjikoji）</div>
+              <div class="tl-detail">济州东海岸最壮观的岬角！韩剧《洛城生死恋》取景地📺<br>
+              沿海木栈道漫步：仙石岩柱 · 白色灯塔 · 草原牧场 · 蔚蓝大海全景<br>
+              ⚠️ 海风大！穿防风外套。附近有 Aqua Planet 水族馆（门票≈¥80）可顺路</div>
+              <span class="tl-tag free">免费</span>
+              <span class="tl-cost">游玩 1-1.5h</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">17:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🏖️ 月汀里海边（월정리）</div>
+              <div class="tl-detail">济州网红海滩 · 白沙碧蓝。聚集大量海景咖啡厅☕<br>
+              推荐打卡 MNDCafé 等网红店，看海、拍照、享受下午茶+日落</div>
+              <span class="tl-cost">咖啡 ~¥30</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">18:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🚗 返回济州市区（约40min）</div>
+              <div class="tl-detail">回酒店稍微休整</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">19:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🥩 晚餐：烤韩牛！</div>
+              <div class="tl-detail">东线暴走一天，犒劳自己！详见下方「美食攻略 #1 烤韩牛」</div>
+              <span class="tl-tag rec">美食优先级 #1</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-links" style="margin-top:14px;">
+          <a class="map-link" href="https://www.google.com/maps/dir/%E7%89%9B%E5%B2%9B/%E5%9F%8E%E5%B1%B1%E6%97%A5%E5%87%BA%E5%B3%B0/%E6%B6%89%E5%9C%B0%E5%8F%AF%E6%94%AF/%E6%9C%88%E6%B1%80%E9%87%8C" target="_blank">🗺 Google Maps 东线路线</a>
+          <a class="map-link" href="https://m.place.naver.com/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89" target="_blank">🔍 Naver Map</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== DAY 3: 西线 ===== -->
+    <div class="day-card">
+      <div class="day-header west">
+        Day 3 · 西线一日游 🌿 周日精华
+        <span class="day-date">7月5日 周日</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">08:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🍳 早餐</div>
+              <div class="tl-detail">酒店早餐或「三好鲍鱼店」鲍鱼粥₩10,000</div>
+              <span class="tl-cost">~¥40</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">08:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🚗 出发 → 西线</div>
+              <div class="tl-detail">包车/一日游拼团，车程约50min到中文旅游区</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">09:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🍵 O'sulloc 雪绿茶博物馆</div>
+              <div class="tl-detail">济州最著名绿茶主题博物馆，<strong>免费入场</strong>。试饮绿茶&柑橘风味茶🍊<br>
+              购买手信推荐：绿茶巧克力🍫、绿茶蛋糕卷、绿茶+柑橘双拼茶礼盒<br>
+              旁边就是广袤茶园，绿浪翻滚，拍照绝美🌿</div>
+              <span class="tl-tag free">免费入场</span>
+              <span class="tl-cost">伴手礼 ~¥60</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">10:45</div>
+            <div class="tl-content">
+              <div class="tl-name">🪨 柱状节理带（주상절리대 Jusangjeolli）</div>
+              <div class="tl-detail">大自然鬼斧神工！汉拿山火山熔岩遇海水冷却形成的<strong>六边形石柱</strong>，高40米<br>
+              祖母绿色海浪拍击黑色石柱，场面壮观震撼🌊 门票₩2,000≈¥11</div>
+              <span class="tl-tag krw">¥11</span>
+              <span class="tl-cost">游玩 40min</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">11:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🌈 天帝渊瀑布（천제연폭포）</div>
+              <div class="tl-detail">中文旅游区内·三段式瀑布。传说七仙女下凡沐浴之地✨<br>
+              🌉 仙临桥（拱形天桥）必打卡 · 五福泉投币祈福<br>
+              门票₩2,500≈¥14 · 夏季水量充沛，运气好能看到彩虹🌈 · 全程约1h</div>
+              <span class="tl-tag krw">¥14</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">12:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🍽️ 午餐：中文旅游区</div>
+              <div class="tl-detail">推荐「<strong>돈사돈（豚乐园）</strong>」——济州黑猪肉烤肉名店<br>
+              或「<strong>만족의상회（满足商会）</strong>」——整条炖白带鱼套餐+酱蟹+黑猪肉全家桶，如其名"太满足"</div>
+              <span class="tl-cost">~¥100-150/人</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">14:00</div>
+            <div class="tl-content">
+              <div class="tl-name">⛰️ 山房山 · 龙头海岸（산방산 · 용머리해안）</div>
+              <div class="tl-detail">济州岛最壮观的海岸奇观之一！退潮时沿海边栈道行走，巨石如龙头入海🐉<br>
+              山房山山脚免费参观。⚠️ 需注意潮汐，高潮时段步道关闭</div>
+              <span class="tl-tag free">免费</span>
+              <span class="tl-cost">游玩 1h</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">15:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🏖️ 挟才海水浴场（협재해수욕장）</div>
+              <div class="tl-detail">济州岛最美沙滩！9公里白沙滩+碧绿海水+松林背景🏝️<br>
+              在这里看一场壮丽落日🌅 · 7月日落约19:50</div>
+              <span class="tl-tag free">免费</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">17:00</div>
+            <div class="tl-content">
+              <div class="tl-name">☕ 涯月咖啡街</div>
+              <div class="tl-detail">济州岛最美海岸咖啡街之一，沿悬崖而建的咖啡厅可俯瞰大海。推荐 Monsant Cafe / GD Cafe</div>
+              <span class="tl-cost">咖啡 ~¥30</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">18:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🚗 返回济州市区（约30min）</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">19:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🐟 晚餐：生鱼片大餐！</div>
+              <div class="tl-detail">最后晚餐，犒劳自己！详见下方「美食攻略 #2 生鱼片」</div>
+              <span class="tl-tag rec">美食优先级 #2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-links" style="margin-top:14px;">
+          <a class="map-link" href="https://www.google.com/maps/dir/O'sulloc+%E7%BB%BF%E8%8C%B6%E5%8D%9A%E7%89%A9%E9%A6%86/%E6%9F%B1%E7%8A%B6%E8%8A%82%E7%90%86%E5%B8%A6/%E5%A4%A9%E5%B8%9D%E6%B8%8A%E7%80%91%E5%B8%83/%E5%B1%B1%E6%88%BF%E5%B1%B1" target="_blank">🗺 Google Maps 西线路线</a>
+          <a class="map-link" href="https://m.place.naver.com/search/%EC%A3%BC%EC%83%81%EC%A0%88%EB%A6%AC%EB%8C%80" target="_blank">🔍 Naver Map</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== DAY 4: 免税店 + 返程 ===== -->
+    <div class="day-card">
+      <div class="day-header leave">
+        Day 4 · 机场免税店 + 返程 ✈
+        <span class="day-date">7月6日 周一</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">04:30</div>
+            <div class="tl-content">
+              <div class="tl-name">⏰ 起床 · 退房</div>
+              <div class="tl-detail">收拾行李、退房</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">05:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🚕 前往济州国际机场</div>
+              <div class="tl-detail">打车约15min，₩8,000-10,000≈¥42-55。05:00机场开始办理值机</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot shop"></div>
+            <div class="tl-time">05:30 → 06:45</div>
+            <div class="tl-content">
+              <div class="tl-name">🛍️ 机场免税店最后扫货 + 提货</div>
+              <div class="tl-detail">过安检后在出发大厅：① 提取出发前网上免税店预订商品 ② 在机场乐天/JDC/GALLERIA做最后补货<br>
+              预留 <strong>至少1小时</strong>！旺季提货排队可能较长</div>
+              <span class="tl-cost">⏰ 预留 1h+</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">07:30 (KST)</div>
+            <div class="tl-content">
+              <div class="tl-name">🛫 济州国际机场起飞</div>
+              <div class="tl-detail">春秋航空 <strong>9C6150</strong> · 飞行约2小时</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">08:15 (CST)</div>
+            <div class="tl-content">
+              <div class="tl-name">🛬 抵达南京禄口机场 T2</div>
+              <div class="tl-detail">过海关、取行李，约09:00出机场。🎉 完美旅程结束！</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 交通方案 ==================== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#fce7f3;color:#ec4899;">✈</span> 交通方案</div>
+    <div class="day-card" style="padding:0;">
+      <table class="transport-table">
+        <thead>
+          <tr><th>航段</th><th>航班</th><th>出发</th><th>到达</th><th>时长</th><th>参考价格</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge flight">✈ 去程</span></td>
+            <td><strong>9C6149</strong> 春秋航空</td>
+            <td>南京 T2<br>19:45 CST</td>
+            <td>济州 CJU<br>22:30 KST</td>
+            <td>1h45m</td>
+            <td class="price" rowspan="2" style="vertical-align:middle;">¥1,722/人 往返<br><small style="color:var(--green);font-weight:700;">✅ 已购实价</small><br><small style="color:var(--text-muted)">含税含行李</small></td>
+          </tr>
+          <tr>
+            <td><span class="badge flight">✈ 回程</span></td>
+            <td><strong>9C6150</strong> 春秋航空</td>
+            <td>济州 CJU<br>07:30 KST</td>
+            <td>南京 T2<br>08:15 CST</td>
+            <td>1h45m</td>
+          </tr>
+          <tr>
+            <td><span class="badge boat">⛴ 牛岛</span></td>
+            <td>城山港渡轮</td>
+            <td>城山港</td>
+            <td>牛岛港</td>
+            <td>15min</td>
+            <td class="price">₩10,000 往返 ≈¥55</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="padding:12px 14px;font-size:12px;color:var(--text-muted);">
+        <strong>✅ 已购实价：</strong>春秋航空 9C6149+9C6150 往返含税含行李 <strong style="color:var(--green);">¥1,722/人</strong>（2人共 ¥3,444）。<br>
+        <strong>💡 对比参考：</strong>Trip.com 7月往返参考价 HK$1,088≈¥990 起（限特定日期），7月旺季实际约 ¥1,500-2,000/人。
+      </div>
+    </div>
+
+    <div class="tips-box" style="margin-top:14px;">
+      <h4>🚗 岛内交通建议</h4>
+      <ul>
+        <li><strong>推荐：一日游包车/拼团</strong> —— ¥200-350/人/天，含中文司机+市区酒店接送，最省心</li>
+        <li><strong>2-4人包车：</strong>全天¥600-800，4人拼更划算，灵活度最高</li>
+        <li><strong>打车：</strong>市区起步₩3,800≈¥20，但东线景点间远，全程打车不划算</li>
+        <li><strong>必备App：</strong>Naver Map（导航）· Kakao T（打车）· Papago（翻译）</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 住宿推荐 ==================== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#ede9fe;color:#7c3aed;">🏨</span> 住宿（7/3-7/6 · 3晚）</div>
+
+    <!-- 已订酒店 -->
+    <div style="background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%);border-radius:var(--radius);padding:20px 24px;margin-bottom:16px;border:2px solid #34d399;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span style="font-size:22px;">✅</span>
+        <span style="font-size:18px;font-weight:800;color:#065f46;">已订：济州贝斯特韦斯特酒店</span>
+        <span style="background:#065f46;color:#fff;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;">Best Western Jeju</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;font-size:14px;">
+        <div><strong>房型：</strong>豪华大小床房（1张大床+1张小床）· 30㎡</div>
+        <div><strong>入住：</strong>7/3晚 - 7/6早 · <strong>3晚</strong></div>
+        <div><strong>总价：</strong><span style="color:var(--accent);font-weight:800;font-size:18px;">¥1,480</span>（人均 ¥740）</div>
+        <div><strong>均价：</strong>¥493/晚</div>
+      </div>
+      <div style="margin-top:10px;font-size:13px;color:#065f46;">
+        ⭐ Agoda 8.5 / Trip.com 8.7（1752评）/ 携程 4.3分 · 2015年开业 · 338间客房 · 16层<br>
+        📍 道令路27号（莲洞五岔路口旁） · ✈机场2.4km打车10min · 🚶乐天免税店步行10min / 新罗免税店步行15min<br>
+        💡 楼下星巴克☕ · 秀一炸鸡300m · Olive Young步行可达 · 前台会中文 · 入住需押金¥500或₩100,000
+      </div>
+    </div>
+
+    <!-- 酒店对比表 -->
+    <div class="day-card" style="padding:0;margin-bottom:14px;">
+      <div style="padding:14px 20px;background:var(--primary-light);font-weight:700;font-size:15px;color:var(--primary);">
+        📊 莲洞商圈酒店横向对比（7月旺季价格参考）
+      </div>
+      <div style="padding:14px 16px;overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="background:#f1f5f9;">
+              <th style="padding:8px 10px;text-align:left;border-bottom:2px solid var(--border);">酒店</th>
+              <th style="padding:8px 10px;text-align:center;border-bottom:2px solid var(--border);">评分</th>
+              <th style="padding:8px 10px;text-align:center;border-bottom:2px solid var(--border);">房型</th>
+              <th style="padding:8px 10px;text-align:right;border-bottom:2px solid var(--border);">3晚总价</th>
+              <th style="padding:8px 10px;text-align:center;border-bottom:2px solid var(--border);">状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#ecfdf5;">
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);font-weight:700;">✅ Best Western 贝斯特韦斯特</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;">8.5-8.7</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;">大小床 30㎡</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:right;font-weight:800;color:var(--green);">¥1,480</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;"><span style="background:var(--green);color:#fff;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700;">已订</span></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);">君临海域 Gloucester</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;">8.5</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;">双床房</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:right;">¥750-1,200</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:12px;">参考价</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);">乐天城市饭店</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;">8.9</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;">双床房</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:right;">¥1,200-1,950</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:12px;">参考价</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);">博尔顿 Bolton（2025新开）</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;">9.0+</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;">双床房</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:right;">¥1,200-2,100</td>
+              <td style="padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:12px;">参考价</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px;">帕纳斯 Parnas（中文区·五星）</td>
+              <td style="padding:8px 10px;text-align:center;">9.2</td>
+              <td style="padding:8px 10px;text-align:center;">海景房</td>
+              <td style="padding:8px 10px;text-align:right;">¥3,600-6,600</td>
+              <td style="padding:8px 10px;text-align:center;color:var(--text-muted);font-size:12px;">参考价</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="padding:10px 16px;font-size:12px;color:var(--text-muted);">
+        📊 价格为2026年7月初旺季3晚预估，2人入住。Best Western ¥1,480 实订价在同档次酒店中竞争力很强。<br>
+        💡 Best Western 亮点：国际四星级连锁品牌 · 大小床房型适合2人出行 · 距机场仅2.4km · 莲洞核心购物区步行可达
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 美食攻略 ==================== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:var(--accent-light);color:#92400e;">🍽️</span> 美食攻略（按优先级排序）</div>
+
+    <!-- #1 烤韩牛 -->
+    <div class="food-card priority-1">
+      <h4><span class="emoji">🥩</span> #1 烤韩牛 한우 <span style="background:#fee2e2;color:#dc2626;padding:2px 8px;border-radius:4px;font-size:11px;margin-left:8px;">推荐安排在 Day 2 晚餐</span></h4>
+      <div class="restaurant">
+        <span class="name">복성한우（福成韩牛）</span><br>
+        <span class="detail">济州岛 A++级顶级韩牛餐厅。展示不同部位油花分布，专业人员桌边代烤确保最佳熟度。<br>
+        推荐：肋眼 · 上等横膈膜 · 嫩肩，配济州海盐突出天然甜味。收尾点冷面或炸酱面。<br>
+        📍 济州市区 ｜ 💰 人均₩40,000-80,000 ≈ ¥210-420</span>
+      </div>
+      <div class="restaurant" style="margin-top:8px;">
+        <span class="name">备选：우화（牛火）烤肉吃到饱</span><br>
+        <span class="detail">牛肉烤肉无限畅吃！₩31,900/人≈¥170。自助吧超丰富（炸鸡/辣炒年糕/披萨/鱼板汤）。就在蓮洞商圈。小学二年级以下₩17,900。<br>
+        📍 蚕丘路（努韦马路步行街） ｜ ⏰ 晚餐时间人多，建议17:30前到</span>
+      </div>
+      <div class="tip">💡 高端韩牛选「복성한우」体验感最佳；性价比之选选「牛火」吃到饱</div>
+    </div>
+
+    <!-- #2 生鱼片 -->
+    <div class="food-card">
+      <h4><span class="emoji">🐟</span> #2 生鱼片 횟집 <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:11px;margin-left:8px;">推荐安排在 Day 3 晚餐</span></h4>
+      <div class="restaurant">
+        <span class="name">노도 고등어회 순살갈치조림</span><br>
+        <span class="detail">济州必吃鯖鱼生鱼片名店！新鲜度极高才能入口，每片油脂香滑、肉质弹嫩，配海盐/蒜片/海苔。套餐还含弹牙鲜虾+生鱼片，推荐加单鲍鱼粥🦐<br>
+        📍 济州市区 ｜ 💰 人均₩25,000-50,000 ≈ ¥130-260</span>
+      </div>
+      <div class="restaurant" style="margin-top:8px;">
+        <span class="name">바다술상（Badasulsang）</span><br>
+        <span class="detail">黑白大出阿姨新开的店！主打当季渔获韩式海鲜套餐，生鱼片+凉拌章鱼+烤鱼+海藻汤一次吃满。使用济州海女捞捕的海藻贝类，鲜甜自然。<br>
+        ⚠️ 不开预订！午餐建议 9:00 到现场排号，晚餐 15:00 开始排队</span>
+      </div>
+      <div class="restaurant" style="margin-top:8px;">
+        <span class="name">西码头生鱼片一条街</span><br>
+        <span class="detail">近黑猪肉街步行10min，可现捞活鱼（石斑鱼/鲷鱼/比目鱼），配烧酒🍶氛围绝配</span>
+      </div>
+      <div class="tip">💡 鯖鱼生鱼片是济州名物，其他城市很难吃到同等新鲜度，一定要试！</div>
+    </div>
+
+    <!-- #3 汤饭 -->
+    <div class="food-card">
+      <h4><span class="emoji">🍲</span> #3 汤饭 · 面类 국수/탕</h4>
+      <div class="restaurant">
+        <span class="name">올래국수（来吃面）</span> <span class="detail">— 济州第一名物猪肉汤面🥇 排队也值得！汤头鲜甜，面条劲道。₩9,000≈¥48</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">미풍해장국（微风醒酒汤）</span> <span class="detail">— 济州式醒酒汤+白饭，暖胃解乏，宿醉后首选</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">어도식당</span> <span class="detail">— 海胆汤₩15,000+海螺汤₩13,000，海带超级大方，汤泡饭一绝！摹瑟浦港附近，适合西线顺路</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">李子炒码面 이자짬뽕</span> <span class="detail">— 济州市老字号海鲜面，大虾+鲍鱼浇头，汤底清淡又辣，当地人午餐排队名店</span>
+      </div>
+      <div class="tip">💡 汤饭/面类适合作为午餐，价格实惠（₩8K-15K≈¥42-80）、饱腹感强</div>
+    </div>
+
+    <!-- #4 生章鱼 -->
+    <div class="food-card">
+      <h4><span class="emoji">🐙</span> #4 生章鱼 산문어</h4>
+      <div class="restaurant">
+        <span class="name">문어집（章鱼屋）</span><br>
+        <span class="detail">"即使有一次没去过，也没有只去过一次的人" —— 济州市民口口相传的当地名店！<br>
+        熟章鱼片 · 辣炒章鱼 · 生章鱼刺身 · 章鱼拉面…章鱼控的天堂。<br>
+        📍 济州市厅附近 ｜ 💰 人均₩15,000-25,000 ≈ ¥80-130</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="detail">🌟 <strong>推荐点套餐：</strong>章鱼综合套餐（熟章鱼+生鱼片+烤串+凉拌+蟹肉饭隐藏作弊器）<br>
+        午餐推荐「蒙盖亚套餐」：章鱼酱+虾酱+鯛鱼生鱼片+辣炒猪肉+迷你蟹饭石锅，性价比之王</span>
+      </div>
+      <div class="tip">💡 蟹肉饭是用鲍鱼内脏做的酱拌饭，与章鱼料理梦幻搭配！隐藏菜单</div>
+    </div>
+
+    <!-- #5 生牛肉 -->
+    <div class="food-card">
+      <h4><span class="emoji">🐄</span> #5 生牛肉 육회</h4>
+      <div class="restaurant">
+        <span class="name">牛心 老衡洞店（우심 노형동점）</span><br>
+        <span class="detail">只卖 1++级最高品质韩牛生牛肉！可免费自带酒水🍷<br>
+        铜铁板（高导热率）+备长炭烤，肉汁丰富、风味浓郁。生牛肉육회入口即化。<br>
+        📍 老衡洞 ｜ 💰 人均₩30,000-60,000 ≈ ¥160-320</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="name">济州黑猪/韩牛综合肉铺+烤肉店</span><br>
+        <span class="detail">先在冷藏柜选肉部位，自行烤。份量透明。露台位可看飞机起降🛫</span>
+      </div>
+      <div class="tip">💡 韩式生牛肉육회配香油+大蒜+辣酱，口感像鞑靼牛肉。建议配烧酒🍶</div>
+    </div>
+
+    <!-- #6 酱蟹 -->
+    <div class="food-card">
+      <h4><span class="emoji">🦀</span> #6 酱蟹 간장게장</h4>
+      <div class="restaurant">
+        <span class="name">정선할매 곤드레밥（旌善奶奶·山薊菜饭）</span><br>
+        <span class="detail">济州当地人力推的酱蟹名店！花蟹切大块，吸满酱油+酒+辣椒醃制酱汁。<br>
+        🦀 吃法：直接吸吮咬食蟹肉，柔软蟹肉带点海味咸香；<br>
+        再挖饭进蟹壳搅拌，让饭粒沾满蟹黄蟹膏+酱汁——饭小偷本王！<br>
+        📍 济州市区（离机场不远） ｜ 💰 人均₩15,000-25,000 ≈ ¥80-130</span>
+      </div>
+      <div class="restaurant" style="margin-top:6px;">
+        <span class="detail">同时推荐：蕨菜辣牛肉汤（浓稠醇厚，泡白饭更好吃）</span>
+      </div>
+      <div class="tip">💡 酱蟹+蟹壳拌饭被称为"饭小偷"（让人停不下来的饭杀手），是韩国人最爱的下饭菜</div>
+    </div>
+  </div>
+
+  <!-- ==================== 免税店购物指南 ==================== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#fce7f3;color:#ec4899;">🛍️</span> 免税店购物指南</div>
+
+    <!-- 购物时间规划 -->
+    <div class="day-card" style="margin-bottom:16px;">
+      <div class="day-header shop">
+        📅 购物时间规划
+        <span class="day-date">两次购物机会</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot shop"></div>
+            <div class="tl-time">⏰ 出发前（现在就能做！）</div>
+            <div class="tl-content">
+              <div class="tl-name">💻 网上免税店下单 —— 最聪明的购物方式！</div>
+              <div class="tl-detail">在济州JTO/JDC线上免税店提前下单，比实体店<strong>便宜5-15%</strong>，有独家折扣<br>
+              JTO出发前30天可下单 → 机场提货 ｜ JDC出发前10天可下单 → 机场提货<br>
+              📱 JTO官网：<code>jtodutyfree.com</code> ｜ JDC官网：<code>jdc-dfs.com</code></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot shop"></div>
+            <div class="tl-time">Day 2/3 下午（14:00-19:00）</div>
+            <div class="tl-content">
+              <div class="tl-name">🏬 市区免税店实地购物（推荐！）</div>
+              <div class="tl-detail">东线或西线某天行程提前结束后，下午去市区免税店实地看货试色比价<br>
+              <strong>新罗免税店</strong>（最大，500+品牌）→ 步行 → <strong>乐天免税店</strong>（品牌最全）<br>
+              两店都在莲洞商圈，步行可达，距酒店超近</div>
+              <span class="tl-cost">⏰ 预留 2-3h</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot shop"></div>
+            <div class="tl-time">Day 4 早晨（05:30-06:45）</div>
+            <div class="tl-content">
+              <div class="tl-name">✈ 机场免税店最后扫货 + 提货</div>
+              <div class="tl-detail">过安检后：① 提取网上预订商品 ② 在机场免税店做最后补货（机场限定套装+济州特产）<br>
+              ⚠️ 旺季提货排队可能很长，<strong>务必预留1小时以上</strong></div>
+              <span class="tl-cost">⏰ 预留 1-1.5h</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 三大免税店对比 -->
+    <div class="dfs-guide">
+      <h3>🏬 济州岛三大免税店</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#fce7f3;">
+          <th style="padding:8px 10px;text-align:left;border:1px solid #f9a8d4;">免税店</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #f9a8d4;">位置/交通</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #f9a8d4;">营业时间</th>
+          <th style="padding:8px 10px;text-align:left;border:1px solid #f9a8d4;">亮点</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;"><strong>🏆 新罗免税店</strong></td>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;">老连路69号<br>机场打车10min</td>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;">10:00-19:00<br>全年无休</td>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;">济州最大！4层楼500+品牌。唯一有LV/Hermes/Tiffany/江诗丹顿</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;"><strong>🏬 乐天免税店</strong></td>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;">道陵路83号<br>乐天城市酒店1-4F</td>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;">10:00-19:00<br>全年无休</td>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;">品牌最全。LV/Chanel/Gucci/Hermes/Cartier+中文导购</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;"><strong>✈ 机场免税店</strong></td>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;">济州机场出境大厅<br>过安检后5-6号登机口</td>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;">依航班调整</td>
+            <td style="padding:8px 10px;border:1px solid #f9a8d4;">网上预订提货+机场限定套装+济州特产。出发前30min仍可买</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>🛍️ 必买推荐 TOP 10</h4>
+
+      <div class="item-card">
+        <div class="item-emoji">💄</div>
+        <div class="item-info">
+          <div class="item-name">1. Innisfree 绿茶籽精华套装（济州限定）</div>
+          <div class="item-desc">济州限定绿茶护肤品，免税价比国内便宜40-50%，送人自用两相宜</div>
+          <div class="item-price">免税价 $30-50 ｜ 新罗/乐天/机场</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-emoji">✨</div>
+        <div class="item-info">
+          <div class="item-name">2. 雪花秀 Sulwhasoo 润燥精华套组</div>
+          <div class="item-desc">免税店限定套组含旅行中样，比单买划算¥200+！雪花秀高端线免税店比Olive Young更划算</div>
+          <div class="item-price">免税价 $60-80 ｜ 新罗/乐天</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-emoji">✨</div>
+        <div class="item-info">
+          <div class="item-name">3. HERA 黑气垫粉底</div>
+          <div class="item-desc">韩国顶级气垫，免税店独家套组价格最优，色号齐全</div>
+          <div class="item-price">免税价 $25-35 ｜ 新罗/乐天</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-emoji">🕯️</div>
+        <div class="item-info">
+          <div class="item-name">4. Tamburins / Tamb 济州限定香氛</div>
+          <div class="item-desc">济州限定香调，免税店独家，外面买不到。颜值超高，送人超有面子</div>
+          <div class="item-price">免税价 $25-40 ｜ 机场免税店/新罗</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-emoji">👜</div>
+        <div class="item-info">
+          <div class="item-name">5. 韩国设计师品牌包（MARHEN.J / STANDART）</div>
+          <div class="item-desc">本土设计师手袋，免税价比官网便宜20-30%。济州限定配色</div>
+          <div class="item-price">免税价 $100-250 ｜ 新罗/乐天</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-emoji">🍫</div>
+        <div class="item-info">
+          <div class="item-name">6. 济州风味巧克力礼盒</div>
+          <div class="item-desc">柑橘/百年草/猕猴桃/绿茶/覆盆子风味巧克力，机场限定包装，送同事佳品</div>
+          <div class="item-price">₩8,000-15,000 ≈ ¥45-85 ｜ 机场免税店</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-emoji">🍵</div>
+        <div class="item-info">
+          <div class="item-name">7. O'sulloc 绿茶+柑橘双拼茶礼盒</div>
+          <div class="item-desc">博物馆内购买更新鲜，免税店也有售。济州绿茶+柑橘双拼最经典</div>
+          <div class="item-price">约 ¥50-100 ｜ O'sulloc博物馆+免税店</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-emoji">⌚</div>
+        <div class="item-info">
+          <div class="item-name">8. TimeVallée 时光天地手表</div>
+          <div class="item-desc">新罗免税店4F，一站式体验高端名表。Tissot/Longines免税价有惊喜</div>
+          <div class="item-price">视品牌 ｜ 新罗4F</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-emoji">🥃</div>
+        <div class="item-info">
+          <div class="item-name">9. 济州威士忌 / Omegi 米酒</div>
+          <div class="item-desc">济州本土蒸馏威士忌（仅济州有售）+ Omegi传统糯米酒，都是人气伴手礼</div>
+          <div class="item-price">₩20,000-50,000 ｜ 机场/新罗4F</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-emoji">🥐</div>
+        <div class="item-info">
+          <div class="item-name">10. 巴黎贝甜·济州机场限定面包</div>
+          <div class="item-desc">牛岛花生脆饼·焦糖奶油夹心，仅济州机场巴黎贝甜有售！人气超高建议早买</div>
+          <div class="item-price">₩5,000-8,000 ｜ 机场巴黎贝甜</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 省钱法则 -->
+    <div class="dfs-guide" style="background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%);border-color:#34d399;">
+      <h3 style="color:#065f46;">💰 免税店省钱五大法则</h3>
+      <ul>
+        <li><strong>法则1：出发前网上下单！</strong>济州JTO/JDC线上免税店折扣比实体店多5-15%，机场提货不占行李额</li>
+        <li><strong>法则2：到服务台领优惠券！</strong>新罗/乐天4F服务台凭银联卡换优惠券，部分柜台95折</li>
+        <li><strong>法则3：办会员卡！</strong>积分可当场抵扣后续购物，新罗和乐天都有</li>
+        <li><strong>法则4：高端品免税店买，开架去 Olive Young！</strong>雪花秀/HERA/后免税店更划算；3CE/Clio等开架在Olive Young更便宜</li>
+        <li><strong>法则5：注意限额！</strong>济州离岛免税每次$800，全年最多6次。酒2瓶+烟200支+其他≤$800。<br>JTO和JDC购买额度<strong>合并计算</strong></li>
+      </ul>
+
+      <h4 style="color:#065f46;margin-top:16px;">📱 出发前待办清单</h4>
+      <ul>
+        <li>☐ 下载「新罗免税店 App」+ 官网注册会员，浏览当前优惠活动</li>
+        <li>☐ 在 JTO 线上免税店（jtodutyfree.com）提前下单，出发前30天开放</li>
+        <li>☐ 在 JDC 线上免税店（jdc-dfs.com）比价下单，出发前10天开放</li>
+        <li>☐ 列好购物清单📋 + 预算，避免现场冲动消费（济州免税店东西太多太香）</li>
+        <li>☐ 准备好护照！免税店购物必须出示护照原件</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 预算明细 ==================== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:var(--accent-light);color:#92400e;">💰</span> 预算明细（人均）</div>
+    <div class="day-card" style="padding:22px;">
+      <div class="budget-bar">
+        <div class="bb-row">
+          <div class="bb-label">✈ 交通</div>
+          <div class="bb-track"><div class="bb-fill transport" style="width:80%">¥1,922</div></div>
+          <div class="bb-amount">¥1,922</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">🏨 住宿</div>
+          <div class="bb-track"><div class="bb-fill hotel" style="width:32%">¥740</div></div>
+          <div class="bb-amount">¥740</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">🍽 餐饮</div>
+          <div class="bb-track"><div class="bb-fill food" style="width:34%">¥800</div></div>
+          <div class="bb-amount">¥800</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">🎫 门票</div>
+          <div class="bb-track"><div class="bb-fill ticket" style="width:8%">¥200</div></div>
+          <div class="bb-amount">¥200</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">🚗 其他</div>
+          <div class="bb-track"><div class="bb-fill other" style="width:34%">¥800</div></div>
+          <div class="bb-amount">¥800</div>
+        </div>
+      </div>
+      <div class="budget-total">
+        <div class="label">合计（人均 · 不含免税购物）</div>
+        <div class="amount">¥4,462</div>
+      </div>
+      <div style="margin-top:14px;font-size:12px;color:var(--text-muted);line-height:1.8;">
+        <strong>✈ 交通 ¥1,922：</strong>往返机票 <strong style="color:var(--green);">¥1,722/人（已购实价）</strong> + 岛内打车/交通约¥200<br>
+        <strong>🏨 住宿 ¥740：</strong>Best Western 大小床房 3晚 ¥1,480 总价 ÷ 2人 = <strong style="color:var(--green);">¥740/人（已订实价）</strong><br>
+        <strong>🍽 餐饮 ¥800：</strong>Day 2 韩牛晚餐¥200 + Day 3 生鱼片¥150 + 4天午餐/早晚餐/咖啡约¥450<br>
+        <strong>🎫 门票 ¥200：</strong>城山日出峰¥28 + 柱状节理带¥11 + 天帝渊瀑布¥14 + 牛岛渡轮¥55 + 环岛电动车¥110<br>
+        <strong>🚗 其他 ¥800：</strong>一日游包车/拼团2天¥400-700 + 打车¥100 + 咖啡☕/冰淇淋🍦¥100<br>
+        ⚠️ 免税购物预算另算，根据购物清单而定
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 实用贴士 ==================== -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:var(--green-light);color:var(--green);">📋</span> 出行实用贴士</div>
+
+    <div class="tips-box">
+      <h4>🛂 签证 & 证件</h4>
+      <ul>
+        <li>济州岛对中国护照<strong>免签30天</strong>🎉 只需护照有效期≥6个月 + 往返机票即可</li>
+        <li>建议打印酒店确认单和机票行程单备用</li>
+      </ul>
+    </div>
+    <div class="tips-box" style="margin-top:10px;">
+      <h4>💱 货币 & 支付</h4>
+      <ul>
+        <li>韩国用韩元（KRW），2026年6月汇率：1 CNY ≈ 190 KRW</li>
+        <li>支持支付宝/微信支付的商家在增加，但小店/传统市场仍以<strong>现金或刷卡</strong>为主</li>
+        <li>建议换₩200,000-300,000现金备用，或用银联卡ATM取现</li>
+        <li>免税店支持银联/Visa/Mastercard，推荐刷卡（积分+汇率优势）</li>
+      </ul>
+    </div>
+    <div class="tips-box" style="margin-top:10px;">
+      <h4>📱 网络 & 必备App</h4>
+      <ul>
+        <li><strong>上网：</strong>机场取随身WiFi（约¥15/天）或买韩国eSIM卡</li>
+        <li><strong>Naver Map 🗺：</strong>韩国国民地图App，公交/驾车/步行导航必备</li>
+        <li><strong>Papago 🗣：</strong>Naver翻译App，拍照翻译韩文菜单/路标</li>
+        <li><strong>Kakao T 🚕：</strong>打车App（类似滴滴），支持微信/支付宝支付</li>
+      </ul>
+    </div>
+    <div class="tips-box" style="margin-top:10px;">
+      <h4>🌤 7月天气 & 穿着建议</h4>
+      <ul>
+        <li>7月济州：23-30°C，湿度高，偶有阵雨⛅，紫外线强</li>
+        <li><strong>穿着：</strong>轻薄透气+防晒外套+防风衣+舒适运动鞋/凉鞋</li>
+        <li><strong>海边风大！</strong>城山日出峰/涉地可支/挟才海滩风更大，防风外套必带</li>
+        <li><strong>防晒三件套：</strong>防晒霜SPF50+太阳镜+遮阳帽 ☀️</li>
+      </ul>
+    </div>
+    <div class="tips-box" style="margin-top:10px;">
+      <h4>⚠️ 注意事项</h4>
+      <ul>
+        <li>韩国与中国有时差：韩国快1小时（KST = CST + 1）</li>
+        <li>免税店商品大部分需机场提货，<strong>务必预留提货时间</strong>（旺季排队1小时+）</li>
+        <li>牛岛渡轮视天气运营，如遇大风停航会改其他景点</li>
+        <li>龙头海岸受潮汐影响，出发前查潮汐表，高潮时步道关闭</li>
+        <li>韩国室内冷气很足，建议随身带薄外套</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Generated by travel-planner · 2026-06-15（v4 更新：实际票价+已订酒店）<br>
+    ✈ 机票：春秋航空实购 ¥1,722/人往返 ｜ 🏨 酒店：Best Western 实订 ¥1,480/3晚<br>
+    景点/美食来源：VisitJeju/小红书攻略/Trip.com/KKday ｜ 其他价格为预估参考
+  </div>
+</div>
+</body>
+</html>
