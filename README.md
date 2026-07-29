@@ -43,6 +43,7 @@ opencode mcp auth nowah-travel       # 2. 一次性浏览器授权（首次必�
 | 计划 | 说明 |
 |------|------|
 | `travel-plans/jeju-20260703` | [济州岛 4天3晚](https://stonechan00.github.io/my-skills/travel-plans/jeju-20260703/index.html) (2026.07.03–06) |
+| `travel-plans/jeju-20260703-v2` | [济州岛 4天3晚](https://stonechan00.github.io/my-skills/travel-plans/jeju-20260703-v2/index.html) (2026.07.03–06) |
 
 ## 初始化做了什么
 
