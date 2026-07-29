@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄山 · 方案B · 2026.08.22-08.23 行程规划（周六下午上山）</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root {
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+    --accent: #f59e0b;
+    --accent-light: #fef3c7;
+    --surface: #ffffff;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+
+  .header { background: linear-gradient(135deg, #7c2d12 0%, #ea580c 100%); color: #fff; border-radius: var(--radius); padding: 32px 28px; margin-bottom: 24px; position: relative; overflow: hidden; }
+  .header::after { content: "🏔"; position: absolute; right: 28px; top: 50%; transform: translateY(-50%); font-size: 64px; opacity: .15; }
+  .header h1 { font-size: 28px; font-weight: 700; }
+  .header .subtitle { opacity: .9; margin-top: 4px; font-size: 15px; }
+  .header .plan-tag { display: inline-block; margin-top: 8px; padding: 3px 10px; background: rgba(255,255,255,.2); border-radius: 6px; font-size: 13px; }
+
+  .overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .ov-card { background: var(--surface); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); text-align: center; }
+  .ov-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; }
+  .ov-card .value { font-size: 22px; font-weight: 700; margin-top: 4px; color: var(--primary); }
+  .ov-card .value.budget { color: var(--accent); }
+  .ov-card .value small { font-size: 13px; font-weight: 400; }
+
+  .section { margin-bottom: 32px; }
+  .section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title .icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+
+  .day-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 16px; overflow: hidden; }
+  .day-header { background: var(--primary); color: #fff; padding: 12px 20px; font-weight: 600; font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
+  .day-header.warn { background: #ea580c; }
+  .day-header .day-date { font-size: 13px; opacity: .85; font-weight: 400; }
+  .day-body { padding: 16px 20px; }
+
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ""; position: absolute; left: 7px; top: 4px; bottom: 4px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 18px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot { position: absolute; left: -24px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--primary-light); border: 2px solid var(--primary); }
+  .tl-dot.food { background: var(--accent-light); border-color: var(--accent); }
+  .tl-dot.attraction { background: #d1fae5; border-color: #10b981; }
+  .tl-dot.transport { background: #dbeafe; border-color: #2563eb; }
+  .tl-dot.hotel { background: #ede9fe; border-color: #7c3aed; }
+  .tl-dot.ticket { background: #fce7f3; border-color: #db2777; }
+  .tl-time { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+  .tl-content { margin-top: 2px; }
+  .tl-name { font-weight: 600; font-size: 15px; }
+  .tl-detail { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+  .tl-cost { display: inline-block; background: var(--accent-light); color: #92400e; border-radius: 6px; padding: 1px 8px; font-size: 12px; font-weight: 600; margin-left: 6px; }
+  .tl-warn { display: inline-block; background: #fee2e2; color: #991b1b; border-radius: 6px; padding: 1px 8px; font-size: 12px; font-weight: 600; margin-left: 6px; }
+
+  .transport-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .transport-table th { background: var(--primary-light); color: var(--primary); text-align: left; padding: 10px 12px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }
+  .transport-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  .transport-table tr:last-child td { border-bottom: none; }
+  .transport-table .price { font-weight: 700; color: var(--accent); }
+  .transport-table tr.return td { background: #fefce8; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+  .badge.train { background: #dbeafe; color: #1e40af; }
+  .badge.return { background: #fef3c7; color: #92400e; }
+  .badge.alt { background: #e2e8f0; color: #475569; }
+
+  .hotel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .hotel-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .hotel-banner { height: 8px; }
+  .hotel-banner.mountain { background: #10b981; }
+  .hotel-banner.mountain-alt { background: #7c3aed; }
+  .hotel-info { padding: 14px 16px; }
+  .hotel-tier { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); font-weight: 600; }
+  .hotel-name { font-size: 16px; font-weight: 700; margin: 4px 0; }
+  .hotel-meta { font-size: 13px; color: var(--text-muted); }
+  .hotel-price { font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 8px; }
+  .hotel-price span { font-size: 12px; font-weight: 400; color: var(--text-muted); }
+  .hotel-price-detail { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .hotel-caveats { font-size: 12px; color: #92400e; margin-top: 6px; line-height: 1.5; }
+  .hotel-links { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .hotel-links a { padding: 3px 10px; border-radius: 6px; background: var(--primary-light); color: var(--primary); text-decoration: none; font-size: 12px; font-weight: 600; }
+  .hotel-links a:hover { background: var(--primary); color: #fff; }
+
+  .budget-bar { display: flex; flex-direction: column; gap: 10px; }
+  .bb-row { display: flex; align-items: center; gap: 12px; }
+  .bb-label { width: 64px; font-size: 13px; font-weight: 600; text-align: right; }
+  .bb-track { flex: 1; height: 28px; background: var(--border); border-radius: 6px; overflow: hidden; position: relative; }
+  .bb-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 12px; font-weight: 700; color: #fff; transition: width .6s ease; }
+  .bb-fill.transport { background: #2563eb; }
+  .bb-fill.hotel { background: #7c3aed; }
+  .bb-fill.food { background: #f59e0b; }
+  .bb-fill.ticket { background: #10b981; }
+  .bb-fill.other { background: #64748b; }
+  .bb-amount { font-size: 13px; font-weight: 600; min-width: 80px; }
+  .budget-total { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-top: 2px solid var(--text); margin-top: 12px; }
+  .budget-total .label { font-size: 16px; font-weight: 700; }
+  .budget-total .amount { font-size: 24px; font-weight: 800; color: var(--accent); }
+
+  .map-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .map-link { display: inline-flex; align-items: center; gap: 4px; padding: 6px 14px; background: var(--primary-light); color: var(--primary); border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600; }
+  .map-link:hover { background: var(--primary); color: #fff; }
+
+  #map { height: 400px; border-radius: var(--radius); margin-top: 12px; box-shadow: var(--shadow); }
+
+  .tips-box { background: #fff7ed; border: 1px solid #fed7aa; border-radius: var(--radius); padding: 16px 20px; margin-top: 16px; }
+  .tips-box h4 { font-size: 14px; color: #9a3412; margin-bottom: 8px; }
+  .tips-box ul { padding-left: 20px; font-size: 13px; color: #7c2d12; }
+  .tips-box li { margin-bottom: 4px; }
+  .tips-box.danger { background: #fef2f2; border-color: #fecaca; }
+  .tips-box.danger h4 { color: #991b1b; }
+  .tips-box.danger ul { color: #7f1d1d; }
+
+  .compare-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius); padding: 16px 20px; margin-top: 16px; }
+  .compare-box h4 { font-size: 14px; color: #1e40af; margin-bottom: 8px; }
+
+  .footer { text-align: center; color: var(--text-muted); font-size: 12px; margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .footer .sources { text-align: left; margin-top: 12px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .footer .sources li { margin-bottom: 2px; }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 22px; }
+    .ov-card .value { font-size: 18px; }
+    .hotel-grid { grid-template-columns: 1fr; }
+    .transport-table { font-size: 12px; }
+    .transport-table th, .transport-table td { padding: 6px 8px; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .header { box-shadow: none; }
+    .day-card, .hotel-card, .ov-card { box-shadow: none; border: 1px solid var(--border); }
+    #map { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>🏔 黄山 · 方案B · 周六下午上山</h1>
+    <div class="subtitle">2026.08.22（周六）- 08.23（周日）｜4人出行 ｜ 南京出发 ｜ 人均¥1,548</div>
+    <span class="plan-tag">对比方案A（周五晚出发）省¥700</span>
+  </div>
+
+  <div class="overview">
+    <div class="ov-card"><div class="label">目的地</div><div class="value">黄山</div></div>
+    <div class="ov-card"><div class="label">天数</div><div class="value">2天1晚</div></div>
+    <div class="ov-card"><div class="label">出行人数</div><div class="value">4人 <small>(2-5可调)</small></div></div>
+    <div class="ov-card"><div class="label">人均预算</div><div class="value budget">¥1,548 <small>(8月)</small></div></div>
+    <div class="ov-card"><div class="label">总预算</div><div class="value budget">¥6,192</div></div>
+  </div>
+
+  <!-- 关键风险提示 -->
+  <div class="tips-box danger">
+    <h4>⚠️ 下午上山关键风险（必读）</h4>
+    <ul>
+      <li><strong>索道末班16:00</strong>：玉屏索道末班约16:00，必须15:30前到达慈光阁索道站</li>
+      <li><strong>时间倒推</strong>：朋友11:00到黄山北 → 12:30到汤口 → 13:00换票 → 13:30上山，<strong>缓冲仅1.5h</strong></li>
+      <li><strong>若朋友晚于12:00到</strong>：建议晚到者改签G7237(11:54发)，或分批上山（先到者先上）</li>
+      <li><strong>周日行程满</strong>：日出+西海大峡谷+下山赶高铁，需严格控时，建议赶D5608(16:44)而非G8324(14:57)</li>
+      <li><strong>放弃内容</strong>：相比方案A，少了周五老街宵夜体验，周六只走前山精华（北海/始信峰移到周日）</li>
+    </ul>
+  </div>
+
+  <!-- Daily Itinerary -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:var(--primary-light);color:var(--primary);">📅</span> 每日行程</div>
+
+    <!-- Day 1 -->
+    <div class="day-card">
+      <div class="day-header warn">
+        Day 1 · 周六 · 早班高铁 → 下午玉屏上山 → 前山经典
+        <span class="day-date">2026-08-22 或 09-05</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">08:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🚄 G1489 早班高铁出发</div>
+              <div class="tl-detail">南京南→黄山北，1h57m，二等座约¥166。10点前到，等11点的朋友<span class="tl-cost">¥166/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">09:57</div>
+            <div class="tl-content">
+              <div class="tl-name">📍 抵达黄山北站，等候朋友</div>
+              <div class="tl-detail">高铁站候车厅/咖啡店等候，朋友乘后续车次于11:00左右到达</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">11:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🍱 人齐后午餐（站附近快餐）</div>
+              <div class="tl-detail">简单吃一口赶路，正宗徽菜留到下山后<span class="tl-cost">¥40/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">11:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🚌 黄山北→汤口（南大门）</div>
+              <div class="tl-detail">旅游大巴约1h，¥30/人。大件行李寄存汤口<span class="tl-cost">¥30/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot ticket"></div>
+            <div class="tl-time">12:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🎫 景区大门刷身份证入园</div>
+              <div class="tl-detail">门票¥190/人。需提前在「黄山旅游官方平台」小程序分时段预约<span class="tl-cost">¥190/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">13:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🚌 换乘景区大巴→玉屏索道（慈光阁）</div>
+              <div class="tl-detail">汤口→慈光阁，大巴¥19/人，约20min<span class="tl-warn">⚠ 须15:30前到索道站</span><span class="tl-cost">¥19/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">13:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🚡 玉屏索道上山</div>
+              <div class="tl-detail">索道¥90/人，约10min到玉屏楼站。前山路线，景色雄奇<span class="tl-cost">¥90/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">13:45</div>
+            <div class="tl-content">
+              <div class="tl-name">🌲 迎客松（必打卡！）</div>
+              <div class="tl-detail">黄山标志！出索道即到，千年古松伸出枝条如迎客，拍照留念约20min</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">14:15</div>
+            <div class="tl-content">
+              <div class="tl-name">⛰ 百步云梯 → 莲花亭</div>
+              <div class="tl-detail">经鳌鱼洞方向经典前山路线，奇松怪石密集，约1h</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">15:15</div>
+            <div class="tl-content">
+              <div class="tl-name">🏔 鳌鱼峰</div>
+              <div class="tl-detail">黄山三十六小峰之首，形似鳌鱼，观云海绝佳点，约30min</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">16:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🚶 海心亭 → 白云宾馆方向</div>
+              <div class="tl-detail">经天海景区缓坡到白云宾馆，约40min</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot hotel"></div>
+            <div class="tl-time">16:40</div>
+            <div class="tl-content">
+              <div class="tl-name">🏨 入住白云宾馆</div>
+              <div class="tl-detail">天海景区，近光明顶。多人独卫上下铺，8月¥300/床 / 9月¥260/床<span class="tl-cost">¥300/床(8月)</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">17:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🍽 晚餐（白云宾馆餐厅）</div>
+              <div class="tl-detail">山上餐厅人均¥80-120，吃饱早睡，明天早起看日出<span class="tl-cost">¥100/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">18:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🌅 鳌鱼峰看晚霞（可选）</div>
+              <div class="tl-detail">白云宾馆步行5min，视体力而定。日落晚霞绝美</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot hotel"></div>
+            <div class="tl-time">21:00</div>
+            <div class="tl-content">
+              <div class="tl-name">💤 早睡！明天04:50起床看日出</div>
+              <div class="tl-detail">8月日出约05:35，需提前15min出发去光明顶</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-links">
+          <a class="map-link" href="https://uri.amap.com/search?keyword=玉屏索道" target="_blank">📍 玉屏索道</a>
+          <a class="map-link" href="https://uri.amap.com/search?keyword=迎客松 黄山" target="_blank">📍 迎客松</a>
+          <a class="map-link" href="https://uri.amap.com/search?keyword=白云宾馆 黄山" target="_blank">📍 白云宾馆</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card">
+      <div class="day-header">
+        Day 2 · 周日 · 光明顶日出 → 西海大峡谷 → 云谷下山 → 返程
+        <span class="day-date">2026-08-23 或 09-06</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">05:00</div>
+            <div class="tl-content">
+              <div class="tl-name">⏰ 起床出发看日出</div>
+              <div class="tl-detail">白云宾馆→光明顶步行约15min，带好外套凌晨冷</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">05:35</div>
+            <div class="tl-content">
+              <div class="tl-name">🌅 光明顶日出（高光时刻！）</div>
+              <div class="tl-detail">黄山第二高峰1840m，180°全景观日出最佳点。云海+日出=此行最值瞬间</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">06:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🥐 早餐（白云宾馆自助）</div>
+              <div class="tl-detail">¥68/人，供应6:30-10:00，吃饱补充体力<span class="tl-cost">¥68/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">07:15</div>
+            <div class="tl-content">
+              <div class="tl-name">🪨 飞来石 → 排云亭</div>
+              <div class="tl-detail">光明顶→飞来石（红楼梦取景地）→排云亭，约1h</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">08:15</div>
+            <div class="tl-content">
+              <div class="tl-name">🌄 西海大峡谷（重点！）</div>
+              <div class="tl-detail">一环→二环→谷底，黄山最壮观峡谷栈道，约2h<span class="tl-warn">⚠ 10:15前到谷底赶小火车</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">10:15</div>
+            <div class="tl-content">
+              <div class="tl-name">🚂 网红小火车上行</div>
+              <div class="tl-detail">谷底→天海站，¥100/人，约5min<span class="tl-cost">¥100/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">10:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🏔 北海景区（视时间精简）</div>
+              <div class="tl-detail">经排云亭→丹霞峰→清凉台→猴子观海，若赶时间可精简为直达始信峰</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot attraction"></div>
+            <div class="tl-time">11:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🌲 始信峰</div>
+              <div class="tl-detail">「不到始信峰不见黄山松」，黑虎松/连理松，约30min。后山精华</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">12:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🚡 云谷索道下山</div>
+              <div class="tl-detail">白鹅岭→云谷寺，索道¥80/人，约10min<span class="tl-cost">¥80/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">12:30</div>
+            <div class="tl-content">
+              <div class="tl-name">🚌 景区大巴→汤口</div>
+              <div class="tl-detail">云谷寺→汤口换乘中心，¥19/人，约20min<span class="tl-cost">¥19/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot food"></div>
+            <div class="tl-time">13:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🍲 午餐（汤口镇）</div>
+              <div class="tl-detail">下山后汤口镇午餐，人均¥50，可尝徽菜<span class="tl-cost">¥50/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">14:00</div>
+            <div class="tl-content">
+              <div class="tl-name">🚌 汤口→黄山北站</div>
+              <div class="tl-detail">旅游大巴¥30/人，约1h<span class="tl-cost">¥30/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">16:44</div>
+            <div class="tl-content">
+              <div class="tl-name">🚄 D5608 高铁返程</div>
+              <div class="tl-detail">黄山北→南京南，1h54m，二等座约¥154<span class="tl-cost">¥154/人</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot transport"></div>
+            <div class="tl-time">18:38</div>
+            <div class="tl-content">
+              <div class="tl-name">🏠 抵达南京南，行程结束</div>
+              <div class="tl-detail">两天紧凑但精华全覆盖！</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-links">
+          <a class="map-link" href="https://uri.amap.com/search?keyword=光明顶 黄山" target="_blank">📍 光明顶</a>
+          <a class="map-link" href="https://uri.amap.com/search?keyword=西海大峡谷" target="_blank">📍 西海大峡谷</a>
+          <a class="map-link" href="https://uri.amap.com/search?keyword=始信峰" target="_blank">📍 始信峰</a>
+          <a class="map-link" href="https://uri.amap.com/search?keyword=云谷索道" target="_blank">📍 云谷索道</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transport -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#dbeafe;color:#2563eb;">🚄</span> 交通方案</div>
+    <div class="day-card" style="padding:0;">
+      <table class="transport-table">
+        <thead>
+          <tr><th>方向</th><th>车次</th><th>出发</th><th>到达</th><th>时长</th><th>二等座</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge train">去程★</span></td>
+            <td><strong>G1489</strong></td>
+            <td>南京南 08:00</td>
+            <td>黄山北 09:57</td>
+            <td>1h57m</td>
+            <td class="price">¥166</td>
+          </tr>
+          <tr>
+            <td><span class="badge alt">去程备选</span></td>
+            <td>G3055</td>
+            <td>南京南 08:40</td>
+            <td>黄山北 10:44</td>
+            <td>2h04m</td>
+            <td class="price">¥166</td>
+          </tr>
+          <tr>
+            <td><span class="badge alt">去程(等人)</span></td>
+            <td>G7237</td>
+            <td>南京南 11:54</td>
+            <td>黄山北 13:59</td>
+            <td>2h08m</td>
+            <td class="price">¥166</td>
+          </tr>
+          <tr class="return">
+            <td><span class="badge return">返程★</span></td>
+            <td><strong>D5608</strong></td>
+            <td>黄山北 16:44</td>
+            <td>南京南 18:38</td>
+            <td>1h54m</td>
+            <td class="price">¥154</td>
+          </tr>
+          <tr class="return">
+            <td><span class="badge alt">返程早班</span></td>
+            <td>G8324</td>
+            <td>黄山北 14:57</td>
+            <td>南京南 17:01</td>
+            <td>2h04m</td>
+            <td class="price">¥166</td>
+          </tr>
+          <tr class="return">
+            <td><span class="badge alt">返程晚班</span></td>
+            <td>G8966</td>
+            <td>黄山北 19:51</td>
+            <td>南京南 21:41</td>
+            <td>1h50m</td>
+            <td class="price">¥166</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">
+      ★ 推荐：去程G1489早班到站等人齐；返程D5608给周日游览留足时间。价格来源：gaotie.com.cn / hao86.com / 携程（2026-07-29 搜索）
+    </div>
+  </div>
+
+  <!-- Hotels -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#ede9fe;color:#7c3aed;">🏨</span> 住宿推荐</div>
+    <div class="hotel-grid">
+      <div class="hotel-card">
+        <div class="hotel-banner mountain"></div>
+        <div class="hotel-info">
+          <div class="hotel-tier">山上·推荐 ★</div>
+          <div class="hotel-name">白云宾馆 · 多人独卫上下铺</div>
+          <div class="hotel-meta">📍 天海景区，近光明顶，海拔1740m<br>⭐ 前后山中点，最适合前山上后山下</div>
+          <div class="hotel-price">¥300/床 <span>(8月) / ¥260/床 (9月)</span></div>
+          <div class="hotel-price-detail">平季¥160 | 周末¥260 | 暑假周末¥300 | 节日¥360</div>
+          <div class="hotel-caveats">
+            ⚠ 8月为暑假旺季+周六，¥260+40上浮=¥300/床<br>
+            ⚠ 多人间上下铺，男女分房，洗漱用品自带<br>
+            ⚠ 方案B只住1晚，比方案A省1晚山下住宿
+          </div>
+          <div class="hotel-links">
+            <a href="http://www.baiyunhotelhuangshan.com/cn/" target="_blank">🔗 官网</a>
+            <a href="https://tw.trip.com/hotels/huangshan-hotel-detail-434484/huangshan-bai-yun-hotel/" target="_blank">🔗 Trip.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-banner mountain-alt"></div>
+        <div class="hotel-info">
+          <div class="hotel-tier">山上·备选</div>
+          <div class="hotel-name">西海饭店 · 多人间独卫</div>
+          <div class="hotel-meta">📍 西海景区，丹霞峰下，近大峡谷入口<br>⭐ 离西海大峡谷北入口仅500m</div>
+          <div class="hotel-price">~¥300/床 <span>(8月参考)</span></div>
+          <div class="hotel-price-detail">标间¥1300起 | 多人间参考白云同档</div>
+          <div class="hotel-caveats">
+            ⚠ A幢（新楼）条件远好于B幢（北楼）<br>
+            ⚠ 多人间需电话预订(0559-2590999)<br>
+            ⚠ <strong>不适合方案B</strong>：下午从前山过来需绕路1h+
+          </div>
+          <div class="hotel-links">
+            <a href="http://www.xihaihotelhuangshan.com/big5/" target="_blank">🔗 官网</a>
+            <a href="https://hotels.ctrip.com/hotels/search?keyword=黄山西海饭店" target="_blank">🔗 携程</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Budget -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:var(--accent-light);color:#92400e;">💰</span> 预算明细（4人 · 8月方案）</div>
+    <div class="day-card" style="padding:20px;">
+      <div class="budget-bar">
+        <div class="bb-row">
+          <div class="bb-label">交通</div>
+          <div class="bb-track"><div class="bb-fill transport" style="width:48%">¥1,456</div></div>
+          <div class="bb-amount">¥1,456</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">住宿</div>
+          <div class="bb-track"><div class="bb-fill hotel" style="width:40%">¥1,200</div></div>
+          <div class="bb-amount">¥1,200</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">餐饮</div>
+          <div class="bb-track"><div class="bb-fill food" style="width:21%">¥632</div></div>
+          <div class="bb-amount">¥632</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">门票</div>
+          <div class="bb-track"><div class="bb-fill ticket" style="width:61%">¥1,836</div></div>
+          <div class="bb-amount">¥1,836</div>
+        </div>
+        <div class="bb-row">
+          <div class="bb-label">其他</div>
+          <div class="bb-track"><div class="bb-fill other" style="width:36%">¥1,068</div></div>
+          <div class="bb-amount">¥1,068</div>
+        </div>
+      </div>
+      <div class="budget-total">
+        <div class="label">合计（4人）</div>
+        <div class="amount">¥6,192</div>
+      </div>
+      <div style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:8px;">
+        人均 ¥1,548 ｜ 9月方案人均 ¥1,508 ｜ 比方案A省¥175/人
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Map -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#dbeafe;color:#2563eb;">🗺️</span> 行程地图</div>
+    <div id="map"></div>
+    <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">
+      🟢 景点 ｜ 🔵 交通 ｜ 🟠 美食 ｜ 🟣 住宿 — 点击标记查看详情
+    </div>
+  </div>
+
+  <!-- Tips -->
+  <div class="section">
+    <div class="section-title"><span class="icon" style="background:#fef3c7;color:#92400e;">💡</span> 实用贴士</div>
+    <div class="tips-box">
+      <h4>⚠️ 方案B专属提醒</h4>
+      <ul>
+        <li><strong>周六时间紧</strong>：从等人齐到上山只有2.5h缓冲，建议约定最晚12:30到汤口，超时分批上山</li>
+        <li><strong>周日早起</strong>：日出05:35，需05:00起床，前一晚22:00前睡</li>
+        <li><strong>周日控时</strong>：西海大峡谷10:15前必须到谷底赶小火车，否则影响下山</li>
+        <li><strong>行李寄存</strong>：汤口换乘中心寄存大件，¥10-20/件，轻装上山</li>
+      </ul>
+    </div>
+    <div class="tips-box" style="margin-top:12px;">
+      <h4>📋 通用提醒</h4>
+      <ul>
+        <li><strong>门票预约</strong>：需提前在「黄山旅游官方平台」小程序分时段预约，刷身份证入园</li>
+        <li><strong>山上酒店</strong>：建议提前30天以上预订，旺季紧张。白云宾馆电话0559-2590***</li>
+        <li><strong>山上物价</strong>：矿泉水¥10+，泡面¥20+，建议自带干粮/自热饭/零食上山</li>
+        <li><strong>穿衣</strong>：山上比山下低8-10°C，即使8月凌晨看日出也需外套。穿防滑运动鞋</li>
+        <li><strong>雨具</strong>：带雨衣不打伞（风大危险），山上天气多变</li>
+        <li><strong>2026暑期优惠</strong>：6月10日-8月31日，应届中高考/大学毕业生免门票！</li>
+        <li><strong>防晒</strong>：山上紫外线强，涂防晒霜+戴帽子+墨镜</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Generated by travel-planner · 方案B · 2026-07-29</p>
+    <div class="sources">
+      <p><strong>📦 价格来源（均于 2026-07-29 搜索）：</strong></p>
+      <ul>
+        <li>火车票：gaotie.com.cn / hao86.com / 携程列车时刻表</li>
+        <li>门票索道：黄山风景区管委会官网 huangshan.gov.cn 2026年度价格政策</li>
+        <li>山上酒店：52uhs.com / 517hslyw.com 旅行社报价 + 酒店官网</li>
+        <li>行程路线：bendibao.com 黄山游玩线路 + icauto.com.cn 班次</li>
+      </ul>
+      <p style="margin-top:8px;">⚠️ 以上价格为搜索时参考价，实际请以购票/预订时为准。</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([30.12, 118.16], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap', maxZoom: 18
+  }).addTo(map);
+
+  const locations = [
+    { name: "玉屏索道上站", lat: 30.1100, lng: 118.1590, day: 1, type: "transport" },
+    { name: "迎客松", lat: 30.1130, lng: 118.1610, day: 1, type: "attraction" },
+    { name: "百步云梯", lat: 30.1160, lng: 118.1630, day: 1, type: "attraction" },
+    { name: "鳌鱼峰", lat: 30.1200, lng: 118.1620, day: 1, type: "attraction" },
+    { name: "白云宾馆（住宿）", lat: 30.1230, lng: 118.1550, day: 1, type: "hotel" },
+    { name: "光明顶（日出！）", lat: 30.1240, lng: 118.1600, day: 2, type: "attraction" },
+    { name: "飞来石", lat: 30.1270, lng: 118.1530, day: 2, type: "attraction" },
+    { name: "排云亭", lat: 30.1280, lng: 118.1500, day: 2, type: "attraction" },
+    { name: "西海大峡谷", lat: 30.1250, lng: 118.1450, day: 2, type: "attraction" },
+    { name: "丹霞峰", lat: 30.1290, lng: 118.1520, day: 2, type: "attraction" },
+    { name: "猴子观海", lat: 30.1370, lng: 118.1580, day: 2, type: "attraction" },
+    { name: "始信峰", lat: 30.1380, lng: 118.1660, day: 2, type: "attraction" },
+    { name: "云谷索道上站", lat: 30.1350, lng: 118.1690, day: 2, type: "transport" }
+  ];
+
+  const colors = { attraction: '#10b981', food: '#f59e0b', transport: '#2563eb', hotel: '#7c3aed' };
+
+  locations.forEach(loc => {
+    const color = colors[loc.type] || '#64748b';
+    L.circleMarker([loc.lat, loc.lng], {
+      radius: 8, fillColor: color, color: '#fff', weight: 2, fillOpacity: 0.8
+    }).addTo(map).bindPopup(`<strong>${loc.name}</strong><br>Day ${loc.day} · ${loc.type}`);
+  });
+
+  // Day 1 route (前山)
+  const day1Route = [
+    [30.1100, 118.1590], [30.1130, 118.1610], [30.1160, 118.1630],
+    [30.1200, 118.1620], [30.1230, 118.1550]
+  ];
+  // Day 2 route (后山+峡谷)
+  const day2Route = [
+    [30.1230, 118.1550], [30.1240, 118.1600], [30.1270, 118.1530],
+    [30.1280, 118.1500], [30.1250, 118.1450], [30.1290, 118.1520],
+    [30.1370, 118.1580], [30.1380, 118.1660], [30.1350, 118.1690]
+  ];
+
+  L.polyline(day1Route, { color: '#ea580c', weight: 3, opacity: 0.6, dashArray: '5,5' }).addTo(map);
+  L.polyline(day2Route, { color: '#10b981', weight: 3, opacity: 0.6, dashArray: '5,5' }).addTo(map);
+</script>
+
+</body>
+</html>

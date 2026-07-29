@@ -1,0 +1,274 @@
+{
+  "destination": "黄山",
+  "dates": ["2026-08-21", "2026-08-23"],
+  "alternative_dates": ["2026-09-04", "2026-09-06"],
+  "departure_city": "南京",
+  "travelers": 4,
+  "travelers_note": "2-5人可调，预算按4人计算",
+  "budget": {
+    "total": 6892,
+    "per_person": 1723,
+    "currency": "CNY",
+    "price_source": "websearch 携程/gaotie.com.cn/hao86.com 火车票（2026-07-29 搜索）+ 黄山管委会官网门票索道价格 + 52uhs.com/517hslyw.com 山上酒店报价"
+  },
+  "days": [
+    {
+      "date": "2026-08-21",
+      "day_of_week": "周五",
+      "title": "南京出发 → 黄山屯溪，老街宵夜",
+      "activities": [
+        { "time": "17:21", "type": "transport", "name": "G8965 高铁", "detail": "南京南→黄山北，1h49m，二等座¥166", "cost": 166 },
+        { "time": "19:10", "type": "transport", "name": "抵达黄山北站", "detail": "出站后打车/公交前往屯溪市区（约20min）", "cost": 10 },
+        { "time": "19:40", "type": "hotel", "name": "入住屯溪区酒店", "detail": "建议住屯溪老街附近，方便宵夜+次日去汤口", "cost": 125 },
+        { "time": "20:00", "type": "food", "name": "屯溪老街宵夜", "detail": "老街第一楼/徽张臭鳜鱼：臭鳜鱼¥80-120/人、毛豆腐¥10-15/份、黄山烧饼¥1-2/个", "cost": 80 }
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "day_of_week": "周六",
+      "title": "后山上山 → 西海大峡谷 → 住山顶",
+      "activities": [
+        { "time": "07:00", "type": "food", "name": "早餐", "detail": "酒店或老街附近早餐店", "cost": 30 },
+        { "time": "07:30", "type": "transport", "name": "屯溪→汤口（南大门）", "detail": "旅游大巴约1h，¥30/人", "cost": 30 },
+        { "time": "08:30", "type": "ticket", "name": "景区大门换票", "detail": "门票¥190/人（学生半价¥95），需提前在「黄山旅游官方平台」小程序预约", "cost": 190 },
+        { "time": "09:00", "type": "transport", "name": "换乘景区大巴→云谷索道", "detail": "汤口→云谷寺，大巴¥19/人，约20min", "cost": 19 },
+        { "time": "09:30", "type": "transport", "name": "云谷索道上山", "detail": "索道¥80/人，约10min到白鹅岭", "cost": 80 },
+        { "time": "10:00", "type": "attraction", "name": "始信峰", "detail": "「不到始信峰，不见黄山松」— 黑虎松、连理松、龙爪松，约40min", "cost": 0 },
+        { "time": "10:50", "type": "attraction", "name": "北海景区", "detail": "梦笔生花→曙光亭→清凉台→猴子观海，约1.5h", "cost": 0 },
+        { "time": "12:30", "type": "food", "name": "午餐（山上简餐）", "detail": "自带干粮或北海宾馆餐厅简餐，人均¥60", "cost": 60 },
+        { "time": "13:30", "type": "attraction", "name": "丹霞峰 → 排云亭", "detail": "经狮子峰往西海方向，排云亭观奇石云海，约1h", "cost": 0 },
+        { "time": "14:30", "type": "attraction", "name": "西海大峡谷", "detail": "一环→二环→谷底，黄山最壮观的峡谷栈道，约2.5h", "cost": 0 },
+        { "time": "17:00", "type": "transport", "name": "网红小火车上行", "detail": "西海大峡谷地轨缆车¥100/人，谷底→天海站，约5min", "cost": 100 },
+        { "time": "17:30", "type": "hotel", "name": "入住白云宾馆", "detail": "天海景区，近光明顶，多人独卫上下铺¥300/床（8月暑假周末价）", "cost": 300 },
+        { "time": "18:00", "type": "food", "name": "晚餐（白云宾馆餐厅）", "detail": "山上餐厅人均¥80-120，自助早餐¥68/人（次日早）", "cost": 100 }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "day_of_week": "周日",
+      "title": "光明顶日出 → 前山下山 → 返程南京",
+      "activities": [
+        { "time": "05:00", "type": "attraction", "name": "起床出发看日出", "detail": "白云宾馆→光明顶步行约15min，8月日出约05:35", "cost": 0 },
+        { "time": "05:35", "type": "attraction", "name": "光明顶日出", "detail": "黄山第二高峰，180°全景观日出最佳点，云海概率高", "cost": 0 },
+        { "time": "06:30", "type": "food", "name": "早餐（白云宾馆自助）", "detail": "¥68/人，供应时间6:30-10:00", "cost": 68 },
+        { "time": "07:30", "type": "attraction", "name": "鳌鱼峰 → 百步云梯", "detail": "经鳌鱼洞→莲花亭→百步云梯，约1.5h", "cost": 0 },
+        { "time": "09:00", "type": "attraction", "name": "迎客松", "detail": "黄山标志性景观，玉屏楼景区，拍照打卡约30min", "cost": 0 },
+        { "time": "09:30", "type": "transport", "name": "玉屏索道下山", "detail": "索道¥90/人，约10min到慈光阁", "cost": 90 },
+        { "time": "10:00", "type": "transport", "name": "景区大巴→汤口", "detail": "慈光阁→汤口换乘中心，¥19/人，约20min", "cost": 19 },
+        { "time": "10:30", "type": "food", "name": "午餐（汤口镇）", "detail": "下山后汤口镇午餐，人均¥50", "cost": 50 },
+        { "time": "12:00", "type": "transport", "name": "汤口→黄山北站", "detail": "旅游大巴¥30/人，约1h", "cost": 30 },
+        { "time": "14:57", "type": "transport", "name": "G8324 高铁返程", "detail": "黄山北→南京南，2h04m，二等座约¥166", "cost": 166 },
+        { "time": "17:01", "type": "transport", "name": "抵达南京南", "detail": "行程结束，回家", "cost": 0 }
+      ]
+    }
+  ],
+  "transport": [
+    {
+      "type": "train",
+      "direction": "去程",
+      "number": "G8965",
+      "from": "南京南",
+      "to": "黄山北",
+      "depart": "17:21",
+      "arrive": "19:10",
+      "duration": "1h49m",
+      "price": 166,
+      "price_note": "二等座¥166 / 一等座¥266 / 商务座¥558",
+      "price_source": "gaotie.com.cn（2026-07-29 搜索）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init"
+    },
+    {
+      "type": "train",
+      "direction": "去程（备选）",
+      "number": "C3695",
+      "from": "南京南",
+      "to": "黄山北",
+      "depart": "19:19",
+      "arrive": "21:23",
+      "duration": "2h04m",
+      "price": 154,
+      "price_note": "二等座约¥154（参考同类车次）",
+      "price_source": "hao86.com 时刻表（2026-07-29 搜索）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init"
+    },
+    {
+      "type": "train",
+      "direction": "去程（晚班）",
+      "number": "D5663",
+      "from": "南京南",
+      "to": "黄山北",
+      "depart": "21:21",
+      "arrive": "23:09",
+      "duration": "1h54m",
+      "price": 154,
+      "price_note": "二等座约¥154（参考同类车次）",
+      "price_source": "hao86.com 时刻表（2026-07-29 搜索）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init"
+    },
+    {
+      "type": "train",
+      "direction": "返程",
+      "number": "G8324",
+      "from": "黄山北",
+      "to": "南京南",
+      "depart": "14:57",
+      "arrive": "17:01",
+      "duration": "2h04m",
+      "price": 166,
+      "price_note": "二等座约¥166（参考同线路G车）",
+      "price_source": "hao86.com / icauto.com.cn（2026-07-29 搜索）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init"
+    },
+    {
+      "type": "train",
+      "direction": "返程（备选）",
+      "number": "D5608",
+      "from": "黄山北",
+      "to": "南京南",
+      "depart": "16:44",
+      "arrive": "18:38",
+      "duration": "1h54m",
+      "price": 154,
+      "price_note": "二等座约¥154（参考D5607同类）",
+      "price_source": "携程列车时刻表（2026-07-29 搜索）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init"
+    },
+    {
+      "type": "train",
+      "direction": "返程（晚班）",
+      "number": "G8966",
+      "from": "黄山北",
+      "to": "南京南",
+      "depart": "19:51",
+      "arrive": "21:41",
+      "duration": "1h50m",
+      "price": 166,
+      "price_note": "二等座¥166（G8965对开车次）",
+      "price_source": "gaotie.cn G8966时刻表（2026-07-29 搜索）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init"
+    }
+  ],
+  "hotels": [
+    {
+      "tier": "山上-推荐",
+      "name": "白云宾馆（多人独卫上下铺）",
+      "location": "天海景区，近光明顶，海拔1740m",
+      "price_per_bed": 300,
+      "price_range": "平季¥160/床 | 周末¥260/床 | 暑假周末¥300/床（+40暑假上浮）| 节日¥360/床",
+      "price_source": "52uhs.com 旅行社报价（2026-07-29 搜索）+ baiyunhotelhuangshan.com 官网",
+      "price_source_note": "8月21日为暑假+周五=周末价¥260+暑假上浮¥40=¥300/床；9月4日非暑假=周末价¥260/床",
+      "caveats": ["山上酒店需提前在官网或电话(0559-2590***)预订", "多人间为上下铺，男女分房", "洗漱用品需自带或收费购买", "9月方案人均可省¥40"],
+      "booking_urls": {
+        "官网": "http://www.baiyunhotelhuangshan.com/cn/",
+        "Trip.com": "https://tw.trip.com/hotels/huangshan-hotel-detail-434484/huangshan-bai-yun-hotel/"
+      },
+      "advantage": "离光明顶最近（步行15min），看日出最方便；离西海大峡谷网红小火车仅5min"
+    },
+    {
+      "tier": "山上-备选",
+      "name": "北海宾馆（4人独卫 / 8-12人独卫）",
+      "location": "北海景区，近始信峰/狮子峰，海拔1630m",
+      "price_per_bed": 280,
+      "price_range": "平季¥140/床 | 周末¥240/床 | 暑假周末约¥280/床 | 节日¥360/床",
+      "price_source": "517hslyw.com 旅行社报价（2026-07-29 搜索）+ beihaihotelhuangshan.com 官网",
+      "price_source_note": "8月暑假周末估¥280/床；9月非暑假周末¥240/床",
+      "caveats": ["4人间房间较小，山上住宿条件有限", "从云谷索道上山步行即可到，适合后山路线", "西海大峡谷需走回头路"],
+      "booking_urls": {
+        "官网": "http://www.beihaihotelhuangshan.com/cn/",
+        "携程": "https://hotels.ctrip.com/hotels/search?keyword=黄山北海宾馆"
+      },
+      "advantage": "后山最佳住宿点，上山放下背包即可游始信峰/北海；价格略低于白云"
+    },
+    {
+      "tier": "山上-备选",
+      "name": "西海饭店（多人间独卫）",
+      "location": "西海景区，丹霞峰下，近西海大峡谷北入口",
+      "price_per_bed": 300,
+      "price_range": "标间¥1300起 | 多人间独卫参考白云/北海同档",
+      "price_source": "xihaihotelhuangshan.com 官网 + huangshan.xbaixing.com（2026-07-29 搜索）",
+      "price_source_note": "多人间独卫价格参考白云/北海同档约¥280-300/床（暑假周末）",
+      "caveats": ["离西海大峡谷北入口（排云亭）最近，仅500m", "A幢（新楼）条件好于B幢（北楼）", "多人间需电话预订"],
+      "booking_urls": {
+        "官网": "http://www.xihaihotelhuangshan.com/big5/",
+        "携程": "https://hotels.ctrip.com/hotels/search?keyword=黄山西海饭店"
+      },
+      "advantage": "游览西海大峡谷最方便，丹霞峰看日落/日出步行可达"
+    },
+    {
+      "tier": "山下-周五晚",
+      "name": "屯溪老街附近经济酒店",
+      "location": "屯溪区，近屯溪老街",
+      "price_per_night": 250,
+      "price_range": "¥200-300/晚/房（如家/汉庭/全季等连锁）",
+      "price_source": "websearch 携程酒店搜索（2026-07-29 估值）",
+      "price_source_note": "屯溪区非景区，酒店价格稳定，暑假涨幅小",
+      "caveats": ["周五晚屯溪老街附近方便宵夜", "次日早晨去汤口约1h大巴"],
+      "booking_urls": {
+        "携程": "https://hotels.ctrip.com/hotels/search?keyword=屯溪老街",
+        "美团": "https://www.meituan.com/hotel/"
+      },
+      "advantage": "性价比高，宵夜方便，交通枢纽位置"
+    }
+  ],
+  "tickets": {
+    "entrance_fee": {
+      "price": 190,
+      "student_price": 95,
+      "source": "黄山风景区管委会官网 huangshan.gov.cn + sina.com.cn 2026年最新政策（2026-07-19）"
+    },
+    "yungu_cable_car": {
+      "price": 80,
+      "source": "黄山管委会 2026年度门票索道价格政策"
+    },
+    "yuping_cable_car": {
+      "price": 90,
+      "source": "黄山管委会 2026年度门票索道价格政策"
+    },
+    "xihai_canyon_cable_car": {
+      "price": 100,
+      "source": "黄山管委会 2026年度门票索道价格政策"
+    },
+    "scenic_bus": {
+      "price": 30,
+      "note": "黄山北站↔汤口南大门",
+      "internal_price": 19,
+      "internal_note": "汤口↔索道站（景区内换乘）"
+    },
+    "note": "2026年6月10日-8月31日，应届中高考/大学毕业生免门票！需在「黄山旅游官方平台」小程序预约。天都峰需实名制限额预约。"
+  },
+  "budget_breakdown": {
+    "transport": 1800,
+    "accommodation": 1700,
+    "food": 1552,
+    "tickets": 1840,
+    "total": 6892,
+    "per_person": 1723,
+    "note": "按4人计算。9月方案山上住宿省¥160（¥40/人×4），总预算约¥6,732，人均¥1,683"
+  },
+  "price_sources": [
+    "火车票：gaotie.com.cn / hao86.com / 携程列车时刻表（2026-07-29 搜索）",
+    "门票索道：黄山风景区管委会官网 huangshan.gov.cn 2026年度价格政策 + sina.com.cn（2026-07-19）",
+    "山上酒店：52uhs.com / 517hslyw.com 旅行社报价 + 酒店官网（2026-07-29 搜索）",
+    "山下酒店：websearch 携程酒店估值（2026-07-29）",
+    "美食：tttl.cn / ctrip.com 屯溪老街美食攻略（2026-07-29 搜索）",
+    "行程路线：icauto.com.cn 黄山北到南京南班次 + bendibao.com 黄山游玩线路"
+  ],
+  "locations": [
+    {"name": "屯溪老街", "lat": 29.7117, "lng": 118.3160, "day": 1, "type": "food"},
+    {"name": "黄山风景区南大门(汤口)", "lat": 30.1269, "lng": 118.1595, "day": 2, "type": "attraction"},
+    {"name": "云谷索道上站(白鹅岭)", "lat": 30.1350, "lng": 118.1690, "day": 2, "type": "attraction"},
+    {"name": "始信峰", "lat": 30.1380, "lng": 118.1660, "day": 2, "type": "attraction"},
+    {"name": "清凉台", "lat": 30.1360, "lng": 118.1600, "day": 2, "type": "attraction"},
+    {"name": "猴子观海", "lat": 30.1370, "lng": 118.1580, "day": 2, "type": "attraction"},
+    {"name": "丹霞峰", "lat": 30.1290, "lng": 118.1520, "day": 2, "type": "attraction"},
+    {"name": "排云亭", "lat": 30.1280, "lng": 118.1500, "day": 2, "type": "attraction"},
+    {"name": "西海大峡谷", "lat": 30.1250, "lng": 118.1450, "day": 2, "type": "attraction"},
+    {"name": "白云宾馆", "lat": 30.1230, "lng": 118.1550, "day": 2, "type": "hotel"},
+    {"name": "光明顶", "lat": 30.1240, "lng": 118.1600, "day": 3, "type": "attraction"},
+    {"name": "鳌鱼峰", "lat": 30.1200, "lng": 118.1620, "day": 3, "type": "attraction"},
+    {"name": "百步云梯", "lat": 30.1160, "lng": 118.1630, "day": 3, "type": "attraction"},
+    {"name": "迎客松(玉屏楼)", "lat": 30.1130, "lng": 118.1610, "day": 3, "type": "attraction"},
+    {"name": "玉屏索道下站(慈光阁)", "lat": 30.1100, "lng": 118.1590, "day": 3, "type": "transport"},
+    {"name": "黄山北站", "lat": 29.8390, "lng": 118.3080, "day": 3, "type": "transport"}
+  ]
+}
