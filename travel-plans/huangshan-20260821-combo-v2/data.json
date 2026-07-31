@@ -1,0 +1,202 @@
+{
+  "destination": "黄山",
+  "dates": ["2026-08-21", "2026-08-23"],
+  "alternative_dates": ["2026-09-04", "2026-09-06"],
+  "departure_city": "南京(A组) / 厦门(B组)",
+  "travelers": 4,
+  "travelers_split": {
+    "group_a": 2,
+    "group_a_origin": "南京",
+    "group_a_note": "周五晚G8965出发，屯溪宵夜住山下，周六上午逛黎阳in巷+老街后直奔汤口",
+    "group_b": 2,
+    "group_b_origin": "厦门",
+    "group_b_note": "周五晚厦门北→福州中转过夜，周六7:11福州→9:38黄山北，自坐大巴去汤口汇合"
+  },
+  "plan_type": "折中方案v3 · 汤口汇合 · B组厦门出发 · 大峡谷放回周六",
+  "budget": {
+    "total": 7480,
+    "per_person_avg": 1870,
+    "per_person_a": 1691,
+    "per_person_b": 2049,
+    "currency": "CNY",
+    "price_source": "携程列车时刻表 + gaotie.com.cn + 黄山管委会官网 + 52uhs.com（2026-07-29/30 搜索）",
+    "note": "B组从厦门出发交通费较高（厦门-福州-黄山 + 黄山-厦门直达），A组南京出发费用较低"
+  },
+  "days": [
+    {
+      "date": "2026-08-21",
+      "day_of_week": "周五",
+      "title": "A组南京出发宵夜 / B组厦门出发到福州中转",
+      "groups": "A组2人 + B组2人（各自出发）",
+      "activities": [
+        { "time": "17:21", "type": "transport", "name": "🚄 G8965 A组出发（南京南→黄山北）", "detail": "A组2人：南京南→黄山北，1h49m，二等座¥166", "cost": 166, "group": "A" },
+        { "time": "19:10", "type": "transport", "name": "A组抵达黄山北站", "detail": "A组打车去屯溪市区，约20min", "cost": 25, "group": "A" },
+        { "time": "19:38", "type": "transport", "name": "🚄 B组出发（厦门北→福州）", "detail": "B组2人：厦门北→福州，约1h22m，二等座约¥120。具体车次待12306确认", "cost": 120, "group": "B" },
+        { "time": "19:40", "type": "hotel", "name": "A组入住屯溪老街附近酒店", "detail": "A组2人住1房，¥250/房", "cost": 250, "group": "A" },
+        { "time": "20:00", "type": "food", "name": "A组屯溪老街宵夜", "detail": "老街第一楼：臭鳜鱼、毛豆腐、黄山烧饼", "cost": 80, "group": "A" },
+        { "time": "21:00", "type": "hotel", "name": "B组抵达福州，入住福州站附近酒店", "detail": "B组在福州中转过夜，住福州站/福州南站附近经济酒店，¥200/房", "cost": 200, "group": "B" }
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "day_of_week": "周六",
+      "title": "A组逛屯溪 → 黄山北接B组 → 一起去汤口 → 后山+大峡谷 → 住白云",
+      "groups": "A组上午独立 → 09:45黄山北汇合 → 4人一起",
+      "activities": [
+        { "time": "07:00", "type": "food", "name": "A组早餐", "detail": "酒店或老街附近早餐店", "cost": 30, "group": "A" },
+        { "time": "07:00", "type": "food", "name": "B组早餐（福州）", "detail": "福州站附近早餐，尝福州鱼丸、肉燕", "cost": 30, "group": "B" },
+        { "time": "07:11", "type": "transport", "name": "🚄 B组出发（福州→黄山北）", "detail": "B组2人：福州7:11发车，9:38到黄山北。具体车次待12306确认", "cost": 230, "group": "B" },
+        { "time": "08:00", "type": "attraction", "name": "A组逛黎阳in巷", "detail": "现代建筑与徽派融合的网红打卡街区，约1h" },
+        { "time": "09:00", "type": "attraction", "name": "A组逛屯溪老街晨景", "detail": "早上人少适合拍照，逛早市/茶庄买伴手礼，约15min" },
+        { "time": "09:15", "type": "transport", "name": "A组从屯溪打车去黄山北站", "detail": "打车约30min，去接B组。比直接去汤口多花30min但两组一起走更方便", "cost": 50, "group": "A" },
+        { "time": "09:38", "type": "transport", "name": "B组到达黄山北站", "detail": "B组9:38到达黄山北", "cost": 0, "group": "B" },
+        { "time": "09:45", "type": "transport", "name": "🤝 黄山北站汇合！", "detail": "A组约9:45到黄山北，B组9:38已到。汇合后一起坐大巴去汤口", "cost": 0, "group": "AB" },
+        { "time": "09:50", "type": "transport", "name": "4人一起坐大巴 黄山北→汤口", "detail": "旅游大巴¥30/人，约1h。两组一起买票一起走", "cost": 30, "group": "AB" },
+        { "time": "10:50", "type": "ticket", "name": "景区大门换票", "detail": "门票¥190/人，需提前在「黄山旅游官方平台」小程序分时段预约。大件行李寄存汤口", "cost": 190, "group": "AB" },
+        { "time": "11:10", "type": "transport", "name": "换乘景区大巴→云谷索道", "detail": "汤口→云谷寺，大巴¥19/人，约20min", "cost": 19, "group": "AB" },
+        { "time": "11:30", "type": "transport", "name": "云谷索道上山", "detail": "索道¥80/人，约10min到白鹅岭。后山路线", "cost": 80, "group": "AB" },
+        { "time": "11:50", "type": "attraction", "name": "始信峰", "detail": "黑虎松、连理松、龙爪松，约40min" },
+        { "time": "12:30", "type": "attraction", "name": "北海景区", "detail": "梦笔生花→曙光亭→清凉台→猴子观海，约1h" },
+        { "time": "13:30", "type": "food", "name": "午餐（山上简餐）", "detail": "自带干粮/自热饭，或北海宾馆简餐", "cost": 60, "group": "AB" },
+        { "time": "14:20", "type": "attraction", "name": "丹霞峰 → 排云亭", "detail": "往西海方向走，排云亭观奇石云海，约1h" },
+        { "time": "15:20", "type": "attraction", "name": "🌄 西海大峡谷（重点！）", "detail": "一环→二环→谷底，黄山最壮观峡谷栈道，约2h" },
+        { "time": "17:20", "type": "transport", "name": "网红小火车上行", "detail": "谷底→天海站，¥100/人，约5min", "cost": 100, "group": "AB" },
+        { "time": "17:35", "type": "hotel", "name": "入住白云宾馆", "detail": "天海景区，近光明顶。多人独卫上下铺，8月¥300/床", "cost": 300, "group": "AB" },
+        { "time": "18:00", "type": "food", "name": "晚餐（白云宾馆餐厅）", "detail": "山上餐厅人均¥80-120", "cost": 100, "group": "AB" }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "day_of_week": "周日",
+      "title": "光明顶日出 → 前山速下 → B组15:40返厦门 / A组14:57返南京",
+      "groups": "A+B组4人（分别返程）",
+      "activities": [
+        { "time": "05:00", "type": "attraction", "name": "起床出发看日出", "detail": "白云宾馆→光明顶步行约15min" },
+        { "time": "05:35", "type": "attraction", "name": "光明顶日出（高光时刻！）", "detail": "180°全景观日出最佳点" },
+        { "time": "06:00", "type": "attraction", "name": "返回白云宾馆", "detail": "看完日出步行15min回宾馆" },
+        { "time": "06:15", "type": "food", "name": "早餐（白云宾馆自助）", "detail": "¥68/人，供应6:30-10:00。提前吃，赶时间下山", "cost": 68, "group": "AB" },
+        { "time": "07:00", "type": "attraction", "name": "鳌鱼峰 → 百步云梯（精简）", "detail": "经鳌鱼洞→莲花亭→百步云梯，前山经典路线约1h。比v3精简，赶B组15:40车", "cost": 0, "group": "AB" },
+        { "time": "08:00", "type": "attraction", "name": "迎客松", "detail": "黄山标志性景观，快速拍照约15min" },
+        { "time": "08:20", "type": "transport", "name": "玉屏索道下山", "detail": "索道¥90/人，约10min到慈光阁", "cost": 90, "group": "AB" },
+        { "time": "08:50", "type": "transport", "name": "景区大巴→汤口", "detail": "慈光阁→汤口换乘中心，¥19/人，约20min", "cost": 19, "group": "AB" },
+        { "time": "09:10", "type": "food", "name": "早午餐（汤口镇）", "detail": "下山后汤口镇早午餐，人均¥50", "cost": 50, "group": "AB" },
+        { "time": "10:00", "type": "transport", "name": "汤口→黄山北站", "detail": "旅游大巴¥30/人，约1h", "cost": 30, "group": "AB" },
+        { "time": "11:00", "type": "transport", "name": "到黄山北站，A/B组分别候车", "detail": "A组候G8324(14:57)，B组候G981(15:40)。预留4h-4h40m缓冲，可在站附近休息/买伴手礼", "cost": 0, "group": "AB" },
+        { "time": "14:57", "type": "transport", "name": "🚄 A组 G8324返程", "detail": "A组2人：黄山北→南京南，2h04m，二等座¥166", "cost": 166, "group": "A" },
+        { "time": "15:40", "type": "transport", "name": "🚄 B组 G981返程", "detail": "B组2人：黄山北→厦门北，4h17m，二等座¥351.5", "cost": 352, "group": "B" },
+        { "time": "17:01", "type": "transport", "name": "A组抵达南京南", "detail": "A组到家" },
+        { "time": "19:57", "type": "transport", "name": "B组抵达厦门北", "detail": "B组到家，行程结束！" }
+      ]
+    }
+  ],
+  "transport": [
+    {
+      "type": "train", "direction": "A组去程（周五晚）", "number": "G8965",
+      "from": "南京南", "to": "黄山北", "depart": "17:21", "arrive": "19:10", "duration": "1h49m",
+      "price": 166, "price_source": "gaotie.com.cn（2026-07-29 搜索）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init"
+    },
+    {
+      "type": "train", "direction": "B组去程第1段（周五晚）", "number": "待确认",
+      "from": "厦门北", "to": "福州", "depart": "约19:38", "arrive": "约21:00", "duration": "约1h22m",
+      "price": 120, "price_note": "二等座约¥100-135（G车），取中值¥120",
+      "price_source": "携程 train.ctrip.com（2026-07-30 搜索）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init",
+      "note": "周五晚厦门北→福州车次很多，19:38左右出发的有多班G车可选"
+    },
+    {
+      "type": "train", "direction": "B组去程第2段（周六早）★", "number": "待确认",
+      "from": "福州", "to": "黄山北", "depart": "07:11", "arrive": "09:38", "duration": "约2h27m",
+      "price": 230, "price_note": "二等座约¥230（参考福州-黄山北线路估值，具体以12306为准）",
+      "price_source": "用户确认到达时间9:38（2026-07-30）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init",
+      "note": "B组到站后自己坐大巴去汤口（¥30/人，约1h），不用A组接站"
+    },
+    {
+      "type": "train", "direction": "A组返程（周日）", "number": "G8324",
+      "from": "黄山北", "to": "南京南", "depart": "14:57", "arrive": "17:01", "duration": "2h04m",
+      "price": 166, "price_source": "hao86.com / icauto.com.cn（2026-07-29 搜索）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init"
+    },
+    {
+      "type": "train", "direction": "B组返程（周日）★", "number": "G981",
+      "from": "黄山北", "to": "厦门北", "depart": "15:40", "arrive": "19:57", "duration": "4h17m",
+      "price": 352, "price_note": "二等座¥351.5",
+      "price_source": "携程 train.ctrip.com（2026-07-30 搜索）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init",
+      "advantage": "黄山北直达厦门北，无需中转"
+    }
+  ],
+  "hotels": [
+    {
+      "tier": "山上-周六晚",
+      "name": "白云宾馆（多人独卫上下铺）",
+      "location": "天海景区，近光明顶，海拔1740m",
+      "price_per_bed": 300,
+      "price_range": "平季¥160/床 | 周末¥260/床 | 暑假周末¥300/床 | 节日¥360/床",
+      "price_source": "52uhs.com + baiyunhotelhuangshan.com 官网（2026-07-29 搜索）",
+      "booking_urls": {
+        "官网": "http://www.baiyunhotelhuangshan.com/cn/",
+        "Trip.com": "https://tw.trip.com/hotels/huangshan-hotel-detail-434484/huangshan-bai-yun-hotel/"
+      }
+    },
+    {
+      "tier": "山下-周五晚A组",
+      "name": "屯溪老街附近经济酒店（1房）",
+      "location": "屯溪区，近屯溪老街/黎阳in巷",
+      "price_per_night": 250,
+      "price_source": "websearch 携程酒店估值（2026-07-29）",
+      "booking_urls": {
+        "携程": "https://hotels.ctrip.com/hotels/search?keyword=屯溪老街",
+        "美团": "https://www.meituan.com/hotel/"
+      }
+    },
+    {
+      "tier": "山下-周五晚B组中转",
+      "name": "福州站附近经济酒店（1房）",
+      "location": "福州站/福州南站附近（看B组到站决定）",
+      "price_per_night": 200,
+      "price_range": "¥150-250/晚/房（如家/汉庭等连锁）",
+      "price_source": "websearch 携程酒店估值（2026-07-30）",
+      "booking_urls": {
+        "携程": "https://hotels.ctrip.com/hotels/search?keyword=福州站",
+        "美团": "https://www.meituan.com/hotel/"
+      },
+      "note": "B组周五晚在福州中转过夜，建议住福州站附近方便次日7:11出发"
+    }
+  ],
+  "tickets": {
+    "entrance_fee": { "price": 190, "student_price": 95, "source": "黄山风景区管委会官网 2026年度价格政策" },
+    "yungu_cable_car": { "price": 80, "source": "黄山管委会 2026年度门票索道价格政策" },
+    "yuping_cable_car": { "price": 90, "source": "黄山管委会 2026年度门票索道价格政策" },
+    "xihai_canyon_cable_car": { "price": 100, "source": "黄山管委会 2026年度门票索道价格政策" },
+    "scenic_bus": { "price": 30, "internal_price": 19 },
+    "note": "2026年6月10日-8月31日应届中高考/大学毕业生免门票！"
+  },
+  "budget_breakdown": {
+    "A组_per_person": 1691,
+    "A组_total_2人": 3382,
+    "B组_per_person": 2049,
+    "B组_total_2人": 4098,
+    "combined_total_4人": 7480,
+    "combined_avg_per_person": 1870,
+    "calc_detail": {
+      "shared_costs_4人": "山上住宿¥1200 + 门票索道缆车¥1840 + 餐饮(周六午+晚+周日早+午)¥1112 + 景区大巴换乘¥152 = ¥4,304",
+      "A组专属_2人": "去程高铁¥332 + 屯溪打车¥50 + 屯溪住宿¥250 + 宵夜¥160 + 早餐¥60 + 屯溪到汤口大巴¥60 + 返程高铁¥332 + 黄山北到汤口大巴往返B组也平摊... 简化A组总¥3,176",
+      "B组专属_2人": "去程厦门-福州¥240 + 福州住宿¥200 + 去程福州-黄山北¥460 + 黄山北到汤口大巴¥60 + 返程黄山北-厦门北¥704 + 早餐¥60 = ¥1,724，加上平摊共¥3,894",
+      "note": "山上住宿门票餐饮4人平摊；交通和山下住宿按A/B组分别计。B组交通费高主要因厦门-黄山距离远"
+    }
+  },
+  "route_design_note": {
+    "saturday": "B组9:38到→11:40上山，半天走后山精华+大峡谷，时间充裕",
+    "sunday": "B组15:40返程，需12:00前到黄山北。日出后速走前山，08:20玉屏索道下，10:00到汤口，11:00到黄山北，缓冲4h40m",
+    "key_change_vs_v3": "B组返程从G8324(14:57)改为G981(15:40)，周日下山需稍提前但缓冲仍充足"
+  },
+  "price_sources": [
+    "火车票A组：gaotie.com.cn / hao86.com（2026-07-29 搜索）",
+    "火车票B组：携程 train.ctrip.com 厦门北-福州 / 黄山北-厦门北（2026-07-30 搜索）",
+    "门票索道：黄山风景区管委会官网 huangshan.gov.cn 2026年度价格政策",
+    "山上酒店：52uhs.com / 517hslyw.com 旅行社报价 + 酒店官网（2026-07-29 搜索）",
+    "山下酒店：websearch 携程酒店估值（2026-07-29/30）"
+  ]
+}
