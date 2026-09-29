@@ -3,19 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>🇻🇳 越南旅行地图 · 82 地点</title>
+<title>🇻🇳 越南旅行地图</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
   body { margin: 0; font-family: "Microsoft YaHei", -apple-system, sans-serif; }
   #map { width: 100vw; height: 100vh; }
   .panel { position: fixed; top: 12px; right: 12px; z-index: 1000; background: #fff; border-radius: 14px;
-           padding: 14px 16px; box-shadow: 0 2px 14px rgba(0,0,0,.2); max-width: 280px; }
-  .panel h3 { margin: 0 0 8px; font-size: 15px; }
-  .btn { display: inline-block; margin: 3px 4px 3px 0; padding: 4px 10px; border-radius: 14px;
+           padding: 12px 14px; box-shadow: 0 2px 14px rgba(0,0,0,.2); max-width: 260px; }
+  .panel h3 { margin: 0 0 6px; font-size: 15px; }
+  .btn { display: inline-block; margin: 2px 4px 2px 0; padding: 3px 10px; border-radius: 14px;
          border: 1px solid #ddd; cursor: pointer; font-size: 12px; background: #fafafa; user-select: none; }
   .btn.on { background: #1F4E79; color: #fff; border-color: #1F4E79; }
   .stat { font-size: 12px; color: #777; margin-top: 4px; }
+  .hint { font-size: 11px; color: #999; margin-top: 4px; }
   .pin { text-align: center; }
   .pin .dot { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff;
               box-shadow: 0 1px 5px rgba(0,0,0,.45); display: flex; align-items: center;
@@ -25,9 +26,20 @@
   .pop-title { font-weight: bold; font-size: 14px; margin-bottom: 4px; }
   .pop-meta { font-size: 12px; color: #666; margin-bottom: 2px; max-width: 230px; }
   .pop-warn { color: #E65100; font-size: 12px; }
-  .nav-btn { display: inline-block; margin-top: 6px; padding: 5px 12px; background: #1F4E79; color: #fff;
-             border-radius: 16px; text-decoration: none; font-size: 12px; }
-  .nav-btn:active { background: #163a5c; }
+  .pop-actions { margin-top: 8px; }
+  .nav-btn { display: inline-block; padding: 6px 14px; border-radius: 16px; text-decoration: none;
+             font-size: 13px; margin-right: 6px; }
+  .nav-primary { background: #1F4E79; color: #fff; }
+  .nav-secondary { background: #fff; color: #1F4E79; border: 1px solid #1F4E79; }
+  .nav-btn:active { opacity: .85; }
+  .locate-btn { position: fixed; bottom: 24px; right: 12px; z-index: 1000; width: 44px; height: 44px;
+                background: #fff; border: 2px solid rgba(0,0,0,.25); border-radius: 50%; cursor: pointer;
+                font-size: 20px; line-height: 40px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+  .locate-btn.locating { animation: pulse 1s infinite; }
+  @keyframes pulse { 50% { background: #cce5ff; } }
+  .toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); z-index: 2000;
+           background: rgba(0,0,0,.75); color: #fff; border-radius: 8px; padding: 8px 16px;
+           font-size: 13px; display: none; }
 </style>
 </head>
 <body>
@@ -37,19 +49,37 @@
   <div id="cityFilter"></div>
   <div id="catFilter" style="margin-top:4px"></div>
   <div class="stat" id="stat"></div>
-  <div class="stat" style="color:#999">点标记可查看详情 + 🧭高德导航</div>
+  <div class="hint">点标记查看详情 · 🧭一键导航 · 右下角📍定位</div>
 </div>
+<div class="locate-btn" id="locateBtn" title="定位到我">📍</div>
+<div class="toast" id="toast"></div>
 <script>
 const POINTS = [{"name": "粉红教堂（新定教堂）", "lat": 10.7883598, "lon": 106.6906418, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明💒一日游攻略》、《胡志明市超全游览路线》、《一眼看懂胡志明旅游地图》", "addr": "Nhà thờ Tân Định"}, {"name": "西贡中央邮局", "lat": 10.7799557, "lon": 106.6999921, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明💒一日游攻略》、《胡志明市超全游览路线》、《一眼看懂胡志明旅游地图》", "addr": "Bưu điện Trung tâm Sài Gòn"}, {"name": "咖啡公寓（42 Nguyễn Huệ）", "lat": 10.7741332, "lon": 106.7042116, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明💒一日游攻略》、《胡志明市超全游览路线》、《一眼看懂胡志明旅游地图》", "addr": "chung cư 42 Nguyễn Huệ"}, {"name": "统一宫", "lat": 10.7770348, "lon": 106.695488, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明💒一日游攻略》、《胡志明市超全游览路线》、《一眼看懂胡志明旅游地图》", "addr": "Dinh Độc Lập"}, {"name": "战争遗迹博物馆", "lat": 10.7793647, "lon": 106.6922806, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明市超全游览路线》、《一眼看懂胡志明旅游地图》", "addr": "Bảo tàng Chứng tích Chiến tranh"}, {"name": "胡志明市美术馆", "lat": 10.769596, "lon": 106.69927, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明市超全游览路线》、《一眼看懂胡志明旅游地图》", "addr": "Bảo tàng Mỹ thuật Thành phố Hồ Chí Minh"}, {"name": "胡志明市博物馆", "lat": 10.7759106, "lon": 106.6996214, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明市超全游览路线》", "addr": "Bảo tàng Thành phố Hồ Chí Minh"}, {"name": "Bitexco 金融塔", "lat": 10.7718634, "lon": 106.7044633, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明市超全游览路线》、《一眼看懂胡志明旅游地图》", "addr": "Bitexco Financial Tower"}, {"name": "Landmark 81", "lat": 10.79488, "lon": 106.72185, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明东南亚最高高空酒吧Blank Lounge》", "addr": "Landmark 81"}, {"name": "范五老街", "lat": 10.7677522, "lon": 106.6924769, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明市超全游览路线》、《一眼看懂胡志明旅游地图》", "addr": "Saigon Cozy2 At Bui Vien Walking Street"}, {"name": "圣母大教堂（红教堂，维修中）", "lat": 10.77978, "lon": 106.69904, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明市超全游览路线》", "addr": "圣母大教堂（红教堂，维修中）"}, {"name": "西贡书街", "lat": 10.7765867, "lon": 106.7009177, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明市超全游览路线》", "addr": "Trụ sở Ủy ban nhân dân Thành phố Hồ Chí Minh"}, {"name": "胡志明大剧院", "lat": 10.7767437, "lon": 106.7032488, "cat": "景点", "city": "胡志明市", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《胡志明市超全游览路线》、《胡志明💒一日游攻略》", "addr": "Nhà hát Thành phố"}, {"name": "Blank Lounge（Landmark 81 75-76F）", "lat": 10.79488, "lon": 106.72185, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明东南亚最高高空酒吧Blank Lounge》", "addr": "75–76F Landmark 81, 208 Nguyễn Hữu Cảnh, P.22, Bình Thạnh"}, {"name": "Little Hanoi Egg Coffee", "lat": 10.768602, "lon": 106.6900885, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明｜Little Hanoi Egg测评》、《胡志明你还蛮好吃的嘛》", "addr": "Little HaNoi Egg Coffee"}, {"name": "Man Moi（战争纪念馆附近）", "lat": 10.778681, "lon": 106.6921566, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明你还蛮好吃的嘛》", "addr": "Mặn Mòi, Tao Đàn"}, {"name": "The Workshop Coffee（亚洲Top3咖啡馆）", "lat": 10.7734061, "lon": 106.7055391, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明你还蛮好吃的嘛》", "addr": "The Workshop Coffee"}, {"name": "Phở Việt Nam（米其林河粉）", "lat": 10.771252, "lon": 106.6962092, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明💒一日游攻略》、《给去胡志明的朋友一些参考》、《🇻🇳🍲胡志明已吃不欠！》", "addr": "14 Phạm Hồng Thái, Bến Thành, Quận 1"}, {"name": "Phở SOL", "lat": 10.7717143, "lon": 106.7050647, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明💒一日游攻略》", "addr": "27 Đ. Hải Triều, Bến Nghé, Quận 1"}, {"name": "Linh 咖啡（盐咖啡）", "lat": 10.7473634, "lon": 106.7227913, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明你还蛮好吃的嘛》", "addr": "Walya Coffee"}, {"name": "Lvoire Pastry（第一甜品店）", "lat": 10.7789, "lon": 106.7005, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《胡志明你还蛮好吃的嘛》", "addr": "柏悦酒店附近(D1)"}, {"name": "Nhà Tú（蟹黄牡蛎肥牛火锅）", "lat": 10.7939241, "lon": 106.6495081, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明你还蛮好吃的嘛》、《🇻🇳🍲胡志明已吃不欠！》", "addr": "Nguyễn Tử Nha"}, {"name": "Bánh Mì Huynh Hoa（法棍）", "lat": 10.7713922, "lon": 106.6927189, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《给去胡志明的朋友一些参考》、《胡志明你还蛮好吃的嘛》", "addr": "Bánh Mì Huỳnh Hoa"}, {"name": "Pho Hoa Pasteur", "lat": 10.7824169, "lon": 106.6944401, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《给去胡志明的朋友一些参考》", "addr": "Trường Đại học Kiến trúc Thành phố Hồ Chí Minh"}, {"name": "Bếp Cuốn Sài Gòn（米其林越南菜）", "lat": 10.777, "lon": 106.7, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《给去胡志明的朋友一些参考》、《🇻🇳🍲胡志明已吃不欠！》", "addr": "D1 中心区"}, {"name": "Bánh Canh Cua 87（蟹肉粉）", "lat": 10.794868, "lon": 106.6908358, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《给去胡志明的朋友一些参考》", "addr": "Bánh Canh Cua 87"}, {"name": "Cục Gạch Quán（越南家常菜）", "lat": 10.7929997, "lon": 106.6889296, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《给去胡志明的朋友一些参考》", "addr": "Cục Gạch Quán"}, {"name": "Ngọc Thạch Quán（甜品）", "lat": 10.7728868, "lon": 106.666188, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《🇻🇳🍲胡志明已吃不欠！》", "addr": "Trường Đại học Y khoa Phạm Ngọc Thạch"}, {"name": "Cong Café 粉红教堂店（椰子绿米冰沙）", "lat": 10.78872, "lon": 106.69127, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《🇻🇳🍲胡志明已吃不欠！》", "addr": "Cong Café 粉红教堂店（椰子绿米冰沙）"}, {"name": "蟹黄粉小店（粉红教堂600米，强推）", "lat": 10.7883598, "lon": 106.6906418, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《🇻🇳胡志明记得一定要来吃的蟹黄粉》", "addr": "Nhà thờ Tân Định"}, {"name": "牛蛙粥摊（粉红教堂附近夜市，本地人店）", "lat": 10.7883598, "lon": 106.6906418, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《我再说一遍来胡志明不去网红店来这家》、《抖音·十一Eleven《粉红教堂旁田鸡粥》(18:30营业)》", "addr": "Nhà thờ Tân Định"}, {"name": "7 Bridges Brewing Co（西贡精酿）", "lat": 10.775, "lon": 106.701, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《西贡值得一来的啤酒吧》", "addr": "一区"}, {"name": "Heart of Darkness（精酿酒厂）", "lat": 10.7797138, "lon": 106.7028996, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《🇻🇳胡志明市必喝『Heart of Darkness』》", "addr": "Nhà Hàng Heart Of Darkness Craft Brewery"}, {"name": "RAW + Atelier（Best 50 鸡尾酒）", "lat": 10.776, "lon": 106.7034, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《胡志明小酒馆日记》、《胡志明Best 50 Bar hopping》、《来喝越南Top 20的鸡尾酒》", "addr": "D1 酒吧区"}, {"name": "The Enigma Mansion（Best 50）", "lat": 10.7808592, "lon": 106.6946027, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明小酒馆日记》、《胡志明Best 50 Bar hopping》", "addr": "Saigon Mansion"}, {"name": "Summer Experiment（Best 50）", "lat": 10.7747294, "lon": 106.6980846, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明小酒馆日记》、《胡志明Best 50 Bar hopping》", "addr": "Summer Experiment"}, {"name": "Stir（Best 50）", "lat": 10.7700574, "lon": 106.7005236, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明小酒馆日记》、《胡志明Best 50 Bar hopping》", "addr": "Star Anise Saigon"}, {"name": "Tamarind Hidden Cocktail Bar", "lat": 10.778226, "lon": 106.698599, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《胡志明小酒馆日记》、《胡志明Best 50 Bar hopping》", "addr": "House Of Merlin - Cocktail Bar & Eatery"}, {"name": "Phở Hưng 阿雄牛肉粉（四大天王）", "lat": 10.75638, "lon": 106.67692, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《抖音·湾区B哥《牛肉粉四大天王》》", "addr": "241-243 Nguyễn Trãi, Q1（米其林推荐, 6:00-次日3:00）"}, {"name": "Phở Lẽ 锦利牛肉粉（四大天王）", "lat": 10.75525, "lon": 106.67353, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《抖音·湾区B哥《牛肉粉四大天王》》", "addr": "413-415 Nguyễn Trãi, Q5 老店（米其林必比登）/ 分店 303-305 Võ Văn Tần, Q3"}, {"name": "阿琼牛肉炖粉（范五老街附近）", "lat": 10.7677522, "lon": 106.6924769, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《抖音·湾区B哥《牛肉粉四大天王》》", "addr": "Saigon Cozy2 At Bui Vien Walking Street"}, {"name": "Bún Mọc Thanh Mai（清汤粉）", "lat": 10.773, "lon": 106.6952, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《抖音·曾yaya《胡志明美食合集》》", "addr": "14 Trương Định, Bến Thành, Q1（滨城市场西侧）"}, {"name": "Cò Tú Cà Mau（越南海鲜）", "lat": 10.7905, "lon": 106.695, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《抖音·曾yaya《胡志明美食合集》》", "addr": "219 Hoàng Sa, Tân Định, Q1（粉红教堂以北运河边）"}, {"name": "Five Boys 鲜果沙冰（小巷）", "lat": 10.775, "lon": 106.7, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《抖音·曾yaya《胡志明美食合集》》", "addr": "D1小巷"}, {"name": "Breadventure 法棍（周五六日营业）", "lat": 10.8036445, "lon": 106.7289327, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《抖音·十一Eleven《为了这口法棍排45分钟》》", "addr": "24 Đ. Đỗ Quang, An Khánh"}, {"name": "爆火膏蟹餐厅（黄油蟹/罗氏虾）", "lat": 10.7725301, "lon": 106.6980365, "cat": "美食", "city": "胡志明市", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《抖音·十一Eleven《螃蟹店排队》》、《小红书《本来以为踩雷》》", "addr": "Chợ Bến Thành"}, {"name": "SIZ SPA", "lat": 10.765935, "lon": 106.689767, "cat": "按摩", "city": "胡志明市", "color": "#8E24AA", "icon": "💆", "approx": false, "notes": "《在越南请务必狠狠去按摩》", "addr": "154 Đ. Cống Quỳnh, Cầu Ông Lãnh, Quận 1"}, {"name": "Sa Spa（1区）", "lat": 10.785, "lon": 106.699, "cat": "按摩", "city": "胡志明市", "color": "#8E24AA", "icon": "💆", "approx": true, "notes": "《胡志明1区可以按摩到睡着的店Sa Spa》", "addr": "D1"}, {"name": "Sả Spa Central", "lat": 10.7745115, "lon": 106.6965738, "cat": "按摩", "city": "胡志明市", "color": "#8E24AA", "icon": "💆", "approx": false, "notes": "《胡志明市按摩洗头三家谷歌高分店实测》", "addr": "Khách Sạn Rosa & Spa"}, {"name": "Phaya Thai Spa Quận 1", "lat": 10.78, "lon": 106.703, "cat": "按摩", "city": "胡志明市", "color": "#8E24AA", "icon": "💆", "approx": true, "notes": "《胡志明市按摩洗头三家谷歌高分店实测》", "addr": "D1"}, {"name": "Sen Trắng Spa & Wellness", "lat": 10.7838557, "lon": 106.6982227, "cat": "按摩", "city": "胡志明市", "color": "#8E24AA", "icon": "💆", "approx": false, "notes": "《胡志明市按摩洗头三家谷歌高分店实测》", "addr": "Trung Tâm Chăm Sóc Sắc Đẹp Sen Trang"}, {"name": "Xíu Spa", "lat": 10.775, "lon": 106.7, "cat": "按摩", "city": "胡志明市", "color": "#8E24AA", "icon": "💆", "approx": true, "notes": "《胡志明洗头spa》", "addr": "D1"}, {"name": "KIM HEALTH & BEAUTY Spa", "lat": 10.7491886, "lon": 106.6183855, "cat": "按摩", "city": "胡志明市", "color": "#8E24AA", "icon": "💆", "approx": false, "notes": "《胡志明洗头spa》", "addr": "Doong Spa Health & Beauty"}, {"name": "An's Spa & Massage（五星强推）", "lat": 10.78554, "lon": 106.69978, "cat": "按摩", "city": "胡志明市", "color": "#8E24AA", "icon": "💆", "approx": true, "notes": "《胡志明洗头spa》、《越南胡志明市按摩推荐》", "addr": "多分店(D1)"}, {"name": "Temple Leaf（按摩）", "lat": 10.78, "lon": 106.695, "cat": "按摩", "city": "胡志明市", "color": "#8E24AA", "icon": "💆", "approx": true, "notes": "《越南胡志明市按摩推荐》", "addr": "D1-D3"}, {"name": "B&B Chill Home（范五老街旁民宿）", "lat": 10.7677522, "lon": 106.6924769, "cat": "住宿", "city": "胡志明市", "color": "#43A047", "icon": "🏨", "approx": true, "notes": "《刚从胡志明回来无雷经验分享》", "addr": "Saigon Cozy2 At Bui Vien Walking Street"}, {"name": "滨城市场", "lat": 10.7725301, "lon": 106.6980365, "cat": "购物", "city": "胡志明市", "color": "#E53935", "icon": "🛍", "approx": false, "notes": "《刚从胡志明回来无雷经验分享》、《胡志明市超全游览路线》、《🇻🇳🍲胡志明已吃不欠！》", "addr": "Chợ Bến Thành"}, {"name": "西贡广场", "lat": 10.7764848, "lon": 106.7016217, "cat": "购物", "city": "胡志明市", "color": "#E53935", "icon": "🛍", "approx": false, "notes": "《胡志明市超全游览路线》", "addr": "Union Square"}, {"name": "Sầu Riêng Nguyên Ký 榴莲一条街", "lat": 10.77, "lon": 106.695, "cat": "购物", "city": "胡志明市", "color": "#E53935", "icon": "🛍", "approx": true, "notes": "《抖音·曾yaya《胡志明美食合集》》", "addr": "Sầu riêng Nguyên Ký（华人店,猫山王约40rmb/kg,街名待确认）"}, {"name": "新山一国际机场 T2（BDIV ATM 取现点）", "lat": 10.8179793, "lon": 106.6562645, "cat": "交通", "city": "胡志明市", "color": "#00897B", "icon": "🚕", "approx": false, "notes": "《胡志明机场取现金💵攻略！》、《胡志明机场Grab打车点图文指路》", "addr": "Sân bay quốc tế Tân Sơn Nhất"}, {"name": "水上巴士码头（Bạch Đằng）", "lat": 10.7752396, "lon": 106.7070023, "cat": "交通", "city": "胡志明市", "color": "#00897B", "icon": "🚕", "approx": false, "notes": "《胡志明市超全游览路线》", "addr": "Bến tàu Bạch Đằng"}, {"name": "KIM MAI 金梅换汇（范五老街附近）", "lat": 10.7520254, "lon": 106.6638664, "cat": "交通", "city": "胡志明市", "color": "#00897B", "icon": "🚕", "approx": false, "notes": "《刚从胡志明回来无雷经验分享》", "addr": "Kim Mai"}, {"name": "滨城市场旁金店换汇（汇率3800）", "lat": 10.7725301, "lon": 106.6980365, "cat": "交通", "city": "胡志明市", "color": "#00897B", "icon": "🚕", "approx": true, "notes": "《🇻🇳胡志明换汇这里最划算》", "addr": "Chợ Bến Thành"}, {"name": "芽庄大教堂", "lat": 12.2467333, "lon": 109.188137, "cat": "景点", "city": "芽庄", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《芽庄大教堂附近的皮皮虾粗粉》、《自己总结的芽庄吃喝实录》", "addr": "Nhà thờ Chính tòa Nha Trang"}, {"name": "Ba Hồ 瀑布", "lat": 12.3822485, "lon": 109.1329056, "cat": "景点", "city": "芽庄", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《越南芽庄四天三晚攻略》", "addr": "Ba Ho Waterfall"}, {"name": "珍珠岛 Vinpearl（摩天轮景色绝美）", "lat": 12.2026831, "lon": 109.2160022, "cat": "景点", "city": "芽庄", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《准备来芽庄的就只能帮你们到这了》", "addr": "VinPearl Nha Trang"}, {"name": "蚕岛（Hon Tằm）", "lat": 12.2084991, "lon": 109.2871204, "cat": "景点", "city": "芽庄", "color": "#1E88E5", "icon": "🏛", "approx": false, "notes": "《准备来芽庄的就只能帮你们到这了》", "addr": "Hòn Tre"}, {"name": "BINGDOU Bingsu（牛油果冰淇淋）", "lat": 12.2406, "lon": 109.1906, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《来芽庄记住这个十字路口的牛油果冰淇淋》", "addr": "Nguyễn Thị Minh Khai, Nha Trang"}, {"name": "Kem Bơ Vfruit（牛油果冰淇淋）", "lat": 12.2393071, "lon": 109.1921464, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《来芽庄记住这个十字路口的牛油果冰淇淋》、《越南芽庄四天三晚攻略》", "addr": "Vfruit"}, {"name": "Bánh Mì Phan（法棍）", "lat": 12.2398324, "lon": 109.192925, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《自己总结的芽庄吃喝实录》、《越南芽庄四天三晚攻略》", "addr": "Bánh Mì Phan"}, {"name": "BÁNH CANH GHẸ CÔ BA MIỀN BIỂN（皮皮虾粗粉）", "lat": 12.2475, "lon": 109.1872, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《芽庄大教堂附近的皮皮虾粗粉》、《越南芽庄四天三晚攻略》", "addr": "Chi Nhánh 5 Thái Nguyên（大教堂西北侧步行2分钟）"}, {"name": "火车咖啡（大教堂旁，2楼看火车）", "lat": 12.2467333, "lon": 109.188137, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《自己总结的芽庄吃喝实录》", "addr": "Nhà thờ Chính tòa Nha Trang"}, {"name": "Bánh Căn 烤米饼（Bánh Mì Phan 隔壁）", "lat": 12.2398324, "lon": 109.192925, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《越南芽庄四天三晚攻略》", "addr": "Bánh Mì Phan"}, {"name": "Tyro Seafood Restaurant", "lat": 12.238, "lon": 109.198, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《自己总结的芽庄吃喝实录》", "addr": "芽庄海岸区"}, {"name": "Ot Hiem（越南菜）", "lat": 12.241, "lon": 109.193, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《芽庄美食记录真吃撑了》", "addr": "芽庄市区"}, {"name": "Ăn Thôi 2（米其林必比登越南菜）", "lat": 12.2406, "lon": 109.1906, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《这才是来芽庄旅游必吃的越南餐厅》、《越南芽庄四天三晚攻略》", "addr": "64C Nguyễn Thị Minh Khai, Nha Trang"}, {"name": "Katinat（红毛丹奶茶）", "lat": 12.2417131, "lon": 109.1958083, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《芽庄美食记录真吃撑了》", "addr": ""}, {"name": "Pizza 4P's", "lat": 12.2385, "lon": 109.193, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《芽庄美食记录真吃撑了》", "addr": "芽庄市区中心"}, {"name": "Phở Thin（牛肉河粉）", "lat": 12.2479247, "lon": 109.1953044, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《芽庄美食记录真吃撑了》", "addr": "Phở Thìn Hà Nội"}, {"name": "Mộc Quán Seafood（海鲜大排档）", "lat": 12.2430002, "lon": 109.190831, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《芽庄美食记录真吃撑了》", "addr": ""}, {"name": "Phở Hạnh Phúc（河粉）", "lat": 12.2440075, "lon": 109.1910379, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《越南芽庄四天三晚攻略》", "addr": "Phỏ Hạnh Phúc"}, {"name": "La Viet Coffee（亚洲第六咖啡店）", "lat": 12.238, "lon": 109.192, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《越南芽庄四天三晚攻略》", "addr": "芽庄市区"}, {"name": "Quán ăn X.O（本地苍蝇馆子）", "lat": 12.235, "lon": 109.196, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": true, "notes": "《越南芽庄四天三晚攻略》", "addr": "芽庄市区"}, {"name": "Hải Sản Thảo Tiến（机场顺路海鲜）", "lat": 12.2464581, "lon": 109.1927126, "cat": "美食", "city": "芽庄", "color": "#FB8C00", "icon": "🍜", "approx": false, "notes": "《越南芽庄四天三晚攻略》", "addr": "Sân thể thao trường Lý Tự Trọng"}, {"name": "Luxury Anna Spa（芽庄按摩）", "lat": 12.238954, "lon": 109.1928869, "cat": "按摩", "city": "芽庄", "color": "#8E24AA", "icon": "💆", "approx": false, "notes": "《在越南请务必狠狠去按摩》", "addr": "172/8A Bạch Đằng, Nha Trang"}, {"name": "Mia 度假酒店（独栋院子+独立沙滩）", "lat": 12.1341995, "lon": 109.2125537, "cat": "住宿", "city": "芽庄", "color": "#43A047", "icon": "🏨", "approx": false, "notes": "《越南芽庄四天三晚攻略》", "addr": "MIA Resort"}, {"name": "阿米娅娜 Amiana 度假酒店（浮潜+下午茶）", "lat": 12.2954088, "lon": 109.2338291, "cat": "住宿", "city": "芽庄", "color": "#43A047", "icon": "🏨", "approx": false, "notes": "《越南芽庄四天三晚攻略》", "addr": "Amiana Resort Nha Trang"}, {"name": "芽庄中心市场（伴手礼）", "lat": 12.2427608, "lon": 109.1904362, "cat": "购物", "city": "芽庄", "color": "#E53935", "icon": "🛍", "approx": false, "notes": "《越南芽庄四天三晚攻略》", "addr": "Chợ Xóm Mới"}, {"name": "Kiss Souvenir（伴手礼两层楼）", "lat": 12.2404157, "lon": 109.1918051, "cat": "购物", "city": "芽庄", "color": "#E53935", "icon": "🛍", "approx": false, "notes": "《越南芽庄四天三晚攻略》", "addr": "Kissa souvenirs"}, {"name": "96 中国超市（旁旅行社换汇汇率3870）", "lat": 12.2396492, "lon": 109.1957898, "cat": "交通", "city": "芽庄", "color": "#00897B", "icon": "🚕", "approx": false, "notes": "《芽庄这个旅行社换钱汇率高》", "addr": "Night market"}, {"name": "Chua Spa（岘港按摩，美溪沙滩附近）", "lat": 16.0432946, "lon": 108.2216654, "cat": "按摩", "city": "岘港", "color": "#8E24AA", "icon": "💆", "approx": false, "notes": "《在越南请务必狠狠去按摩》", "addr": "269 Núi Thành, Hòa Cường, Đà Nẵng"}];
-const map = L.map("map").setView([12.3, 107.9], 6);
-L.tileLayer("https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}", {
-  subdomains: "1234", maxZoom: 19, attribution: "高德"
-}).addTo(map);
+const OVERSEAS = true;
+const map = L.map("map").setView([13.3953, 107.9528], 6);
 
+// ---- 图层（高德瓦片国内直连；卫星+路网对海外覆盖完整）----
+const amapVec = L.tileLayer("https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}",
+  { subdomains: "1234", maxZoom: 19, attribution: "高德" });
+const amapSat = L.tileLayer("https://wprd0{s}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=7",
+  { subdomains: "1234", maxZoom: 19, attribution: "高德卫星" });
+const amapRoad = L.tileLayer("https://wprd0{s}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=8",
+  { subdomains: "1234", maxZoom: 19, attribution: "高德路网" });
+const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+  { maxZoom: 19, attribution: "OSM" });
+
+const satGroup = L.layerGroup([amapSat, amapRoad]);
+const layers = { "🗺 标准": amapVec, "🛰 卫星+路网": satGroup, "🛰 纯卫星": amapSat, "🌍 OSM": osm };
+L.control.layers(layers, null, { position: "bottomleft" }).addTo(map);
+(OVERSEAS ? satGroup : amapVec).addTo(map);
+
+// ---- 标记 ----
 const markers = [];
 POINTS.forEach(p => {
-  const navUrl = "https://uri.amap.com/marker?position=" + p.lon + "," + p.lat +
-                 "&name=" + encodeURIComponent(p.name) + "&src=VietnamTripMap&callnative=1";
+  const navUrl = "https://uri.amap.com/navigation?to=" + p.lon + "," + p.lat + "," +
+                 encodeURIComponent(p.name) + "&mode=car&policy=1&src=VietnamTripMap&callnative=1";
+  const viewUrl = "https://uri.amap.com/marker?position=" + p.lon + "," + p.lat +
+                  "&name=" + encodeURIComponent(p.name) + "&src=VietnamTripMap&callnative=1";
   const m = L.marker([p.lat, p.lon], { icon: L.divIcon({ className: "",
     html: '<div class="pin"><div class="dot" style="background:' + p.color + '">' + p.icon +
           '</div><span class="lbl">' + p.name.slice(0, 14) + '</span></div>',
@@ -58,13 +88,16 @@ POINTS.forEach(p => {
     '<div class="pop-meta">🏷 ' + p.city + ' · ' + p.cat + (p.approx ? " · 近似定位" : "") + '</div>' +
     (p.addr ? '<div class="pop-meta">📍 ' + p.addr + '</div>' : "") +
     (p.notes ? '<div class="pop-meta">来源：' + p.notes + '</div>' : "") +
-    (p.approx ? '<div class="pop-warn">位置约为附近区域</div>' : "") +
-    '<a class="nav-btn" target="_blank" href="' + navUrl + '">🧭 高德App打开/导航</a>'
-  );
+    (p.approx ? '<div class="pop-warn">位置约为附近区域，建议到后按名称搜索确认</div>' : "") +
+    '<div class="pop-actions">' +
+    '<a class="nav-btn nav-primary" target="_blank" href="' + navUrl + '">🧭 导航前往</a>' +
+    '<a class="nav-btn nav-secondary" target="_blank" href="' + viewUrl + '">📍 查看位置</a>' +
+    '</div>', { maxWidth: 280 });
   m.cat = p.cat; m.city = p.city;
   markers.push(m); m.addTo(map);
 });
 
+// ---- 筛选 ----
 const state = { cat: "全部", city: "全部" };
 function apply() {
   markers.forEach(m => {
@@ -85,17 +118,47 @@ function mk(el, options, key) {
     el.appendChild(b);
   });
 }
-mk(document.getElementById("cityFilter"), ["全部", "胡志明市", "芽庄", "岘港"], "city");
+mk(document.getElementById("cityFilter"), ["全部"].concat(Array.from(new Set(POINTS.map(p => p.city)))), "city");
 const cf = document.getElementById("catFilter");
-["全部"].concat(Object.keys({景点:0,美食:0,按摩:0,住宿:0,购物:0,交通:0})).forEach(c => {
+["全部", "景点", "美食", "按摩", "住宿", "购物", "交通"].forEach(c => {
   const b = document.createElement("span");
   b.className = "btn" + (state.cat === c ? " on" : "");
   b.textContent = c;
   b.onclick = () => { state.cat = c; apply();
-    [...cf.children].forEach(x => x.classList.remove("on")); b.classList.add("on"); };
+    Array.from(cf.children).forEach(x => x.classList.remove("on")); b.classList.add("on"); };
   cf.appendChild(b);
 });
 apply();
+
+// ---- 定位 ----
+const locBtn = document.getElementById("locateBtn");
+const toast = document.getElementById("toast");
+let userMarker = null, accuracyCircle = null;
+function showToast(msg, ms) {
+  toast.textContent = msg; toast.style.display = "block";
+  setTimeout(() => { toast.style.display = "none"; }, ms || 2500);
+}
+locBtn.onclick = () => {
+  if (!navigator.geolocation) { showToast("此浏览器不支持定位"); return; }
+  locBtn.classList.add("locating");
+  locBtn.textContent = "⏳";
+  map.locate({ setView: true, maxZoom: 16, enableHighAccuracy: true, timeout: 10000 });
+};
+map.on("locationfound", e => {
+  locBtn.classList.remove("locating"); locBtn.textContent = "📍";
+  if (userMarker) { map.removeLayer(userMarker); map.removeLayer(accuracyCircle); }
+  userMarker = L.circleMarker([e.latlng.lat, e.latlng.lng], { radius: 8, color: "#136AEC",
+    fillColor: "#136AEC", fillOpacity: 0.9, weight: 2 }).addTo(map)
+    .bindPopup("📍 我的位置").openPopup();
+  accuracyCircle = L.circle([e.latlng.lat, e.latlng.lng], {
+    radius: e.accuracy / 2, color: "#136AEC", weight: 1, fillOpacity: 0.1 }).addTo(map);
+});
+map.on("locationerror", e => {
+  locBtn.classList.remove("locating"); locBtn.textContent = "📍";
+  const msgs = { 1: "定位权限被拒绝，请在浏览器设置允许位置权限", 2: "位置信息不可用",
+                 3: "定位超时，请重试" };
+  showToast(msgs[e.code] || "定位失败");
+});
 </script>
 </body>
 </html>

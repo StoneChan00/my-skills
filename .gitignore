@@ -10,3 +10,5 @@ map-collections/*/captures/
 map-collections/*/artifacts/
 map-collections/*/note_list.json
 __pycache__/
+map-tiles-check.png
+map-popup-check.png
