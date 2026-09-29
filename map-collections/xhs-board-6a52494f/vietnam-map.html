@@ -49,7 +49,7 @@
   <div id="cityFilter"></div>
   <div id="catFilter" style="margin-top:4px"></div>
   <div class="stat" id="stat"></div>
-  <div class="hint">点标记查看详情 · 🧭一键导航 · 右下角📍定位</div>
+  <div class="hint">点标记 → 🧭一键导航 · 📍定位 · 左下角切换图层（当地打开自动选最佳道路图）</div>
 </div>
 <div class="locate-btn" id="locateBtn" title="定位到我">📍</div>
 <div class="toast" id="toast"></div>
@@ -58,20 +58,41 @@ const POINTS = [{"name": "粉红教堂（新定教堂）", "lat": 10.7883598, "l
 const OVERSEAS = true;
 const map = L.map("map").setView([13.3953, 107.9528], 6);
 
-// ---- 图层（高德瓦片国内直连；卫星+路网对海外覆盖完整）----
-const amapVec = L.tileLayer("https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}",
-  { subdomains: "1234", maxZoom: 19, attribution: "高德" });
-const amapSat = L.tileLayer("https://wprd0{s}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=7",
-  { subdomains: "1234", maxZoom: 19, attribution: "高德卫星" });
-const amapRoad = L.tileLayer("https://wprd0{s}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=8",
-  { subdomains: "1234", maxZoom: 19, attribution: "高德路网" });
+// ---- 图层（多源：OSM道路最细/Esri全球街道/高德卫星国内直连）----
 const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
   { maxZoom: 19, attribution: "OSM" });
+const esriStreet = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+  { maxZoom: 19, attribution: "Esri" });
+const amapSat = L.tileLayer("https://wprd0{s}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=7",
+  { subdomains: "1234", maxZoom: 19, attribution: "高德卫星" });
+const amapVec = L.tileLayer("https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}",
+  { subdomains: "1234", maxZoom: 19, attribution: "高德" });
 
-const satGroup = L.layerGroup([amapSat, amapRoad]);
-const layers = { "🗺 标准": amapVec, "🛰 卫星+路网": satGroup, "🛰 纯卫星": amapSat, "🌍 OSM": osm };
+const layers = { "🗺 街道(OSM)": osm, "🗺 街道(Esri)": esriStreet, "🛰 卫星": amapSat, "🗺 高德标准": amapVec };
 L.control.layers(layers, null, { position: "bottomleft" }).addTo(map);
-(OVERSEAS ? satGroup : amapVec).addTo(map);
+
+// ---- 智能默认：探测瓦片源可达性（OSM → Esri → 卫星），海外优先道路图 ----
+function probeTile(url, ms) {
+  return new Promise(res => {
+    const img = new Image();
+    const t = setTimeout(() => { img.src = ""; res(false); }, ms);
+    img.onload = () => { clearTimeout(t); res(img.naturalWidth > 0); };
+    img.onerror = () => { clearTimeout(t); res(false); };
+    img.src = url + (url.includes("?") ? "&" : "?") + "_p=" + Date.now();
+  });
+}
+(async () => {
+  if (!OVERSEAS) { amapVec.addTo(map); return; }
+  amapSat.addTo(map);  // 先上卫星兜底，探测完成即换更优图层
+  const z = map.getZoom(), c = map.getCenter();
+  const n = Math.pow(2, z);
+  const tx = Math.floor((c.lng + 180) / 360 * n);
+  const ty = Math.floor((1 - Math.log(Math.tan(c.lat * Math.PI / 180) + 1 / Math.cos(c.lat * Math.PI / 180)) / Math.PI) / 2 * n);
+  const osmOK = await probeTile(`https://tile.openstreetmap.org/${z}/${tx}/${ty}.png`, 3500);
+  if (osmOK) { map.removeLayer(amapSat); osm.addTo(map); return; }
+  const esriOK = await probeTile(`https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/${z}/${ty}/${tx}`, 4000);
+  if (esriOK) { map.removeLayer(amapSat); esriStreet.addTo(map); }
+})();
 
 // ---- 标记 ----
 const markers = [];

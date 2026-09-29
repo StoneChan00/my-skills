@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tile Test: HCMC 路网覆盖对比</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  .row { display: flex; }
+  .cell { width: 33.33vw; height: 33.33vh; }
+  .label { position: absolute; z-index: 1000; background: rgba(0,0,0,.7); color: #fff;
+           font-size: 13px; padding: 2px 8px; border-radius: 6px; margin: 4px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="cell" style="position:relative"><span class="label">① Esri World Street Map</span><div id="m1"></div></div>
+  <div class="cell" style="position:relative"><span class="label">② 高德卫星 + Esri Transportation 叠加</span><div id="m2"></div></div>
+  <div class="cell" style="position:relative"><span class="label">③ OSM</span><div id="m3"></div></div>
+</div>
+<div class="row">
+  <div class="cell" style="position:relative"><span class="label">④ Esri卫星 + Transportation</span><div id="m4"></div></div>
+  <div class="cell" style="position:relative"><span class="label">⑤ Esri Topo</span><div id="m5"></div></div>
+  <div class="cell" style="position:relative"><span class="label">⑥ 高德卫星（现状对照）</span><div id="m6"></div></div>
+</div>
+<script>
+const C = [10.78836, 106.69064], Z = 15; // 粉红教堂
+const mk = (id, layers) => {
+  const m = L.map(id, { zoomControl: false, attributionControl: false }).setView(C, Z);
+  layers.forEach(l => l.addTo(m));
+};
+const esriStreet = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", { maxZoom: 19 });
+const esriTrans = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}", { maxZoom: 19 });
+const esriSat = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { maxZoom: 19 });
+const esriTopo = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}", { maxZoom: 19 });
+const amapSat = L.tileLayer("https://wprd0{s}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=7", { subdomains: "1234" });
+const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19 });
+
+mk("m1", [esriStreet]);
+mk("m2", [amapSat, esriTrans]);
+mk("m3", [osm]);
+mk("m4", [esriSat, esriTrans]);
+mk("m5", [esriTopo]);
+mk("m6", [amapSat]);
+</script>
+</body>
+</html>
