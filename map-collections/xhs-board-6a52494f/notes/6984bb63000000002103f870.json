@@ -1,0 +1,226 @@
+{
+  "type": "video",
+  "title": "胡志明💒一日游攻略",
+  "user": {
+    "xsec_token": "AB107tew6jxf7faPFUdAlvECrKoBR-GmyAK2DDBZQ-FFs=",
+    "user_id": "65e99129000000000500b6c1",
+    "nickname": "旅行的大钊🍉",
+    "avatar": "https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo311ha5kiema005pf9i4kh9dm140g7538"
+  },
+  "image_list": [
+    {
+      "height": 1554,
+      "width": 1165,
+      "url": "",
+      "trace_id": "",
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/0c41eae6be27ada6e337d882fd898f7a/1040g2sg31s78v1gn620g5pf9i4kh9dm12h75l28!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/66dd219efae008a4a9fd40191a0395bd/1040g2sg31s78v1gn620g5pf9i4kh9dm12h75l28!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "stream": {},
+      "live_photo": false,
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281431/0c41eae6be27ada6e337d882fd898f7a/1040g2sg31s78v1gn620g5pf9i4kh9dm12h75l28!nd_prv_wlteh_webp_3",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281431/66dd219efae008a4a9fd40191a0395bd/1040g2sg31s78v1gn620g5pf9i4kh9dm12h75l28!nd_dft_wlteh_webp_3",
+      "file_id": "1040g2sg31s78v1gn620g5pf9i4kh9dm12h75l28"
+    }
+  ],
+  "tag_list": [
+    {
+      "id": "5bf4e341e192160001087aca",
+      "name": "越南",
+      "type": "topic"
+    },
+    {
+      "id": "5bed85e94b7e8300019fb01c",
+      "name": "胡志明",
+      "type": "topic"
+    },
+    {
+      "id": "5c129feaccbf910001a7fedb",
+      "name": "胡志明市",
+      "type": "topic"
+    },
+    {
+      "id": "62f177b40000000001001983",
+      "name": "胡志明市旅游",
+      "type": "topic"
+    },
+    {
+      "type": "topic",
+      "id": "5940ec13805d89434dc236fd",
+      "name": "越南旅行"
+    }
+  ],
+  "at_user_list": [],
+  "time": 1770306403000,
+  "last_update_time": 1770306404000,
+  "note_id": "6984bb63000000002103f870",
+  "desc": "一天时间打卡胡志明，这条高效路线请收好！\n🕙路线 9:00-20:00\n粉红教堂—中央邮局—独立宫—滨城市场—胡志明美术馆—胡志明大剧院—咖啡公寓\n🍜视频里的餐厅\n✅Phở Việt Nam 米其林越南河粉\n每次去都在排队，很火爆\n14 Phạm Hồng Thái, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh, 越南\n✅Phở SOL\n27 Đ. Hải Triều, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, 越南\n🌟Tips：城市不大，景点集中，可以全程步行。记得做好防晒\n#越南[话题]# #胡志明[话题]# #胡志明市[话题]# #胡志明市旅游[话题]# #越南旅行[话题]#",
+  "interact_info": {
+    "comment_count": "19",
+    "share_count": "1285",
+    "followed": false,
+    "liked": false,
+    "collected_count": "2571",
+    "relation": "none",
+    "nice_count": "",
+    "liked_count": "1872",
+    "collected": false
+  },
+  "video": {
+    "media": {
+      "video_id": 137787200505363780,
+      "video": {
+        "drm_type": 0,
+        "stream_types": [
+          259,
+          114,
+          115
+        ],
+        "biz_name": 110,
+        "biz_id": "281902392050972784",
+        "duration": 181,
+        "md5": "161105c52d886dba9b2a68cdd5fe5b09",
+        "hdr_type": 0
+      },
+      "stream": {
+        "av1": [],
+        "h264": [
+          {
+            "stream_type": 259,
+            "size": 37930717,
+            "video_codec": "h264",
+            "audio_codec": "aac",
+            "audio_duration": 180046,
+            "rotate": 0,
+            "psnr": 0,
+            "default_stream": 0,
+            "format": "mp4",
+            "width": 720,
+            "volume": 0,
+            "audio_bitrate": 64054,
+            "audio_channels": 2,
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/110/259/01e984ba94b7bd3b010370039c2e7d539a_259.mp4?sign=57d490b155c4896e8c096a6c0b94f422&t=6abea6f9",
+            "hdr_type": 0,
+            "height": 1280,
+            "avg_bitrate": 1685182,
+            "fps": 30,
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/110/259/01e984ba94b7bd3b010370039c2e7d539a_259.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/110/259/01e984ba94b7bd3b010370039c2e7d539a_259.mp4"
+            ],
+            "vmaf": -1,
+            "ssim": 0,
+            "weight": 62,
+            "stream_desc": "WEB_259",
+            "duration": 180067,
+            "video_bitrate": 1614606,
+            "video_duration": 180066,
+            "quality_type": "HD"
+          }
+        ],
+        "h265": [
+          {
+            "audio_bitrate": 128100,
+            "audio_channels": 2,
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/110/114/01e984ba94b7bd3b010370019c2e7ed25e_114.mp4?sign=e4b8325c40b233ad0f843d291c8a57a0&t=6abea6f9",
+            "ssim": 0,
+            "quality_type": "HD",
+            "video_bitrate": 1034718,
+            "stream_type": 114,
+            "format": "mp4",
+            "height": 1280,
+            "size": 26321832,
+            "volume": 0,
+            "avg_bitrate": 1169423,
+            "audio_codec": "aac",
+            "default_stream": 0,
+            "audio_duration": 180046,
+            "rotate": 0,
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/110/114/01e984ba94b7bd3b010370019c2e7ed25e_114.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/110/114/01e984ba94b7bd3b010370019c2e7ed25e_114.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1,
+            "weight": 62,
+            "video_duration": 180066,
+            "stream_desc": "WEB_114",
+            "fps": 29,
+            "psnr": 38.39099884033203,
+            "width": 720,
+            "duration": 180067,
+            "video_codec": "hevc"
+          },
+          {
+            "psnr": 38.250999450683594,
+            "fps": 29,
+            "audio_bitrate": 128100,
+            "audio_channels": 2,
+            "rotate": 0,
+            "weight": 70,
+            "stream_type": 115,
+            "stream_desc": "WEB_115",
+            "width": 1080,
+            "avg_bitrate": 1424941,
+            "video_bitrate": 1290236,
+            "video_duration": 180066,
+            "vmaf": -1,
+            "quality_type": "HD",
+            "default_stream": 0,
+            "format": "mp4",
+            "height": 1920,
+            "video_codec": "hevc",
+            "audio_duration": 180046,
+            "ssim": 0,
+            "duration": 180067,
+            "size": 32073123,
+            "volume": 0,
+            "audio_codec": "aac",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/110/115/01e984ba94b7bd3b010370019c2e80e6bf_115.mp4?sign=88c8382f4b844b99564572e72590a0ba&t=6abea6f9",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/110/115/01e984ba94b7bd3b010370019c2e80e6bf_115.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/110/115/01e984ba94b7bd3b010370019c2e80e6bf_115.mp4"
+            ],
+            "hdr_type": 0
+          }
+        ],
+        "h266": []
+      }
+    },
+    "image": {
+      "first_frame_fileid": "110/0/01e984ba94b7bd3b0010000000019c2e7c0412_0.jpg",
+      "thumbnail_fileid": "frame/110/0/01e984ba94b7bd3b0010000000019c2e7c91b3_0.webp"
+    },
+    "capa": {
+      "duration": 180
+    },
+    "consumer": {
+      "chapters": [
+        {
+          "text": "行程规划",
+          "time": 21677
+        },
+        {
+          "text": "景点解说",
+          "time": 41559
+        },
+        {
+          "text": "美食推荐",
+          "time": 150725
+        }
+      ]
+    },
+    "media_v2": "{\"video_id\":\"137787200505363771\",\"video\":{\"biz_name\":110,\"biz_id\":\"281902392050972784\",\"duration\":181,\"md5\":\"161105c52d886dba9b2a68cdd5fe5b09\",\"hdr_type\":0,\"drm_type\":0,\"stream_types\":[259,114,115],\"width\":1080,\"height\":1920,\"bound\":[{\"x\":0,\"y\":0,\"w\":0,\"h\":0}],\"bbox\":{\"ocr_v5\":[{\"x\":0,\"y\":0,\"w\":0,\"h\":0}],\"ocr_v3\":[{\"x\":39,\"y\":178,\"w\":876,\"h\":1387}],\"ocr_v4\":[{\"x\":0,\"y\":0,\"w\":0,\"h\":0}],\"ocr_v2\":[{\"x\":39,\"y\":144,\"w\":934,\"h\":1688}]},\"opaque1\":{\"bottomAvgLuma\":\"96\",\"loudnorm\":\"{\\\"lra\\\":2.9,\\\"htp\\\":-2.28,\\\"hldn\\\":-19.68,\\\"ldn\\\":-19.49,\\\"thr\\\":-29.64}\",\"hasHumanVoice\":\"true\",\"topAvgLuma\":\"148\",\"domestic\":\"1\",\"isSupportSubtitle\":\"true\",\"rightAvgLuma\":\"104\",\"videoLanguage\":\"[\\\"zh-CN\\\"]\",\"audioLevInfo\":\"{\\\"audio_quality_level\\\":\\\"E\\\",\\\"mos_overall\\\":4.0445,\\\"version\\\":\\\"3.0\\\"}\",\"weakNetUserFlag\":\"1\",\"insertSubtitleLanguages\":\"[\\\"zh-CN\\\"]\",\"audioClsInfo\":\"{\\\"music_ratio\\\":0.997944895590175,\\\"freesound_ratio\\\":0.0,\\\"speech_ratio\\\":0.9753388081796333}\"},\"subtitles\":{\"en-US\":[{\"url\":\"https://sns-subtitle-s1.xhscdn.com/subtitle/1/110/1/01e984ba94b7bd3b010370039c2e7c3c89_12.srt?sign=e3366dff41dded6e35b4994612b7b481&t=6abea6f9\",\"language\":\"en-US\",\"format\":0,\"type\":0}],\"source\":[{\"url\":\"https://sns-subtitle-s1.xhscdn.com/subtitle/1/110/1/01e984ba94b7bd3b010370039c2e7c3b76_1.srt?sign=eb3e42c35cc4e17be19f0cec1762448a&t=6abea6f9\",\"language\":\"zh-CN\",\"format\":0,\"type\":0}],\"zh-CN\":[{\"url\":\"https://sns-subtitle-s1.xhscdn.com/subtitle/1/110/1/01e984ba94b7bd3b010370039c2e7c3c57_11.srt?sign=a30a03691ff9a90af78878d9c37b8ee7&t=6abea6f9\",\"language\":\"zh-CN\",\"format\":0,\"type\":0}]}},\"stream\":{\"h264\":[{\"stream_type\":259,\"stream_desc\":\"WEB_259\",\"default_stream\":0,\"format\":\"mp4\",\"width\":720,\"height\":1280,\"duration\":180067,\"size\":37930717,\"volume\":0.0,\"avg_bitrate\":1685182,\"fps\":30,\"video_codec\":\"h264\",\"video_bitrate\":1614606,\"video_duration\":180066,\"audio_codec\":\"aac\",\"audio_bitrate\":64054,\"audio_duration\":180046,\"audio_channels\":2,\"rotate\":0,\"master_url\":\"http://sns-video-v2.xhscdn.com/stream/1/110/259/01e984ba94b7bd3b010370039c2e7d539a_259.mp4?sign=57d490b155c4896e8c096a6c0b94f422&t=6abea6f9\",\"backup_urls\":[\"http://sns-bak-v1.xhscdn.com/stream/1/110/259/01e984ba94b7bd3b010370039c2e7d539a_259.mp4\",\"http://sns-bak-v6.xhscdn.com/stream/1/110/259/01e984ba94b7bd3b010370039c2e7d539a_259.mp4\"],\"hdr_type\":0,\"vmaf\":-1.0,\"psnr\":0.0,\"ssim\":0.0,\"weight\":62,\"quality_type\":\"HD\",\"token\":\"\",\"sr\":0,\"opaque1\":{\"pcdn_302_flag\":\"false\",\"didLoudnorm\":\"false\",\"pcdn_supplier\":\"\",\"encode_stream\":\"0\"}}],\"h265\":[{\"stream_type\":114,\"stream_desc\":\"WEB_114\",\"default_stream\":0,\"format\":\"mp4\",\"width\":720,\"height\":1280,\"duration\":180067,\"size\":26321832,\"volume\":0.0,\"avg_bitrate\":1169423,\"fps\":29,\"video_codec\":\"hevc\",\"video_bitrate\":1034718,\"video_duration\":180066,\"audio_codec\":\"aac\",\"audio_bitrate\":128100,\"audio_duration\":180046,\"audio_channels\":2,\"rotate\":0,\"master_url\":\"http://sns-video-v2.xhscdn.com/stream/1/110/114/01e984ba94b7bd3b010370019c2e7ed25e_114.mp4?sign=e4b8325c40b233ad0f843d291c8a57a0&t=6abea6f9\",\"backup_urls\":[\"http://sns-bak-v1.xhscdn.com/stream/1/110/114/01e984ba94b7bd3b010370019c2e7ed25e_114.mp4\",\"http://sns-bak-v6.xhscdn.com/stream/1/110/114/01e984ba94b7bd3b010370019c2e7ed25e_114.mp4\"],\"hdr_type\":0,\"vmaf\":-1.0,\"psnr\":38.39099884033203,\"ssim\":0.0,\"weight\":62,\"quality_type\":\"HD\",\"token\":\"\",\"sr\":0,\"opaque1\":{\"pcdn_302_flag\":\"false\",\"didLoudnorm\":\"false\",\"pcdn_supplier\":\"\",\"encode_stream\":\"0\"}},{\"stream_type\":115,\"stream_desc\":\"WEB_115\",\"default_stream\":0,\"format\":\"mp4\",\"width\":1080,\"height\":1920,\"duration\":180067,\"size\":32073123,\"volume\":0.0,\"avg_bitrate\":1424941,\"fps\":29,\"video_codec\":\"hevc\",\"video_bitrate\":1290236,\"video_duration\":180066,\"audio_codec\":\"aac\",\"audio_bitrate\":128100,\"audio_duration\":180046,\"audio_channels\":2,\"rotate\":0,\"master_url\":\"http://sns-video-v2.xhscdn.com/stream/1/110/115/01e984ba94b7bd3b010370019c2e80e6bf_115.mp4?sign=88c8382f4b844b99564572e72590a0ba&t=6abea6f9\",\"backup_urls\":[\"http://sns-bak-v1.xhscdn.com/stream/1/110/115/01e984ba94b7bd3b010370019c2e80e6bf_115.mp4\",\"http://sns-bak-v6.xhscdn.com/stream/1/110/115/01e984ba94b7bd3b010370019c2e80e6bf_115.mp4\"],\"hdr_type\":0,\"vmaf\":-1.0,\"psnr\":38.250999450683594,\"ssim\":0.0,\"weight\":70,\"quality_type\":\"HD\",\"token\":\"\",\"sr\":0,\"opaque1\":{\"pcdn_302_flag\":\"false\",\"didLoudnorm\":\"false\",\"pcdn_supplier\":\"\",\"encode_stream\":\"0\"}}],\"h266\":[],\"av1\":[]},\"user_level\":0}"
+  },
+  "share_info": {
+    "un_share": false
+  },
+  "webUrl": "https://www.xiaohongshu.com/explore/6984bb63000000002103f870?xsec_token=CB5LtTgHfLx1JDUC_PVGgstO9lapEFg9m7CRaxSUZVwVY%3D&xsec_source=pc_share"
+}

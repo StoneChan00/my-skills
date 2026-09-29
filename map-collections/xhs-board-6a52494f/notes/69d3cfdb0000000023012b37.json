@@ -1,0 +1,153 @@
+{
+  "interact_info": {
+    "liked_count": "55",
+    "collected": false,
+    "collected_count": "65",
+    "comment_count": "3",
+    "followed": false,
+    "relation": "none",
+    "liked": false,
+    "share_count": "24",
+    "nice_count": ""
+  },
+  "tag_list": [],
+  "title": "胡志明洗头spa",
+  "image_list": [
+    {
+      "live_photo": true,
+      "file_id": "notes_uhdr/1040g3qo31ukgjnku1ubg4a7f6rj3smsqd5bo2ao",
+      "height": 5712,
+      "trace_id": "",
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/cccc190a26a37c973db5bce002e6e14d/notes_uhdr/1040g3qo31ukgjnku1ubg4a7f6rj3smsqd5bo2ao!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/935fd551110e55b4bf8deafb6ea44117/notes_uhdr/1040g3qo31ukgjnku1ubg4a7f6rj3smsqd5bo2ao!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281431/cccc190a26a37c973db5bce002e6e14d/notes_uhdr/1040g3qo31ukgjnku1ubg4a7f6rj3smsqd5bo2ao!nd_prv_wlteh_webp_3",
+      "width": 4284,
+      "url": "",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281431/935fd551110e55b4bf8deafb6ea44117/notes_uhdr/1040g3qo31ukgjnku1ubg4a7f6rj3smsqd5bo2ao!nd_dft_wlteh_webp_3",
+      "stream": {
+        "h264": [
+          {
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01e9d3cfd65236e9010050039d63641ae8_19.mp4?sign=7a39c19b114ede402c2334e6f91f6d82&t=6abea710",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01e9d3cfd65236e9010050039d63641ae8_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01e9d3cfd65236e9010050039d63641ae8_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0
+          }
+        ],
+        "h265": [],
+        "h266": [],
+        "av1": []
+      }
+    },
+    {
+      "height": 5712,
+      "width": 4284,
+      "trace_id": "",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281431/770234ffa1b82e2e4f4f0db45dba0211/notes_uhdr/1040g3qo31ukgjnku1uc04a7f6rj3smsqe2u9e08!nd_dft_wlteh_webp_3",
+      "stream": {
+        "h264": [
+          {
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01e9d3cfd8527350010050039d63641c8e_19.mp4?sign=3d67e74dd596f2d553a0f4615487307f&t=6abea710",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01e9d3cfd8527350010050039d63641c8e_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01e9d3cfd8527350010050039d63641c8e_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD"
+          }
+        ],
+        "h265": [],
+        "h266": [],
+        "av1": []
+      },
+      "live_photo": true,
+      "file_id": "notes_uhdr/1040g3qo31ukgjnku1uc04a7f6rj3smsqe2u9e08",
+      "url": "",
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/1af61243a92de2233ea34cb52efb07c2/notes_uhdr/1040g3qo31ukgjnku1uc04a7f6rj3smsqe2u9e08!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/770234ffa1b82e2e4f4f0db45dba0211/notes_uhdr/1040g3qo31ukgjnku1uc04a7f6rj3smsqe2u9e08!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281431/1af61243a92de2233ea34cb52efb07c2/notes_uhdr/1040g3qo31ukgjnku1uc04a7f6rj3smsqe2u9e08!nd_prv_wlteh_webp_3"
+    },
+    {
+      "file_id": "notes_uhdr/1040g3qo31ukgjnku1ucg4a7f6rj3smsqk19d1ro",
+      "info_list": [
+        {
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/ccf581dde1169e6d97649fb649565a98/notes_uhdr/1040g3qo31ukgjnku1ucg4a7f6rj3smsqk19d1ro!nd_prv_wlteh_webp_3",
+          "image_scene": "WB_PRV"
+        },
+        {
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/f747fcf129ab258b926c6c411a277290/notes_uhdr/1040g3qo31ukgjnku1ucg4a7f6rj3smsqk19d1ro!nd_dft_wlteh_webp_3",
+          "image_scene": "WB_DFT"
+        }
+      ],
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281431/ccf581dde1169e6d97649fb649565a98/notes_uhdr/1040g3qo31ukgjnku1ucg4a7f6rj3smsqk19d1ro!nd_prv_wlteh_webp_3",
+      "stream": {
+        "h264": [
+          {
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01e9d3cfd9523c7a010050039d63641330_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01e9d3cfd9523c7a010050039d63641330_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01e9d3cfd9523c7a010050039d63641330_19.mp4?sign=9d0b11b1d15751afc598fcc5d73a3396&t=6abea710"
+          }
+        ],
+        "h265": [],
+        "h266": [],
+        "av1": []
+      },
+      "live_photo": true,
+      "height": 5712,
+      "width": 4284,
+      "url": "",
+      "trace_id": "",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281431/f747fcf129ab258b926c6c411a277290/notes_uhdr/1040g3qo31ukgjnku1ucg4a7f6rj3smsqk19d1ro!nd_dft_wlteh_webp_3"
+    }
+  ],
+  "at_user_list": [],
+  "time": 1775488987000,
+  "last_update_time": 1775488988000,
+  "share_info": {
+    "un_share": false
+  },
+  "note_id": "69d3cfdb0000000023012b37",
+  "type": "normal",
+  "desc": "一共去了三家\n第一家 Xíu Spa\n90min洗头加按摩450k，就是肩颈手臂简单按一按，脸会给卸妆洗脸按摩敷面膜。但是卸的很不干净，最后吹头发的时候看到自己眼圈是黑的…拿棉签自己擦了擦。还有时间不够90min，可能把最开始泡脚时间也算进去了，但是也不够时间。会让换衣服，给倒水喝，整体无功无过，可以给3星。\n第二家 KIM HEALTH & BEAUTY | Spa Trị Mụn Uy Tín Quận 1 Spa Gần Đây\n小红书上很火一家，要预约，60min洗头按摩190k，但是她没有给我看价目表，也没有问我要做什么项目，直接就让我躺床上要去洗了，因为穿的是件吊带，衣服也没让换，还是我主动问的价格，说了自己要洗哪个。卸妆卸的比第一家干净很多，按摩比第一家要随意很多，可能因为给我洗的是一个新手，我能感觉到她的不熟练，并且把我衣服洗湿了，吹头发时候一位年龄大一点的姐在教她怎么做，吹头发时候会让你泡下脚。整体是性价比高，会给水给小零食，但也没有很享受…三星\n第三家 An‘s spa\n这家我没有洗头，只按摩60min540k。最最最舒服的一家，一共有三家店，去的第三家分店，到店因为没有预约，要等一个小时，店里工作人员给我打车到他们第一店，让我过去按摩。到店后，接待的工作人员很热情会给酸奶和水，问要做什么，他们有中英韩三种语言价目表…选好后，会给一张表，让你选择按摩力度，会告知你按摩要用到一点虎牌精油和薰衣草精油可不可以接受。整体按摩过程特别舒服，真的有种按透的感觉，我一般按摩不会睡觉，这个最后真的睡着了…结束后会告诉你多久不要洗澡，因为用精油按了穴位（大概意思是两个小时后可以洗）。结束后会给倒水给水果吃，然后给你一张评价表，让写下反馈。这家给五星！推荐！（图片是这家店）\n去了三天，每天体验了一家，以上全是个人感受、、",
+  "user": {
+    "user_id": "5b56e63ee8ac2b34431b5b9a",
+    "nickname": "ᅠᅠᅠᅠ",
+    "avatar": "https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo30r1t0jne1k0g4a7f6rj3smsqi27rl58",
+    "xsec_token": "AB9EunY7DCK0A4W5l1gib5UccnW0fN9p4s7a48iXKsKdY="
+  },
+  "webUrl": "https://www.xiaohongshu.com/explore/69d3cfdb0000000023012b37?xsec_token=CB6-qm_U8HAlAw2qUOLXOVORfzSxA8uXl-F3m3NsJdZlE%3D&xsec_source=pc_share"
+}

@@ -1,0 +1,12 @@
+{
+  "board_id": "6a52494f0000000036010c6e",
+  "name": "越南",
+  "total": 54,
+  "privacy": 1,
+  "owner": {
+    "nickname": "JoJo",
+    "profile": "https://www.xiaohongshu.com/user/profile/61b6c78e000000001000ba5d"
+  },
+  "note": "privacy:1 = 私密合集，笔记列表仅所有者可见；board/note API 对非所有者返回 code:-1",
+  "_fetched": "2026-09-28"
+}

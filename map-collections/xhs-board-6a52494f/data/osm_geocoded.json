@@ -1,0 +1,1436 @@
+[
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Tan Son Nhat International Airport Terminal 2",
+  "lat": 10.8179793,
+  "lon": 106.6562645,
+  "osm_name": "Sân bay quốc tế Tân Sơn Nhất",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "新山一国际机场 T2（BDIV ATM 取现点）",
+  "query": "Tan Son Nhat International Airport Terminal 2",
+  "city": "胡志明市",
+  "category": "交通",
+  "notes": [
+   "胡志明机场取现金💵攻略！",
+   "胡志明机场Grab打车点图文指路"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Tan Dinh Church",
+  "lat": 10.7883598,
+  "lon": 106.6906418,
+  "osm_name": "Nhà thờ Tân Định",
+  "osm_city": "Hồ Chí Minh City",
+  "city_ok": false,
+  "approx": false,
+  "display": "粉红教堂（新定教堂）",
+  "query": "Tan Dinh Church",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明💒一日游攻略",
+   "胡志明市超全游览路线",
+   "一眼看懂胡志明旅游地图"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Saigon Central Post Office",
+  "lat": 10.7799557,
+  "lon": 106.6999921,
+  "osm_name": "Bưu điện Trung tâm Sài Gòn",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "西贡中央邮局",
+  "query": "Saigon Central Post Office",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明💒一日游攻略",
+   "胡志明市超全游览路线",
+   "一眼看懂胡志明旅游地图"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "The Cafe Apartment 42 Nguyen Hue",
+  "lat": 10.7741332,
+  "lon": 106.7042116,
+  "osm_name": "chung cư 42 Nguyễn Huệ",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "咖啡公寓（42 Nguyễn Huệ）",
+  "query": "The Cafe Apartment 42 Nguyen Hue",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明💒一日游攻略",
+   "胡志明市超全游览路线",
+   "一眼看懂胡志明旅游地图"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Independence Palace Ho Chi Minh City",
+  "lat": 10.7770348,
+  "lon": 106.695488,
+  "osm_name": "Dinh Độc Lập",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "统一宫",
+  "query": "Independence Palace Ho Chi Minh City",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明💒一日游攻略",
+   "胡志明市超全游览路线",
+   "一眼看懂胡志明旅游地图"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "War Remnants Museum",
+  "lat": 10.7793647,
+  "lon": 106.6922806,
+  "osm_name": "Bảo tàng Chứng tích Chiến tranh",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "战争遗迹博物馆",
+  "query": "War Remnants Museum",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明市超全游览路线",
+   "一眼看懂胡志明旅游地图"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Ben Thanh Market",
+  "lat": 10.7725301,
+  "lon": 106.6980365,
+  "osm_name": "Chợ Bến Thành",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "滨城市场",
+  "query": "Ben Thanh Market",
+  "city": "胡志明市",
+  "category": "购物",
+  "notes": [
+   "刚从胡志明回来无雷经验分享",
+   "胡志明市超全游览路线",
+   "🇻🇳🍲胡志明已吃不欠！"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Ho Chi Minh City Museum of Fine Arts",
+  "lat": 10.769596,
+  "lon": 106.69927,
+  "osm_name": "Bảo tàng Mỹ thuật Thành phố Hồ Chí Minh",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "胡志明市美术馆",
+  "query": "Ho Chi Minh City Museum of Fine Arts",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明市超全游览路线",
+   "一眼看懂胡志明旅游地图"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Ho Chi Minh City Museum Gia Long Palace",
+  "lat": 10.7759106,
+  "lon": 106.6996214,
+  "osm_name": "Bảo tàng Thành phố Hồ Chí Minh",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "胡志明市博物馆",
+  "query": "Ho Chi Minh City Museum Gia Long Palace",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明市超全游览路线"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Bitexco Financial Tower",
+  "lat": 10.7718634,
+  "lon": 106.7044633,
+  "osm_name": "Bitexco Financial Tower",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Bitexco 金融塔",
+  "query": "Bitexco Financial Tower",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明市超全游览路线",
+   "一眼看懂胡志明旅游地图"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Landmark 81",
+  "lat": 10.7950845,
+  "lon": 106.7219139,
+  "osm_name": "Cửa Hàng Innisfree - Vincom Landmark 81",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Landmark 81",
+  "query": "Landmark 81",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明东南亚最高高空酒吧Blank Lounge"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Bui Vien Street",
+  "lat": 10.7677522,
+  "lon": 106.6924769,
+  "osm_name": "Saigon Cozy2 At Bui Vien Walking Street",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "范五老街",
+  "query": "Bui Vien Street",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明市超全游览路线",
+   "一眼看懂胡志明旅游地图"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "圣母大教堂（红教堂，维修中）",
+  "query": "Notre Dame Cathedral Basilica of Saigon",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明市超全游览路线"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Saigon Book Street",
+  "lat": 10.7765867,
+  "lon": 106.7009177,
+  "osm_name": "Trụ sở Ủy ban nhân dân Thành phố Hồ Chí Minh",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "西贡书街",
+  "query": "Saigon Book Street",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明市超全游览路线"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Saigon Opera House",
+  "lat": 10.7767437,
+  "lon": 106.7032488,
+  "osm_name": "Nhà hát Thành phố",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "胡志明大剧院",
+  "query": "Saigon Opera House",
+  "city": "胡志明市",
+  "category": "景点",
+  "notes": [
+   "胡志明市超全游览路线",
+   "胡志明💒一日游攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Bach Dang Wharf Saigon Waterbus",
+  "lat": 10.7752396,
+  "lon": 106.7070023,
+  "osm_name": "Bến tàu Bạch Đằng",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "水上巴士码头（Bạch Đằng）",
+  "query": "Bach Dang Wharf Saigon Waterbus",
+  "city": "胡志明市",
+  "category": "交通",
+  "notes": [
+   "胡志明市超全游览路线"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Saigon Square Shopping Center",
+  "lat": 10.7764848,
+  "lon": 106.7016217,
+  "osm_name": "Union Square",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "西贡广场",
+  "query": "Saigon Square Shopping Center",
+  "city": "胡志明市",
+  "category": "购物",
+  "notes": [
+   "胡志明市超全游览路线"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Landmark 81",
+  "lat": 10.7950845,
+  "lon": 106.7219139,
+  "osm_name": "Cửa Hàng Innisfree - Vincom Landmark 81",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Blank Lounge（Landmark 81 75-76F）",
+  "query": "Landmark 81",
+  "city": "胡志明市",
+  "category": "美食",
+  "address": "75–76F Landmark 81, 208 Nguyễn Hữu Cảnh, P.22, Bình Thạnh",
+  "notes": [
+   "胡志明东南亚最高高空酒吧Blank Lounge"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Little Hanoi Egg Coffee Ho Chi Minh",
+  "lat": 10.768602,
+  "lon": 106.6900885,
+  "osm_name": "Little HaNoi Egg Coffee",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Little Hanoi Egg Coffee",
+  "query": "Little Hanoi Egg Coffee Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "胡志明｜Little Hanoi Egg测评",
+   "胡志明你还蛮好吃的嘛"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Man Moi Restaurant Ho Chi Minh",
+  "lat": 10.8246977,
+  "lon": 106.7156455,
+  "osm_name": "Công Ty Vận Chuyển - Nhành Mai Mới",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "Man Moi（战争纪念馆附近）",
+  "query": "Man Moi Restaurant Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "胡志明你还蛮好吃的嘛"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "The Workshop Coffee Ho Chi Minh",
+  "lat": 10.7734061,
+  "lon": 106.7055391,
+  "osm_name": "The Workshop Coffee",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "The Workshop Coffee（亚洲Top3咖啡馆）",
+  "query": "The Workshop Coffee Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "胡志明你还蛮好吃的嘛"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Pho Viet Nam 14 Pham Hong Thai",
+  "lat": 10.771252,
+  "lon": 106.6962092,
+  "osm_name": "Phở Việt Nam",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Phở Việt Nam（米其林河粉）",
+  "query": "Pho Viet Nam 14 Pham Hong Thai",
+  "city": "胡志明市",
+  "category": "美食",
+  "address": "14 Phạm Hồng Thái, Bến Thành, Quận 1",
+  "notes": [
+   "胡志明💒一日游攻略",
+   "给去胡志明的朋友一些参考",
+   "🇻🇳🍲胡志明已吃不欠！"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Pho Sol 27 Hai Trieu",
+  "lat": 10.7717143,
+  "lon": 106.7050647,
+  "osm_name": "PHỞ SOL - Q1 (Phở & Các Món Ngon Từ Phở) Phở Thìn - By SOL",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Phở SOL",
+  "query": "Pho Sol 27 Hai Trieu",
+  "city": "胡志明市",
+  "category": "美食",
+  "address": "27 Đ. Hải Triều, Bến Nghé, Quận 1",
+  "notes": [
+   "胡志明💒一日游攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Linh Coffee Ho Chi Minh",
+  "lat": 10.7473634,
+  "lon": 106.7227913,
+  "osm_name": "Walya Coffee",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Linh 咖啡（盐咖啡）",
+  "query": "Linh Coffee Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "fallback_query": "Pho Viet Nam 14 Pham Hong Thai",
+  "notes": [
+   "胡志明你还蛮好吃的嘛"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Lvoire Pastry Ho Chi Minh",
+  "lat": 10.7869807,
+  "lon": 106.6802959,
+  "osm_name": "Cozy Pastry",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Lvoire Pastry（第一甜品店）",
+  "query": "Lvoire Pastry Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "胡志明你还蛮好吃的嘛"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Nha Tu Ho Chi Minh",
+  "lat": 10.7839626,
+  "lon": 106.6888998,
+  "osm_name": "Nhà thiếu nhi Thành phố Hồ Chí Minh",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Nhà Tú（蟹黄牡蛎肥牛火锅）",
+  "query": "Nha Tu Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "胡志明你还蛮好吃的嘛",
+   "🇻🇳🍲胡志明已吃不欠！"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Banh Mi Huynh Hoa",
+  "lat": 10.7713922,
+  "lon": 106.6927189,
+  "osm_name": "Bánh Mì Huỳnh Hoa",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "Bánh Mì Huynh Hoa（法棍）",
+  "query": "Banh Mi Huynh Hoa",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "给去胡志明的朋友一些参考",
+   "胡志明你还蛮好吃的嘛"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Pho Hoa Pasteur Ho Chi Minh",
+  "lat": 10.7849456,
+  "lon": 106.6904122,
+  "osm_name": "Sở Nội vụ Thành phố Hồ Chí Minh",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "Pho Hoa Pasteur",
+  "query": "Pho Hoa Pasteur Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "给去胡志明的朋友一些参考"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Bep Cuon Sai Gon",
+  "lat": 10.7797687,
+  "lon": 106.6990427,
+  "osm_name": "Nhà thờ Đức Bà Sài Gòn",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "Bếp Cuốn Sài Gòn（米其林越南菜）",
+  "query": "Bep Cuon Sai Gon",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "给去胡志明的朋友一些参考",
+   "🇻🇳🍲胡志明已吃不欠！"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Banh Canh Cua 87 Ho Chi Minh",
+  "lat": 10.794868,
+  "lon": 106.6908358,
+  "osm_name": "Bánh Canh Cua 87",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Bánh Canh Cua 87（蟹肉粉）",
+  "query": "Banh Canh Cua 87 Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "给去胡志明的朋友一些参考"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Cuc Gach Quan",
+  "lat": 10.7929997,
+  "lon": 106.6889296,
+  "osm_name": "Cục Gạch Quán",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Cục Gạch Quán（越南家常菜）",
+  "query": "Cuc Gach Quan",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "给去胡志明的朋友一些参考"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Ngoc Thach Quan Ho Chi Minh",
+  "lat": 10.7738288,
+  "lon": 106.6653538,
+  "osm_name": "Center for Elaboration Competency and Innovation in Clinical Simulation - University of Medicine Pham Ngoc Thach",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "Ngọc Thạch Quán（甜品）",
+  "query": "Ngoc Thach Quan Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "🇻🇳🍲胡志明已吃不欠！"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Cong Coffee Tan Dinh",
+  "lat": 10.8289607,
+  "lon": 106.6422652,
+  "osm_name": "Công Ty TNHH Dịch Vụ Giúp Việc Nhà Gia Đình, Chăm Sóc Trẻ Em Sơ Sinh, Chăm Sóc Người Già - Người Bệnh Phương Nam",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "Cong Café 粉红教堂店（椰子绿米冰沙）",
+  "query": "Cong Coffee Tan Dinh",
+  "city": "胡志明市",
+  "category": "美食",
+  "fallback_query": "Tan Dinh Church",
+  "notes": [
+   "🇻🇳🍲胡志明已吃不欠！"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Tan Dinh Church",
+  "lat": 10.7883598,
+  "lon": 106.6906418,
+  "osm_name": "Nhà thờ Tân Định",
+  "osm_city": "Hồ Chí Minh City",
+  "city_ok": false,
+  "approx": true,
+  "display": "蟹黄粉小店（粉红教堂600米，强推）",
+  "query": "Tan Dinh Church",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "🇻🇳胡志明记得一定要来吃的蟹黄粉"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Tan Dinh Church",
+  "lat": 10.7883598,
+  "lon": 106.6906418,
+  "osm_name": "Nhà thờ Tân Định",
+  "osm_city": "Hồ Chí Minh City",
+  "city_ok": false,
+  "approx": true,
+  "display": "牛蛙粥摊（粉红教堂附近夜市，本地人店）",
+  "query": "Tan Dinh Church",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "我再说一遍来胡志明不去网红店来这家"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "7 Bridges Brewing Co Ho Chi Minh",
+  "lat": 10.7739304,
+  "lon": 106.6973809,
+  "osm_name": "Pasteur Street Brewing Co",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "7 Bridges Brewing Co（西贡精酿）",
+  "query": "7 Bridges Brewing Co Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "西贡值得一来的啤酒吧"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Heart of Darkness Brewery Saigon",
+  "lat": 10.7797138,
+  "lon": 106.7028996,
+  "osm_name": "Nhà Hàng Heart Of Darkness Craft Brewery",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Heart of Darkness（精酿酒厂）",
+  "query": "Heart of Darkness Brewery Saigon",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "🇻🇳胡志明市必喝『Heart of Darkness』"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "RAW + Atelier（Best 50 鸡尾酒）",
+  "query": "RAW and Atelier cocktail bar Saigon",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "胡志明小酒馆日记",
+   "胡志明Best 50 Bar hopping",
+   "来喝越南Top 20的鸡尾酒"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "The Enigma Mansion Saigon",
+  "lat": 10.7808592,
+  "lon": 106.6946027,
+  "osm_name": "Saigon Mansion",
+  "osm_city": "Thành Phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "The Enigma Mansion（Best 50）",
+  "query": "The Enigma Mansion Saigon",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "胡志明小酒馆日记",
+   "胡志明Best 50 Bar hopping"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "Summer Experiment（Best 50）",
+  "query": "Summer Experiment cocktail bar Saigon",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "胡志明小酒馆日记",
+   "胡志明Best 50 Bar hopping"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Stir cocktail bar Saigon Ho Chi Minh",
+  "lat": 10.7760827,
+  "lon": 106.7034287,
+  "osm_name": "Quán Bar Saigon Saigon",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "Stir（Best 50）",
+  "query": "Stir cocktail bar Saigon Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "胡志明小酒馆日记",
+   "胡志明Best 50 Bar hopping"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "Tamarind Hidden Cocktail Bar",
+  "query": "Tamarind Hidden Cocktail Bar Saigon",
+  "city": "胡志明市",
+  "category": "美食",
+  "notes": [
+   "胡志明小酒馆日记",
+   "胡志明Best 50 Bar hopping"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "SIZ SPA",
+  "query": "SIZ Spa 154 Cong Quynh",
+  "city": "胡志明市",
+  "category": "按摩",
+  "address": "154 Đ. Cống Quỳnh, Cầu Ông Lãnh, Quận 1",
+  "notes": [
+   "在越南请务必狠狠去按摩"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Sa Spa Ho Chi Minh District 1",
+  "lat": 10.7855412,
+  "lon": 106.6997789,
+  "osm_name": "AN's spa",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "Sa Spa（1区）",
+  "query": "Sa Spa Ho Chi Minh District 1",
+  "city": "胡志明市",
+  "category": "按摩",
+  "notes": [
+   "胡志明1区可以按摩到睡着的店Sa Spa"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Sa Spa Central Ho Chi Minh",
+  "lat": 10.7842393,
+  "lon": 106.6940764,
+  "osm_name": "Trung Tâm Chăm Sóc Sắc Đẹp Golden Lotus Spa",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Sả Spa Central",
+  "query": "Sa Spa Central Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "按摩",
+  "notes": [
+   "胡志明市按摩洗头三家谷歌高分店实测"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Phaya Thai Spa Ho Chi Minh",
+  "lat": 10.7801225,
+  "lon": 106.7038609,
+  "osm_name": "Silverland Hotel and Spa",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Phaya Thai Spa Quận 1",
+  "query": "Phaya Thai Spa Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "按摩",
+  "notes": [
+   "胡志明市按摩洗头三家谷歌高分店实测"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Sen Trang Spa Ho Chi Minh",
+  "lat": 10.7838557,
+  "lon": 106.6982227,
+  "osm_name": "Trung Tâm Chăm Sóc Sắc Đẹp Sen Trang",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Sen Trắng Spa & Wellness",
+  "query": "Sen Trang Spa Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "按摩",
+  "notes": [
+   "胡志明市按摩洗头三家谷歌高分店实测"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Xiu Spa Ho Chi Minh",
+  "lat": 10.7699939,
+  "lon": 106.6513127,
+  "osm_name": "Điểm Tâm Sú Ky - Há cảo & Xíu mại",
+  "osm_city": "Ho Chi Minh City",
+  "city_ok": true,
+  "approx": false,
+  "display": "Xíu Spa",
+  "query": "Xiu Spa Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "按摩",
+  "notes": [
+   "胡志明洗头spa"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Kim Health and Beauty Spa Quan 1",
+  "lat": 10.8353661,
+  "lon": 106.6715115,
+  "osm_name": "Hoàng Kim Pharma Beauty & Spa",
+  "osm_city": "Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "KIM HEALTH & BEAUTY Spa",
+  "query": "Kim Health and Beauty Spa Quan 1",
+  "city": "胡志明市",
+  "category": "按摩",
+  "notes": [
+   "胡志明洗头spa"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "An's Spa and Massage Ho Chi Minh",
+  "lat": 10.8026623,
+  "lon": 106.738191,
+  "osm_name": "Tiệm Massage & Spa Mandarin",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "An's Spa & Massage（五星强推）",
+  "query": "An's Spa and Massage Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "按摩",
+  "notes": [
+   "胡志明洗头spa",
+   "越南胡志明市按摩推荐"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "Temple Leaf（按摩）",
+  "query": "Temple Leaf Spa Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "按摩",
+  "notes": [
+   "越南胡志明市按摩推荐"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Bui Vien Street",
+  "lat": 10.7677522,
+  "lon": 106.6924769,
+  "osm_name": "Saigon Cozy2 At Bui Vien Walking Street",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": true,
+  "display": "B&B Chill Home（范五老街旁民宿）",
+  "query": "Bui Vien Street",
+  "city": "胡志明市",
+  "category": "住宿",
+  "notes": [
+   "刚从胡志明回来无雷经验分享"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Kim Mai Gold Shop Ho Chi Minh",
+  "lat": 10.7520254,
+  "lon": 106.6638664,
+  "osm_name": "Kim Mai",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "KIM MAI 金梅换汇（范五老街附近）",
+  "query": "Kim Mai Gold Shop Ho Chi Minh",
+  "city": "胡志明市",
+  "category": "交通",
+  "fallback_query": "Bui Vien Street",
+  "notes": [
+   "刚从胡志明回来无雷经验分享"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Ben Thanh Market",
+  "lat": 10.7725301,
+  "lon": 106.6980365,
+  "osm_name": "Chợ Bến Thành",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": true,
+  "display": "滨城市场旁金店换汇（汇率3800）",
+  "query": "Ben Thanh Market",
+  "city": "胡志明市",
+  "category": "交通",
+  "notes": [
+   "🇻🇳胡志明换汇这里最划算"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Nha Trang Cathedral",
+  "lat": 12.2467333,
+  "lon": 109.188137,
+  "osm_name": "Nhà thờ Chính tòa Nha Trang",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "芽庄大教堂",
+  "query": "Nha Trang Cathedral",
+  "city": "芽庄",
+  "category": "景点",
+  "notes": [
+   "芽庄大教堂附近的皮皮虾粗粉",
+   "自己总结的芽庄吃喝实录"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Ba Ho Waterfall Nha Trang",
+  "lat": 12.3822485,
+  "lon": 109.1329056,
+  "osm_name": "Ba Ho Waterfall",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Ba Hồ 瀑布",
+  "query": "Ba Ho Waterfall Nha Trang",
+  "city": "芽庄",
+  "category": "景点",
+  "notes": [
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Vinpearl Nha Trang",
+  "lat": 12.2026831,
+  "lon": 109.2160022,
+  "osm_name": "VinPearl Nha Trang",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "珍珠岛 Vinpearl（摩天轮景色绝美）",
+  "query": "Vinpearl Nha Trang",
+  "city": "芽庄",
+  "category": "景点",
+  "notes": [
+   "准备来芽庄的就只能帮你们到这了"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Hon Tam Island",
+  "lat": 12.2084991,
+  "lon": 109.2871204,
+  "osm_name": "Hòn Tre",
+  "osm_city": "",
+  "city_ok": true,
+  "approx": false,
+  "display": "蚕岛（Hon Tằm）",
+  "query": "Hon Tam Island",
+  "city": "芽庄",
+  "category": "景点",
+  "notes": [
+   "准备来芽庄的就只能帮你们到这了"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "BINGDOU Bingsu（牛油果冰淇淋）",
+  "query": "Bingdou Bingsu Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "address": "Nguyễn Thị Minh Khai, Nha Trang",
+  "notes": [
+   "来芽庄记住这个十字路口的牛油果冰淇淋"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "Kem Bơ Vfruit（牛油果冰淇淋）",
+  "query": "Kem Bo Vfruit Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "来芽庄记住这个十字路口的牛油果冰淇淋",
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Banh Mi Phan Nha Trang",
+  "lat": 12.2398324,
+  "lon": 109.192925,
+  "osm_name": "Bánh Mì Phan",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Bánh Mì Phan（法棍）",
+  "query": "Banh Mi Phan Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "自己总结的芽庄吃喝实录",
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "BÁNH CANH GHẸ CÔ BA MIỀN BIỂN（皮皮虾粗粉）",
+  "query": "Banh Canh Ghe Co Ba Mien Bien Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "address": "Chi Nhánh 5 Thái Nguyên（大教堂西北侧步行2分钟）",
+  "notes": [
+   "芽庄大教堂附近的皮皮虾粗粉",
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Nha Trang Cathedral",
+  "lat": 12.2467333,
+  "lon": 109.188137,
+  "osm_name": "Nhà thờ Chính tòa Nha Trang",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": true,
+  "display": "火车咖啡（大教堂旁，2楼看火车）",
+  "query": "Nha Trang Cathedral",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "自己总结的芽庄吃喝实录"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Banh Mi Phan Nha Trang",
+  "lat": 12.2398324,
+  "lon": 109.192925,
+  "osm_name": "Bánh Mì Phan",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": true,
+  "display": "Bánh Căn 烤米饼（Bánh Mì Phan 隔壁）",
+  "query": "Banh Mi Phan Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Tyro Seafood Restaurant Nha Trang",
+  "lat": 12.219671,
+  "lon": 109.2040898,
+  "osm_name": "Cơm Quỳnh Anh | Seafood Restaurant",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Tyro Seafood Restaurant",
+  "query": "Tyro Seafood Restaurant Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "自己总结的芽庄吃喝实录"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Ot Hiem Nha Trang",
+  "lat": 12.2712781,
+  "lon": 109.2009747,
+  "osm_name": "NHA OT",
+  "osm_city": "",
+  "city_ok": true,
+  "approx": false,
+  "display": "Ot Hiem（越南菜）",
+  "query": "Ot Hiem Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "芽庄美食记录真吃撑了"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "An Thoi 2 Nha Trang",
+  "lat": 10.8008017,
+  "lon": 106.6611716,
+  "osm_name": "Cửa Hàng Thời Trang An Phước",
+  "osm_city": "Thành phố Hồ Chí Minh",
+  "city_ok": false,
+  "approx": false,
+  "display": "Ăn Thôi 2（米其林必比登越南菜）",
+  "query": "An Thoi 2 Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "address": "64C Nguyễn Thị Minh Khai, Nha Trang",
+  "notes": [
+   "这才是来芽庄旅游必吃的越南餐厅",
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Katinat Nha Trang",
+  "lat": 12.2417131,
+  "lon": 109.1958083,
+  "osm_name": "",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Katinat（红毛丹奶茶）",
+  "query": "Katinat Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "芽庄美食记录真吃撑了"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Pizza 4Ps Nha Trang",
+  "lat": 12.2337683,
+  "lon": 109.1960792,
+  "osm_name": "IL MIO 3 - Nhà Hàng Ý - Pizza & Pasta",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Pizza 4P's",
+  "query": "Pizza 4Ps Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "芽庄美食记录真吃撑了"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Pho Thin Nha Trang",
+  "lat": 12.2479247,
+  "lon": 109.1953044,
+  "osm_name": "Phở Thìn Hà Nội",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Phở Thin（牛肉河粉）",
+  "query": "Pho Thin Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "芽庄美食记录真吃撑了"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Moc Quan Seafood Nha Trang",
+  "lat": 12.2512426,
+  "lon": 109.1940818,
+  "osm_name": "Quán öc bình dân",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Mộc Quán Seafood（海鲜大排档）",
+  "query": "Moc Quan Seafood Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "芽庄美食记录真吃撑了"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Pho Hanh Phuc Nha Trang",
+  "lat": 12.2440075,
+  "lon": 109.1910379,
+  "osm_name": "Phỏ Hạnh Phúc",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Phở Hạnh Phúc（河粉）",
+  "query": "Pho Hanh Phuc Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "La Viet Coffee Nha Trang",
+  "lat": 12.2384928,
+  "lon": 109.1929812,
+  "osm_name": "Mây Rooftop Coffee",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "La Viet Coffee（亚洲第六咖啡店）",
+  "query": "La Viet Coffee Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Quan An XO Nha Trang",
+  "lat": 12.2341811,
+  "lon": 109.1958426,
+  "osm_name": "quan an hong duc",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Quán ăn X.O（本地苍蝇馆子）",
+  "query": "Quan An XO Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Hai San Thao Tien Nha Trang",
+  "lat": 12.2464581,
+  "lon": 109.1927126,
+  "osm_name": "Sân thể thao trường Lý Tự Trọng",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Hải Sản Thảo Tiến（机场顺路海鲜）",
+  "query": "Hai San Thao Tien Nha Trang",
+  "city": "芽庄",
+  "category": "美食",
+  "notes": [
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "Luxury Anna Spa（芽庄按摩）",
+  "query": "Luxury Anna Spa Nha Trang",
+  "city": "芽庄",
+  "category": "按摩",
+  "address": "172/8A Bạch Đằng, Nha Trang",
+  "notes": [
+   "在越南请务必狠狠去按摩"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Mia Resort Nha Trang",
+  "lat": 12.2940634,
+  "lon": 109.2289773,
+  "osm_name": "Alibu Resort Nha Trang",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Mia 度假酒店（独栋院子+独立沙滩）",
+  "query": "Mia Resort Nha Trang",
+  "city": "芽庄",
+  "category": "住宿",
+  "notes": [
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Amiana Resort Nha Trang",
+  "lat": 12.2954088,
+  "lon": 109.2338291,
+  "osm_name": "Amiana Resort Nha Trang",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "阿米娅娜 Amiana 度假酒店（浮潜+下午茶）",
+  "query": "Amiana Resort Nha Trang",
+  "city": "芽庄",
+  "category": "住宿",
+  "notes": [
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Nha Trang Central Market Cho Xom Moi",
+  "lat": 12.2427608,
+  "lon": 109.1904362,
+  "osm_name": "Chợ Xóm Mới",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "芽庄中心市场（伴手礼）",
+  "query": "Nha Trang Central Market Cho Xom Moi",
+  "city": "芽庄",
+  "category": "购物",
+  "notes": [
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Kiss Souvenir Nha Trang",
+  "lat": 12.2404157,
+  "lon": 109.1918051,
+  "osm_name": "Kissa souvenirs",
+  "osm_city": "Nha Trang",
+  "city_ok": true,
+  "approx": false,
+  "display": "Kiss Souvenir（伴手礼两层楼）",
+  "query": "Kiss Souvenir Nha Trang",
+  "city": "芽庄",
+  "category": "购物",
+  "notes": [
+   "越南芽庄四天三晚攻略"
+  ]
+ },
+ {
+  "status": "no_match",
+  "display": "96 中国超市（旁旅行社换汇汇率3870）",
+  "query": "96 Chinese Supermarket Nha Trang",
+  "city": "芽庄",
+  "category": "交通",
+  "notes": [
+   "芽庄这个旅行社换钱汇率高"
+  ]
+ },
+ {
+  "status": "ok",
+  "engine": "photon",
+  "via": "Chua Spa 269 Nui Thanh Da Nang",
+  "lat": 16.0432946,
+  "lon": 108.2216654,
+  "osm_name": "East Meets West Dental",
+  "osm_city": "Đà Nẵng",
+  "city_ok": true,
+  "approx": false,
+  "display": "Chua Spa（岘港按摩，美溪沙滩附近）",
+  "query": "Chua Spa 269 Nui Thanh Da Nang",
+  "city": "岘港",
+  "category": "按摩",
+  "address": "269 Núi Thành, Hòa Cường, Đà Nẵng",
+  "notes": [
+   "在越南请务必狠狠去按摩"
+  ]
+ }
+]

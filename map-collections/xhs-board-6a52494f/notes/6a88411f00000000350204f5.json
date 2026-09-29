@@ -1,0 +1,309 @@
+{
+  "share_info": {
+    "un_share": false
+  },
+  "note_id": "6a88411f00000000350204f5",
+  "title": "我再说一遍！来胡志明不去网红店！来这家！！！",
+  "desc": "来胡志明去了好几家网红店都踩雷了……\n最后我和朋友决定直接路上找本地人扎堆的店\n经过的时候看到这家店人很多不知道是吃什么的\n本着全都是本地人肯定不会难吃的原则试试了\n真的好好吃🤤牛蛙粥一份才20块人民币！而且牛蛙特别多！\n就在粉色教堂附近的夜市这里！很好找！（可以看我的p5，有他家的招牌）\n\t\n#只有本地人才知道的店[话题]# #全球吃喝小分队[话题]# #旅行中的地道美食[话题]# #胡志明旅行[话题]# #胡志明美食[话题]# #胡志明旅游[话题]# #胡志明攻略[话题]#",
+  "image_list": [
+    {
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281433/9c3adbad3cc8c75cce46fc90f8284277/notes_uhdr/1040g3qo3244o61mngo2g49oj2o1gkdf2d19716g!nd_prv_wlteh_webp_3",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281433/0328364c848b5f2646317237b6ed4d34/notes_uhdr/1040g3qo3244o61mngo2g49oj2o1gkdf2d19716g!nd_dft_wlteh_webp_3",
+      "live_photo": true,
+      "height": 2560,
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/9c3adbad3cc8c75cce46fc90f8284277/notes_uhdr/1040g3qo3244o61mngo2g49oj2o1gkdf2d19716g!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/0328364c848b5f2646317237b6ed4d34/notes_uhdr/1040g3qo3244o61mngo2g49oj2o1gkdf2d19716g!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "stream": {
+        "h264": [
+          {
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01ea88411fab909e01005003a0243e84f8_19.mp4?sign=440a907d0e33863a0d5bdcfb7e791de1&t=6abea771",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01ea88411fab909e01005003a0243e84f8_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01ea88411fab909e01005003a0243e84f8_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1
+          }
+        ],
+        "h265": [],
+        "h266": [],
+        "av1": []
+      },
+      "file_id": "notes_uhdr/1040g3qo3244o61mngo2g49oj2o1gkdf2d19716g",
+      "width": 1920,
+      "url": "",
+      "trace_id": ""
+    },
+    {
+      "trace_id": "",
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/3c54ac9fa94ab7fbe5fb5917ea3f27b6/notes_uhdr/1040g3qo3244o61mngo2049oj2o1gkdf26ef5878!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/ac4e48ebcab560ae8a34b95b8ac2eca8/notes_uhdr/1040g3qo3244o61mngo2049oj2o1gkdf26ef5878!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "height": 2560,
+      "width": 1920,
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281433/3c54ac9fa94ab7fbe5fb5917ea3f27b6/notes_uhdr/1040g3qo3244o61mngo2049oj2o1gkdf26ef5878!nd_prv_wlteh_webp_3",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281433/ac4e48ebcab560ae8a34b95b8ac2eca8/notes_uhdr/1040g3qo3244o61mngo2049oj2o1gkdf26ef5878!nd_dft_wlteh_webp_3",
+      "stream": {
+        "av1": [],
+        "h264": [
+          {
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01ea88411ed063d801005003a0243e8798_19.mp4?sign=bae2cc924e204d12f95a8388a7ea60fc&t=6abea771",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01ea88411ed063d801005003a0243e8798_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01ea88411ed063d801005003a0243e8798_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1,
+            "psnr": 0
+          }
+        ],
+        "h265": [],
+        "h266": []
+      },
+      "live_photo": true,
+      "file_id": "notes_uhdr/1040g3qo3244o61mngo2049oj2o1gkdf26ef5878",
+      "url": ""
+    },
+    {
+      "url": "",
+      "width": 1920,
+      "trace_id": "",
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/5a4868f927e8e4bbd0723b1d29b081d7/notes_uhdr/1040g3qo3244o61mngo0g49oj2o1gkdf2up33d5g!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/2aa7cd5391a46c929aafd1c71689bbe7/notes_uhdr/1040g3qo3244o61mngo0g49oj2o1gkdf2up33d5g!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281433/5a4868f927e8e4bbd0723b1d29b081d7/notes_uhdr/1040g3qo3244o61mngo0g49oj2o1gkdf2up33d5g!nd_prv_wlteh_webp_3",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281433/2aa7cd5391a46c929aafd1c71689bbe7/notes_uhdr/1040g3qo3244o61mngo0g49oj2o1gkdf2up33d5g!nd_dft_wlteh_webp_3",
+      "stream": {
+        "h266": [],
+        "av1": [],
+        "h264": [
+          {
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01ea884117abbc4501005003a0243e8881_19.mp4?sign=9d7be667db3cecf3c73c019e50be0525&t=6abea771",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01ea884117abbc4501005003a0243e8881_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01ea884117abbc4501005003a0243e8881_19.mp4"
+            ],
+            "hdr_type": 0
+          }
+        ],
+        "h265": []
+      },
+      "live_photo": true,
+      "file_id": "notes_uhdr/1040g3qo3244o61mngo0g49oj2o1gkdf2up33d5g",
+      "height": 2560
+    },
+    {
+      "url": "",
+      "info_list": [
+        {
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/ac66d52b17ee80ae64beb123a1cd7315/notes_uhdr/1040g3qo3244o61mngo1049oj2o1gkdf2e07lv30!nd_prv_wlteh_webp_3",
+          "image_scene": "WB_PRV"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/016f4aec86d456dbcc5a5c9f37d0acac/notes_uhdr/1040g3qo3244o61mngo1049oj2o1gkdf2e07lv30!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281433/ac66d52b17ee80ae64beb123a1cd7315/notes_uhdr/1040g3qo3244o61mngo1049oj2o1gkdf2e07lv30!nd_prv_wlteh_webp_3",
+      "live_photo": true,
+      "file_id": "notes_uhdr/1040g3qo3244o61mngo1049oj2o1gkdf2e07lv30",
+      "height": 2560,
+      "trace_id": "",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281433/016f4aec86d456dbcc5a5c9f37d0acac/notes_uhdr/1040g3qo3244o61mngo1049oj2o1gkdf2e07lv30!nd_dft_wlteh_webp_3",
+      "stream": {
+        "av1": [],
+        "h264": [
+          {
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01ea88411ad195b501005003a0243e83ba_19.mp4?sign=9a946e6191f39b6912920c765d5625eb&t=6abea771",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01ea88411ad195b501005003a0243e83ba_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01ea88411ad195b501005003a0243e83ba_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD"
+          }
+        ],
+        "h265": [],
+        "h266": []
+      },
+      "width": 1920
+    },
+    {
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281433/7d95e84efb4a907711905e7706a396d4/notes_uhdr/1040g3qo3244o61mngo1g49oj2o1gkdf2npedo1g!nd_dft_wlteh_webp_3",
+      "stream": {
+        "h266": [],
+        "av1": [],
+        "h264": [
+          {
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01ea88411cd19b5201005003a0243e8388_19.mp4?sign=e02f1cf0223006ffcfc76813caaac98c&t=6abea771",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01ea88411cd19b5201005003a0243e8388_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01ea88411cd19b5201005003a0243e8388_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62
+          }
+        ],
+        "h265": []
+      },
+      "live_photo": true,
+      "file_id": "notes_uhdr/1040g3qo3244o61mngo1g49oj2o1gkdf2npedo1g",
+      "height": 2560,
+      "width": 1920,
+      "url": "",
+      "trace_id": "",
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/faa2e969999c00082fde6014a716f8c8/notes_uhdr/1040g3qo3244o61mngo1g49oj2o1gkdf2npedo1g!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/7d95e84efb4a907711905e7706a396d4/notes_uhdr/1040g3qo3244o61mngo1g49oj2o1gkdf2npedo1g!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281433/faa2e969999c00082fde6014a716f8c8/notes_uhdr/1040g3qo3244o61mngo1g49oj2o1gkdf2npedo1g!nd_prv_wlteh_webp_3"
+    },
+    {
+      "width": 1920,
+      "url": "",
+      "trace_id": "",
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281433/6eb654b06312a7e1eb9afc39e4ebaa6a/notes_uhdr/1040g3qo3244o61mngo0049oj2o1gkdf2a8o7ur8!nd_prv_wlteh_webp_3",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281433/c91ff4a4be58fb2089a60786d75bb2e9/notes_uhdr/1040g3qo3244o61mngo0049oj2o1gkdf2a8o7ur8!nd_dft_wlteh_webp_3",
+      "file_id": "notes_uhdr/1040g3qo3244o61mngo0049oj2o1gkdf2a8o7ur8",
+      "height": 2560,
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/6eb654b06312a7e1eb9afc39e4ebaa6a/notes_uhdr/1040g3qo3244o61mngo0049oj2o1gkdf2a8o7ur8!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281433/c91ff4a4be58fb2089a60786d75bb2e9/notes_uhdr/1040g3qo3244o61mngo0049oj2o1gkdf2a8o7ur8!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "stream": {
+        "h266": [],
+        "av1": [],
+        "h264": [
+          {
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01ea884115d1890401005003a0243e9105_19.mp4?sign=6d8c70dbf7bb461780677b85aa725106&t=6abea771",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01ea884115d1890401005003a0243e9105_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01ea884115d1890401005003a0243e9105_19.mp4"
+            ],
+            "hdr_type": 0
+          }
+        ],
+        "h265": []
+      },
+      "live_photo": true
+    }
+  ],
+  "tag_list": [
+    {
+      "id": "656abe2600000000200043db",
+      "name": "只有本地人才知道的店",
+      "type": "topic"
+    },
+    {
+      "name": "全球吃喝小分队",
+      "type": "topic",
+      "id": "629db44e0000000001003344"
+    },
+    {
+      "id": "64215ce0000000000a00612c",
+      "name": "旅行中的地道美食",
+      "type": "topic"
+    },
+    {
+      "id": "5be6eec150fe56000102de1b",
+      "name": "胡志明旅行",
+      "type": "topic"
+    },
+    {
+      "id": "5bf52e07e1921600010f9fc7",
+      "name": "胡志明美食",
+      "type": "topic"
+    },
+    {
+      "id": "5c27ad5d000000000800a979",
+      "name": "胡志明旅游",
+      "type": "topic"
+    },
+    {
+      "id": "5d0b1ce2000000000e02e104",
+      "name": "胡志明攻略",
+      "type": "topic"
+    }
+  ],
+  "at_user_list": [],
+  "last_update_time": 1787637294000,
+  "type": "normal",
+  "user": {
+    "xsec_token": "ABIRBLctZzVZw2YCmfDrXTGvhv3bqju6AbAMnCJli6Jtc=",
+    "user_id": "599d030a6a6a6934500135e2",
+    "nickname": "Violet_y",
+    "avatar": "https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31fdq8v1mmi0049oj2o1gkdf2n36u3kg"
+  },
+  "interact_info": {
+    "liked": false,
+    "liked_count": "221",
+    "collected_count": "230",
+    "relation": "none",
+    "collected": false,
+    "comment_count": "65",
+    "share_count": "126",
+    "followed": false,
+    "nice_count": ""
+  },
+  "time": 1787314463000,
+  "webUrl": "https://www.xiaohongshu.com/explore/6a88411f00000000350204f5?xsec_token=CBo6AIWC0oTIp0EeKcmM2ekYfnVP74Ywf9F2J8Awloh1o%3D&xsec_source=pc_share"
+}

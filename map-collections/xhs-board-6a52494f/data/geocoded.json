@@ -1,0 +1,47 @@
+[
+  {
+    "name": "新山一国际机场",
+    "city": "胡志明市",
+    "category": "交通",
+    "notes": [
+      "胡志明机场取现金💵攻略！"
+    ],
+    "raw": {
+      "name": "新山一国际机场",
+      "city": "胡志明市",
+      "category": "交通",
+      "notes": [
+        "胡志明机场取现金💵攻略！"
+      ]
+    },
+    "status": "ok_nocity",
+    "matched": {
+      "name": "杭州萧山国际机场",
+      "address": "机场1号路1号",
+      "location": "120.432413,30.234708",
+      "poiid": null,
+      "type": "交通设施服务;机场相关;飞机场",
+      "cityname": "杭州市",
+      "pname": "浙江省",
+      "adname": "萧山区"
+    },
+    "candidates": []
+  },
+  {
+    "name": "胡志明新山一机场T2航站楼",
+    "city": "",
+    "category": "交通",
+    "notes": [
+      "胡志明机场取现金💵攻略！"
+    ],
+    "raw": {
+      "name": "胡志明新山一机场T2航站楼",
+      "city": "",
+      "category": "交通",
+      "notes": [
+        "胡志明机场取现金💵攻略！"
+      ]
+    },
+    "status": "no_match"
+  }
+]

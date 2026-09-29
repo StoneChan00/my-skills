@@ -1,0 +1,113 @@
+{
+  "note_id": "6a7e80dd0000000026037df6",
+  "type": "normal",
+  "user": {
+    "user_id": "583ff3d06a6a694ebfb9517d",
+    "nickname": "咿呀咿呀哟",
+    "avatar": "https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo323pb3gh56u0048uai2pt0kbtar4gt80",
+    "xsec_token": "ABQKI7wN5Vyc6crTebBkWCaXYmmRu-w9Njkb4zoqlnt2c="
+  },
+  "at_user_list": [],
+  "time": 1786675421000,
+  "last_update_time": 1786675422000,
+  "share_info": {
+    "un_share": false
+  },
+  "title": "芽庄这个旅行社换钱汇率高👍",
+  "desc": "之前刷到很多薯友说96中国超市汇率高～从巴拿马酒店导航过去也就300多米就过去了～然后96中国超市当天汇率是3840，我们在中国超市隔着一家店看见3850就在这家店换了1000～很神奇的是去中国超市的路上没看见有换钱的，回酒店的时候看见特别的多贴在门口换钱的[失望R][失望R]路过这家店写着3870是最高的，之后就在这里换了……大家换过哪家汇率高呢给大家作个参考[哇R][哇R]",
+  "interact_info": {
+    "liked": false,
+    "collected": false,
+    "share_count": "208",
+    "liked_count": "232",
+    "collected_count": "314",
+    "comment_count": "74",
+    "followed": false,
+    "relation": "none",
+    "nice_count": ""
+  },
+  "image_list": [
+    {
+      "trace_id": "",
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281432/5da4d8653915edb8db4ce63b1b16b5a3/note_pre_post_uhdr/1040g3r8323r777730m0048uai2pt0kbtcenkjl0!nd_prv_wlteh_webp_3",
+      "file_id": "note_pre_post_uhdr/1040g3r8323r777730m0048uai2pt0kbtcenkjl0",
+      "height": 5712,
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281432/5da4d8653915edb8db4ce63b1b16b5a3/note_pre_post_uhdr/1040g3r8323r777730m0048uai2pt0kbtcenkjl0!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281432/53ecb28b847a728193c32d1e9dd79657/note_pre_post_uhdr/1040g3r8323r777730m0048uai2pt0kbtcenkjl0!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281432/53ecb28b847a728193c32d1e9dd79657/note_pre_post_uhdr/1040g3r8323r777730m0048uai2pt0kbtcenkjl0!nd_dft_wlteh_webp_3",
+      "stream": {
+        "h264": [
+          {
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01ea7e7ef508edaa010050039ffe279699_19.mp4?sign=d4c2e8811cc2e9c422909645ae8b2aaf&t=6abea752",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01ea7e7ef508edaa010050039ffe279699_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01ea7e7ef508edaa010050039ffe279699_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1,
+            "psnr": 0
+          }
+        ],
+        "h265": [],
+        "h266": [],
+        "av1": []
+      },
+      "live_photo": true,
+      "width": 4284,
+      "url": ""
+    },
+    {
+      "height": 5712,
+      "width": 4284,
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281432/6193227b18fd198a843fe26b16ee749d/note_pre_post_uhdr/1040g3r8323r777730m0g48uai2pt0kbttho1ko8!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281432/ae72353d8a5938723d8d9f5008f964ea/note_pre_post_uhdr/1040g3r8323r777730m0g48uai2pt0kbttho1ko8!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281432/6193227b18fd198a843fe26b16ee749d/note_pre_post_uhdr/1040g3r8323r777730m0g48uai2pt0kbttho1ko8!nd_prv_wlteh_webp_3",
+      "stream": {
+        "h266": [],
+        "av1": [],
+        "h264": [
+          {
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01ea7e7f03049760010050039ffe27ac8e_19.mp4?sign=66b23a2146f3c38ca3479d54f9b734fd&t=6abea752",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01ea7e7f03049760010050039ffe27ac8e_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01ea7e7f03049760010050039ffe27ac8e_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1
+          }
+        ],
+        "h265": []
+      },
+      "live_photo": true,
+      "file_id": "note_pre_post_uhdr/1040g3r8323r777730m0g48uai2pt0kbttho1ko8",
+      "url": "",
+      "trace_id": "",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281432/ae72353d8a5938723d8d9f5008f964ea/note_pre_post_uhdr/1040g3r8323r777730m0g48uai2pt0kbttho1ko8!nd_dft_wlteh_webp_3"
+    }
+  ],
+  "tag_list": [],
+  "webUrl": "https://www.xiaohongshu.com/explore/6a7e80dd0000000026037df6?xsec_token=CBC9MZbCZnCLCkSa99ngRvwiPjyA5sWb4O63RqBUyW0tw%3D&xsec_source=pc_share"
+}

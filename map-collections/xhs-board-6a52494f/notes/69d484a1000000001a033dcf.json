@@ -1,0 +1,254 @@
+{
+  "interact_info": {
+    "collected_count": "127",
+    "share_count": "101",
+    "nice_count": "",
+    "liked_count": "142",
+    "collected": false,
+    "comment_count": "46",
+    "followed": false,
+    "relation": "none",
+    "liked": false
+  },
+  "tag_list": [
+    {
+      "id": "5bff6ceb9c9f340001989217",
+      "name": "cafe",
+      "type": "topic"
+    },
+    {
+      "id": "5bed85e94b7e8300019fb01c",
+      "name": "胡志明",
+      "type": "topic"
+    },
+    {
+      "id": "62319200000000000101d982",
+      "name": "胡志明咖啡",
+      "type": "topic"
+    },
+    {
+      "name": "胡志明旅游",
+      "type": "topic",
+      "id": "5c27ad5d000000000800a979"
+    }
+  ],
+  "at_user_list": [],
+  "image_list": [
+    {
+      "height": 2560,
+      "width": 1920,
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/aedd443a5828feb3f29dc3091b8140b6/notes_uhdr/1040g3qg31ul4bihb2g2g5npspsp0bm4u7hue8no!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/1e19f0d8b196c33f200dae36a52c7857/notes_uhdr/1040g3qg31ul4bihb2g2g5npspsp0bm4u7hue8no!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281431/1e19f0d8b196c33f200dae36a52c7857/notes_uhdr/1040g3qg31ul4bihb2g2g5npspsp0bm4u7hue8no!nd_dft_wlteh_webp_3",
+      "stream": {
+        "h264": [
+          {
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01e9d484a1314fca010050039d66264bd5_19.mp4?sign=959f80f1d66f9e9e33b1aa43c6bf8215&t=6abea6f1",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01e9d484a1314fca010050039d66264bd5_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01e9d484a1314fca010050039d66264bd5_19.mp4"
+            ],
+            "hdr_type": 0
+          }
+        ],
+        "h265": [],
+        "h266": [],
+        "av1": []
+      },
+      "file_id": "notes_uhdr/1040g3qg31ul4bihb2g2g5npspsp0bm4u7hue8no",
+      "url": "",
+      "trace_id": "",
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281431/aedd443a5828feb3f29dc3091b8140b6/notes_uhdr/1040g3qg31ul4bihb2g2g5npspsp0bm4u7hue8no!nd_prv_wlteh_webp_3",
+      "live_photo": true
+    },
+    {
+      "file_id": "notes_uhdr/1040g3qg31ul4bihb2g305npspsp0bm4uiej4oj0",
+      "url": "",
+      "trace_id": "",
+      "stream": {
+        "h264": [
+          {
+            "hdr_type": 0,
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01e9d484a158ef80010050039d66264768_19.mp4?sign=78b236d3e5a562a789d1c490b86c89b7&t=6abea6f1",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01e9d484a158ef80010050039d66264768_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01e9d484a158ef80010050039d66264768_19.mp4"
+            ]
+          }
+        ],
+        "h265": [],
+        "h266": [],
+        "av1": []
+      },
+      "height": 2560,
+      "width": 1920,
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/4283dcb57281c2410d462243f6ff281c/notes_uhdr/1040g3qg31ul4bihb2g305npspsp0bm4uiej4oj0!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/38411f86607226ed79b1240964913ec6/notes_uhdr/1040g3qg31ul4bihb2g305npspsp0bm4uiej4oj0!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281431/4283dcb57281c2410d462243f6ff281c/notes_uhdr/1040g3qg31ul4bihb2g305npspsp0bm4uiej4oj0!nd_prv_wlteh_webp_3",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281431/38411f86607226ed79b1240964913ec6/notes_uhdr/1040g3qg31ul4bihb2g305npspsp0bm4uiej4oj0!nd_dft_wlteh_webp_3",
+      "live_photo": true
+    },
+    {
+      "file_id": "notes_uhdr/1040g3qg31ul4bihb2g3g5npspsp0bm4u3e224pg",
+      "height": 2560,
+      "width": 1920,
+      "info_list": [
+        {
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/27e30e0eebaba8bfe367c3f6161636da/notes_uhdr/1040g3qg31ul4bihb2g3g5npspsp0bm4u3e224pg!nd_prv_wlteh_webp_3",
+          "image_scene": "WB_PRV"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/2c67b5b9a22626f632a612b37bf3f6d9/notes_uhdr/1040g3qg31ul4bihb2g3g5npspsp0bm4u3e224pg!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281431/27e30e0eebaba8bfe367c3f6161636da/notes_uhdr/1040g3qg31ul4bihb2g3g5npspsp0bm4u3e224pg!nd_prv_wlteh_webp_3",
+      "stream": {
+        "h265": [],
+        "h266": [],
+        "av1": [],
+        "h264": [
+          {
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01e9d484a158ef81010050039d662641a2_19.mp4?sign=44604f97037829f064f89a5ee9a94330&t=6abea6f1",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01e9d484a158ef81010050039d662641a2_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01e9d484a158ef81010050039d662641a2_19.mp4"
+            ],
+            "hdr_type": 0
+          }
+        ]
+      },
+      "url": "",
+      "trace_id": "",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281431/2c67b5b9a22626f632a612b37bf3f6d9/notes_uhdr/1040g3qg31ul4bihb2g3g5npspsp0bm4u3e224pg!nd_dft_wlteh_webp_3",
+      "live_photo": true
+    },
+    {
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/6f965096247f0571658735ef46e53e59/notes_uhdr/1040g3qg31ul4bihb2g405npspsp0bm4u0ro4m6o!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/140fc0b0558e35088fdfc33ce71eb000/notes_uhdr/1040g3qg31ul4bihb2g405npspsp0bm4u0ro4m6o!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281431/6f965096247f0571658735ef46e53e59/notes_uhdr/1040g3qg31ul4bihb2g405npspsp0bm4u0ro4m6o!nd_prv_wlteh_webp_3",
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281431/140fc0b0558e35088fdfc33ce71eb000/notes_uhdr/1040g3qg31ul4bihb2g405npspsp0bm4u0ro4m6o!nd_dft_wlteh_webp_3",
+      "stream": {
+        "h264": [
+          {
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01e9d484a1314fcb010050039d66264d30_19.mp4?sign=ca3720462f5ade57904f73d3fa96a710&t=6abea6f1",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01e9d484a1314fcb010050039d66264d30_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01e9d484a1314fcb010050039d66264d30_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1,
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD"
+          }
+        ],
+        "h265": [],
+        "h266": [],
+        "av1": []
+      },
+      "file_id": "notes_uhdr/1040g3qg31ul4bihb2g405npspsp0bm4u0ro4m6o",
+      "height": 2560,
+      "width": 1920,
+      "live_photo": true,
+      "url": "",
+      "trace_id": ""
+    },
+    {
+      "live_photo": true,
+      "file_id": "notes_uhdr/1040g3qg31ul4bihb2g4g5npspsp0bm4ugusqiu0",
+      "width": 1920,
+      "info_list": [
+        {
+          "image_scene": "WB_PRV",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/1943160c949f45e839b3b24919f297c0/notes_uhdr/1040g3qg31ul4bihb2g4g5npspsp0bm4ugusqiu0!nd_prv_wlteh_webp_3"
+        },
+        {
+          "image_scene": "WB_DFT",
+          "url": "http://sns-webpic-qc.xhscdn.com/202609281431/70ea1d9c06a89cc00eeb8e9dba64422a/notes_uhdr/1040g3qg31ul4bihb2g4g5npspsp0bm4ugusqiu0!nd_dft_wlteh_webp_3"
+        }
+      ],
+      "url_default": "http://sns-webpic-qc.xhscdn.com/202609281431/70ea1d9c06a89cc00eeb8e9dba64422a/notes_uhdr/1040g3qg31ul4bihb2g4g5npspsp0bm4ugusqiu0!nd_dft_wlteh_webp_3",
+      "height": 2560,
+      "url": "",
+      "trace_id": "",
+      "url_pre": "http://sns-webpic-qc.xhscdn.com/202609281431/1943160c949f45e839b3b24919f297c0/notes_uhdr/1040g3qg31ul4bihb2g4g5npspsp0bm4ugusqiu0!nd_prv_wlteh_webp_3",
+      "stream": {
+        "h265": [],
+        "h266": [],
+        "av1": [],
+        "h264": [
+          {
+            "psnr": 0,
+            "ssim": 0,
+            "weight": 62,
+            "quality_type": "HD",
+            "master_url": "http://sns-video-v2.xhscdn.com/stream/1/10/19/01e9d484a157a92d010050039d66263577_19.mp4?sign=4a9953a0a726419a9ded96f01fcf8ba8&t=6abea6f1",
+            "backup_urls": [
+              "http://sns-bak-v1.xhscdn.com/stream/1/10/19/01e9d484a157a92d010050039d66263577_19.mp4",
+              "http://sns-bak-v6.xhscdn.com/stream/1/10/19/01e9d484a157a92d010050039d66263577_19.mp4"
+            ],
+            "hdr_type": 0,
+            "vmaf": -1
+          }
+        ]
+      }
+    }
+  ],
+  "time": 1775535265000,
+  "last_update_time": 1775535265000,
+  "share_info": {
+    "un_share": false
+  },
+  "note_id": "69d484a1000000001a033dcf",
+  "type": "normal",
+  "title": "胡志明｜Little Hanoi Egg 测评（含价格）",
+  "desc": "在胡志明吃了三顿这家，本来只是随便找的，没想到竟然是网红店，感觉比较好吃的主食和饮料都品鉴过了，以下测评纯主观，本来也没有抱着测评的本意，只是忽然发现原来吃了这么多回。\n\t\n☕️咖啡类\n鸡蛋咖啡🌟🌟🌟🌟🌟（40k）\n这是我在越南喝的第一杯鸡蛋咖啡，我觉得惊为天人，很新奇，我觉得吃起来比较像奶盖，如果点了热的的话，建议搭配吐司类的，然后可以面包蘸着吃就特别好吃😋单喝的话肯定会很腻。所以还是推荐点冰的。但是下面的咖啡还是很苦的哟，建议不要搅匀了。\n鸡蛋抹茶🌟🌟🌟🌟🌟（40k）\n上面的鸡蛋部分味道和鸡蛋咖啡是一样的，它的抹茶也是很苦很苦的那种😭喜欢抹茶可以点，同样推荐冰的，因为热的话会腻，除非点热的蘸面包吃。\n椰子咖啡🌟🌟🌟🌟（55k）\n只有冰的，还是很推荐的啦，就是很清爽的味道。就是椰子和咖啡和冰块和糖/炼乳混合，没有鸡蛋咖啡那么甜。\n\t\n🍽️主食类\n芒果吐司🌟🌟🌟（80k）\n只有一片面包，中间好像是一层奶酪或者奶油，上面是很多芒果，配两片香蕉，两块西瓜，还有蜂蜜，拍起来比较好看，吃起来和你想象到的味道是一样的，没有惊艳到我，而且相比于其他吐司来说，分量少一些，饱腹感也没有那么强。并且我感觉他们融合的并不是很好，就感觉吃了一盘芒果，一片吐司，加点乳酪。并且饮料都是甜的，这个再配的话甜上加甜，除非你特别特别爱甜的，不然我不推荐你点。\n基础班尼迪克蛋🌟🌟🌟🌟(140k)\n就是火腿➕西红柿➕流心蛋➕玛芬？有点记不太清了，层次挺丰富的，还挺好吃。\n牛肉吐司🌟🌟🌟🌟🌟（100k)\n中间有非常多的牛肉，两片面包，旁边还有沙拉以及两块香蕉，两块西瓜，甜咸搭配（咖啡）才更好吃嘛。而且吃完特别特别饱，感觉相当于两顿饭。\n金枪鱼吐司🌟🌟🌟🌟🌟(100k）\n不知道是金枪鱼体积更大还是怎么样，它是所有主食里面最厚的，里面有非常多的金枪鱼，也配沙拉，吃完非常饱，喜欢金枪鱼的肯定会喜欢吃。\n\t\n🥤饮料类\n芒果奶昔🌟🌟🌟（75k）\n当时喝的时候很热，所以觉得还不错，应该是芒果加牛奶加冰加酸奶，在很热想休息时喝一个还挺不错的。\n芒果酸奶🌟🌟（65k）\n我感觉就是普通的芒果加酸奶，有点浓稠，当时我太热了，实在喝不下去。跟你自己做的差不了多少。\n橙汁🌟🌟🌟（50k）\n就是很纯正的纯汁味道，感觉没有另外加糖，还不错啦。\n#cafe[话题]# #胡志明[话题]# #胡志明咖啡[话题]# #胡志明旅游[话题]#",
+  "user": {
+    "xsec_token": "AB-UMPsYDn_GJ54RH2zyiEleODi306khhc27j7JuUm00c=",
+    "user_id": "5f3ccf32000000000101d89e",
+    "nickname": "黄油momo",
+    "avatar": "https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31qqvdvj97g0g5npspsp0bm4uhivv5f0"
+  },
+  "webUrl": "https://www.xiaohongshu.com/explore/69d484a1000000001a033dcf?xsec_token=CBJfRAYQGhZTJb6CYGNk0Mkpex3cnBQvPtgTakF9Y4oDk%3D&xsec_source=pc_share"
+}
