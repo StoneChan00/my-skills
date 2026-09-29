@@ -1,2 +1,12 @@
 .claude/
 .opencode/
+.playwright-mcp/
+.sisyphus/
+
+# 地图合集：第三方原始内容与运行产物不入库（可由管线重新生成）
+map-collections/*/notes/
+map-collections/*/data/
+map-collections/*/captures/
+map-collections/*/artifacts/
+map-collections/*/note_list.json
+__pycache__/

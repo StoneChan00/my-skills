@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ============================================================
 #  sync-pages.sh
-#  Sync travel-plans/ from master to gh-pages branch
+#  Sync travel-plans/ + map-collections/ from master to gh-pages branch
 #  Usage:  run from repo root as ./scripts/sync-pages.sh
 # ============================================================
 
@@ -24,9 +24,9 @@ if [[ "$CURRENT_BRANCH" != "master" ]]; then
     exit 1
 fi
 
-# --- Step 2: Check for uncommitted travel-plans changes ---
-if ! git diff --quiet travel-plans/ 2>/dev/null; then
-    echo "[ERR] You have uncommitted changes in travel-plans/. Commit them to master first." >&2
+# --- Step 2: Check for uncommitted output changes ---
+if ! git diff --quiet travel-plans/ map-collections/ 2>/dev/null; then
+    echo "[ERR] You have uncommitted changes in travel-plans/ or map-collections/. Commit them to master first." >&2
     exit 1
 fi
 
@@ -37,12 +37,12 @@ if ! git checkout gh-pages --quiet 2>/dev/null; then
     exit 1
 fi
 
-# --- Step 4: Pull travel-plans from master ---
-echo "[2/4] Pulling travel-plans from master..."
-git checkout master -- travel-plans/ 2>/dev/null || true
+# --- Step 4: Pull output dirs from master ---
+echo "[2/4] Pulling travel-plans/ + map-collections/ from master..."
+git checkout master -- travel-plans/ map-collections/ 2>/dev/null || true
 
 # --- Step 5: Check if anything actually changed ---
-if git diff --cached --quiet travel-plans/ 2>/dev/null; then
+if git diff --cached --quiet travel-plans/ map-collections/ 2>/dev/null; then
     echo "[INFO] No changes to sync. gh-pages is already up to date."
     git checkout master --quiet
     exit 0
@@ -51,7 +51,7 @@ fi
 # --- Step 6: Commit + push ---
 echo "[3/4] Committing and pushing..."
 MASTER_MSG="$(git log master -1 --format='%s' 2>/dev/null)"
-git add travel-plans/
+git add travel-plans/ map-collections/
 git commit -m "sync: $MASTER_MSG" --quiet
 if ! git push --quiet; then
     echo "[ERR] Push failed. You're still on gh-pages - fix and switch back manually." >&2

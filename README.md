@@ -8,10 +8,13 @@ OpenCode / AI Agent skills 仓库。存放自研 skill 及由其生成的产出�
 my-skills/
 ├── skills-creator/       # Skill：生成规范 SKILL.md 脚手架
 ├── travel-planner/       # Skill：旅行规划，对接 MCP 生成可视化 HTML 行程
+├── map-planner/          # Skill：社媒内容→地点合集→地图标点（小红书/抖音→高德/MyMaps/网页地图）
 ├── travel-plans/         # 产出物：每次旅行规划的 HTML + 数据
 │   └── jeju-20260703/    #   济州岛 4天3晚 (2026.07.03-06)
+├── map-collections/      # 产出物：每次地点合集的数据 + 交付物
+│   └── xhs-board-6a52494f/  # 越南 91 地点（小红书36篇+抖音10条）
 ├── scripts/
-│   └── sync-pages.sh     # 将 travel-plans/ 同步到 gh-pages 分支
+│   └── sync-pages.sh     # 将 travel-plans/ + map-collections/ 同步到 gh-pages 分支
 ├── .opencode/            # [git-ignored] agent 运行时配置，symlink 指向顶层 skill
 ├── .github/workflows/    # CI：同步到 GitCode 镜像
 └── init.sh               # 首次 clone 后运行，建立 .opencode/skills 软链接
@@ -37,6 +40,7 @@ opencode mcp auth nowah-travel       # 2. 一次性浏览器授权（首次必�
 |-------|------|
 | `skills-creator` | 生成规范 SKILL.md 脚手架，遵循 OpenCode 官方 spec |
 | `travel-planner` | 旅行规划，对接 nowah-travel / 12306 MCP，产出可视化 HTML 行程 |
+| `map-planner` | 社媒内容（小红书/抖音）→ 地点提取 → 定位 → 地图标点；支持高德 App 收藏灌入 / 地图小程序 / My Maps / 网页地图 |
 
 ## 产出物
 
@@ -44,6 +48,7 @@ opencode mcp auth nowah-travel       # 2. 一次性浏览器授权（首次必�
 |------|------|
 | `travel-plans/jeju-20260703` | [济州岛 4天3晚](https://stonechan00.github.io/my-skills/travel-plans/jeju-20260703/index.html) (2026.07.03–06) |
 | `travel-plans/jeju-20260703-v2` | [济州岛 4天3晚](https://stonechan00.github.io/my-skills/travel-plans/jeju-20260703-v2/index.html) (2026.07.03–06) |
+| `map-collections/xhs-board-6a52494f` | [越南旅行地图 · 91 地点](https://stonechan00.github.io/my-skills/map-collections/xhs-board-6a52494f/vietnam-map.html)（小红书36篇+抖音10条 → 高德App收藏） |
 
 ## 初始化做了什么
 

@@ -38,6 +38,7 @@ mkdir -p "$SKILLS_DIR"
 declare -A SKILL_MAP=(
   ["skills-creator"]="../../skills-creator"
   ["travel-planner"]="../../travel-planner"
+  ["map-planner"]="../../map-planner"
 )
 
 for skill_name in "${!SKILL_MAP[@]}"; do
@@ -65,6 +66,12 @@ for skill_name in "${!SKILL_MAP[@]}"; do
     ok "$skill_name → $target"
   fi
 done
+
+# ---- 1b. Output directories ----------------------------------
+
+step "Ensuring output directories"
+mkdir -p "$REPO_ROOT/travel-plans" "$REPO_ROOT/map-collections"
+ok "travel-plans/ + map-collections/"
 
 # ---- 2. MCP server config -----------------------------------
 
@@ -294,9 +301,10 @@ echo ""
 echo -e "\033[1m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\033[1m  Setup complete!\033[0m"
 echo ""
-echo "  What was done:"
-echo "    · Skill symlinks in .opencode/skills/"
-echo "    · MCP servers in .opencode/opencode.jsonc"
+  echo "  What was done:"
+  echo "    · Skill symlinks in .opencode/skills/ (skills-creator, travel-planner, map-planner)"
+  echo "    · MCP servers in .opencode/opencode.jsonc"
+  echo "    · Output dirs travel-plans/ + map-collections/"
 echo ""
 echo "  To verify everything works:"
 echo "    opencode mcp list          # see connected servers"
