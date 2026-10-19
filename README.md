@@ -9,6 +9,11 @@ my-skills/
 ├── skills-creator/       # Skill：生成规范 SKILL.md 脚手架
 ├── travel-planner/       # Skill：旅行规划，对接 MCP 生成可视化 HTML 行程
 ├── map-planner/          # Skill：社媒内容→地点合集→地图标点（小红书/抖音→高德/MyMaps/网页地图）
+├── gitcode-infra/        # Skill 集：GitCode 协作（镜像自 cann/cannbot-skills infra/）
+│   ├── gitcode-issue-handler/
+│   ├── gitcode-issue-gen/
+│   ├── gitcode-pr-handler/
+│   └── gitcode-toolkit/  # 共享库，被上面 3 个引用，4 目录必须保持平级
 ├── travel-plans/         # 产出物：每次旅行规划的 HTML + 数据
 │   └── jeju-20260703/    #   济州岛 4天3晚 (2026.07.03-06)
 ├── map-collections/      # 产出物：每次地点合集的数据 + 交付物
@@ -41,6 +46,7 @@ opencode mcp auth nowah-travel       # 2. 一次性浏览器授权（首次必�
 | `skills-creator` | 生成规范 SKILL.md 脚手架，遵循 OpenCode 官方 spec |
 | `travel-planner` | 旅行规划，对接 nowah-travel / 12306 MCP，产出可视化 HTML 行程 |
 | `map-planner` | 社媒内容（小红书/抖音）→ 地点提取 → 定位 → 地图标点；支持高德 App 收藏灌入 / 地图小程序 / My Maps / 网页地图 |
+| `gitcode-infra` | GitCode 协作 skill 集（4 个：Issue 批量处理 / Issue 生成 / PR 文案重写 / 共享工具库），镜像自 cann/cannbot-skills，详见 [gitcode-infra/README.md](gitcode-infra/README.md) |
 
 ## 产出物
 

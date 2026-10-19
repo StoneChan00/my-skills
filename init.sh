@@ -39,6 +39,11 @@ declare -A SKILL_MAP=(
   ["skills-creator"]="../../skills-creator"
   ["travel-planner"]="../../travel-planner"
   ["map-planner"]="../../map-planner"
+  # gitcode-infra skill 集（镜像自 cann/cannbot-skills，4 目录必须保持平级）
+  ["gitcode-toolkit"]="../../gitcode-infra/gitcode-toolkit"
+  ["gitcode-issue-handler"]="../../gitcode-infra/gitcode-issue-handler"
+  ["gitcode-pr-handler"]="../../gitcode-infra/gitcode-pr-handler"
+  ["gitcode-issue-gen"]="../../gitcode-infra/gitcode-issue-gen"
 )
 
 for skill_name in "${!SKILL_MAP[@]}"; do
@@ -302,7 +307,7 @@ echo -e "\033[1m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "\033[1m  Setup complete!\033[0m"
 echo ""
   echo "  What was done:"
-  echo "    · Skill symlinks in .opencode/skills/ (skills-creator, travel-planner, map-planner)"
+  echo "    · Skill symlinks in .opencode/skills/ (skills-creator, travel-planner, map-planner + 4 gitcode-infra skills)"
   echo "    · MCP servers in .opencode/opencode.jsonc"
   echo "    · Output dirs travel-plans/ + map-collections/"
 echo ""
