@@ -1,0 +1,184 @@
+{
+  "destination": "都江堰",
+  "dates": ["2026-11-14"],
+  "departure_city": "成都（高新区福朋喜来登酒店）",
+  "hotel": {
+    "name": "成都高新会展中心福朋喜来登酒店",
+    "name_en": "Four Points by Sheraton Chengdu, High-tech Zone Exhibition Center",
+    "address": "成都高新区吉庆一路288号",
+    "lat": 30.553116,
+    "lng": 104.060351,
+    "nearest_metro": "世纪城站（1号线，1.1km）/ 天府三街站（1号线，1.3km）",
+    "source": "Marriott 官网 + Trip.com（2026-11-13 查询）"
+  },
+  "travelers": 1,
+  "budget": {
+    "total": 226,
+    "currency": "CNY",
+    "price_source": "12306-mcp 实时查询（2026-11-13）+ 四川中青旅官网淡季门票价（2026-10-30 文章）+ 攻略餐饮估算",
+    "breakdown": {
+      "transport": 46,
+      "ticket": 60,
+      "food": 80,
+      "other": 40
+    }
+  },
+  "weather": {
+    "date": "2026-11-14",
+    "condition": "多云转阴，部分预报提示傍晚前后可能有小雨",
+    "temp_high": 18,
+    "temp_low": 11,
+    "rain_probability": "10%-30%（各家预报不一，建议备伞）",
+    "sunset": "18:08",
+    "aqi": "55-73 良",
+    "advice": "薄外套/风衣 + 折叠伞 + 防滑运动鞋（景区石板路与索桥可能湿滑）",
+    "source": "天气网 tianqi.com（13~18℃）+ 中国天气网（16/11℃ 小雨转多云）+ Open-Meteo/Exa（16.7/9.4℃，降水概率10%），2026-11-13 查询"
+  },
+  "days": [
+    {
+      "date": "2026-11-14",
+      "activities": [
+        { "time": "06:55", "type": "transport", "name": "酒店出发 → 世纪城地铁站", "detail": "打车 1.1km（起步价约¥8）或步行 15 分钟", "cost": 8 },
+        { "time": "07:05", "type": "transport", "name": "地铁 1号线 世纪城 → 天府广场，换 2号线 → 犀浦", "detail": "全程约 55 分钟（含换乘），¥5", "cost": 5 },
+        { "time": "08:11", "type": "transport", "name": "成灌快铁 S5105 犀浦 → 离堆公园", "detail": "08:39 到达，历时 28 分钟，¥10。⚠️ 二等座已无票，买无座（车程短可接受）或候补；备选 S5103 07:28（剩3张二等，需 06:10 前出发）", "cost": 10 },
+        { "time": "08:45", "type": "attraction", "name": "仰天窝广场", "detail": "出站即达，巨型大熊猫雕塑打卡点，免费", "cost": 0 },
+        { "time": "09:00", "type": "attraction", "name": "都江堰景区（秦堰楼6号门入园）", "detail": "淡季 8:00-17:30 开放，17:00 停售。门票 ¥60（11月1日起淡季价，需在『青城山都江堰』公众号实名预约，刷身份证入园）", "cost": 60 },
+        { "time": "09:15", "type": "attraction", "name": "秦堰楼", "detail": "登楼俯瞰都江堰水利工程全景，拍照第一站" },
+        { "time": "09:45", "type": "attraction", "name": "二王庙", "detail": "祭祀李冰父子的古建筑群，了解治水故事；建议租电子讲解器（含儿童模式）" },
+        { "time": "10:15", "type": "attraction", "name": "安澜索桥", "detail": "横跨岷江内外江，晃动明显，恐高者缓行、牵好小孩" },
+        { "time": "10:30", "type": "attraction", "name": "鱼嘴分水堤", "detail": "三大核心工程之首：四六分水、二八分沙" },
+        { "time": "11:00", "type": "attraction", "name": "飞沙堰 → 宝瓶口", "detail": "泄洪排沙堰与进水咽喉，顺路经伏龙观" },
+        { "time": "11:40", "type": "attraction", "name": "伏龙观 → 离堆公园大门出园", "detail": "全程下坡不走回头路，精华约 3 小时；体力有限可乘观光车（单程¥10/往返¥15）" },
+        { "time": "12:10", "type": "food", "name": "灌县古城 · 午餐", "detail": "西街/杨柳河街美食带：赵卖面（甜水面）、太平张醪糟（红糖醪糟粉子蛋）、钟鸭子（甜皮鸭）、文革葱葱卷、老妈火锅粉；人均 ¥30-50", "cost": 45 },
+        { "time": "13:40", "type": "attraction", "name": "灌县古城慢游", "detail": "西街老街、文庙、古城墙，找家茶馆歇脚（盖碗茶 ¥20-30）", "cost": 25 },
+        { "time": "15:30", "type": "attraction", "name": "南桥 & 岷江边散步（可选：熊猫谷）", "detail": "主线：水文化广场→南桥→天府源廊桥江边漫步；可选加项：打车15分钟去熊猫谷（¥55，16:30停止入园，冬季熊猫下午活跃度低，仅推荐快刷爱好者）", "cost": 0 },
+        { "time": "17:40", "type": "food", "name": "古城晚餐（吃饱再看夜景）", "detail": "小吃简餐 ¥30-40（尤兔头/渣渣面/火锅粉）；江边夜风凉，先吃饱再等亮灯", "cost": 35 },
+        { "time": "18:15", "type": "attraction", "name": "南桥『蓝眼泪』夜景 🌊", "detail": "📕小红书实测（1.4万赞）：冬季约17:40起陆续亮灯、18:40左右全亮（23:00关），天黑透后（约18:30后）拍摄效果最佳；观赏点位：天府源廊桥（效果最好）→南桥（路面宽）；拍摄技巧：手机先对暖色灯光对焦再快速移向水面，绿水秒变蓝；11月晚间江风凉加外套", "cost": 0 },
+        { "time": "19:10", "type": "transport", "name": "步行前往离堆公园站", "detail": "天府源廊桥步行约8分钟，从容检票；📕小红书：离堆公园站末班车21:55，错过19:34仍有兜底" },
+        { "time": "19:34", "type": "transport", "name": "成灌快铁 S5128 离堆公园 → 犀浦", "detail": "20:03 到达，¥10。⚠️ 二等座无票→买无座或候补；不看夜景可选 S5124 18:24（有票）", "cost": 10 },
+        { "time": "20:15", "type": "transport", "name": "地铁 2号线 犀浦 → 天府广场，换 1号线 → 世纪城", "detail": "末班车充裕（犀浦 2号线末班约 23:00），¥5", "cost": 5 },
+        { "time": "21:20", "type": "transport", "name": "返回酒店", "detail": "世纪城站打车 1.1km ¥8 或骑行/步行", "cost": 8 }
+      ]
+    }
+  ],
+  "transport": [
+    {
+      "type": "metro", "number": "1号线→2号线", "price": 5,
+      "route": "世纪城 → 天府广场 → 犀浦",
+      "time": "约55分钟（含换乘）",
+      "price_source": "成都地铁计价（估算）",
+      "note": "酒店→世纪城站 1.1km，打车¥8 或步行15分钟"
+    },
+    {
+      "type": "train", "number": "S5105", "price": 10,
+      "route": "犀浦 08:11 → 离堆公园 08:39",
+      "price_source": "12306-mcp 实时（2026-11-13 查询）",
+      "note": "二等座无票，无座有票；离堆公园站步行5分钟到景区，比都江堰站近",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc&fs=%E7%8A%80%E6%B5%A6,XIW&ts=%E7%A6%BB%E5%A0%86%E5%85%AC%E5%9B%AD,INW&date=2026-11-14"
+    },
+    {
+      "type": "train", "number": "S5103（备选）", "price": 10,
+      "route": "犀浦 07:28 → 离堆公园 07:51",
+      "price_source": "12306-mcp 实时（2026-11-13 查询）",
+      "note": "二等座剩3张，需 06:10 前从酒店出发（打车直达犀浦约45分钟¥70+）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc&fs=%E7%8A%80%E6%B5%A6,XIW&ts=%E7%A6%BB%E5%A0%86%E5%85%AC%E5%9B%AD,INW&date=2026-11-14"
+    },
+    {
+      "type": "train", "number": "S5145（备选）", "price": 10,
+      "route": "犀浦 09:49 → 离堆公园 10:13",
+      "price_source": "12306-mcp 实时（2026-11-13 查询）",
+      "note": "二等座无票，无座有票；悠闲版出发，游玩时间依然充足",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc&fs=%E7%8A%80%E6%B5%A6,XIW&ts=%E7%A6%BB%E5%A0%86%E5%85%AC%E5%9B%AD,INW&date=2026-11-14"
+    },
+    {
+      "type": "train", "number": "S5124（早回·不看夜景）", "price": 10,
+      "route": "离堆公园 18:24 → 犀浦 18:54",
+      "price_source": "12306-mcp 实时（2026-11-13 查询）",
+      "note": "二等座有票；17:30 从景区出来即可",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc&fs=%E7%A6%BB%E5%A0%86%E5%85%AC%E5%9B%AD,INW&ts=%E7%8A%80%E6%B5%A6,XIW&date=2026-11-14"
+    },
+    {
+      "type": "train", "number": "S5128（晚回·看蓝眼泪）", "price": 10,
+      "route": "离堆公园 19:34 → 犀浦 20:03",
+      "price_source": "12306-mcp 实时（2026-11-13 查询）",
+      "note": "二等座无票，无座有票（29分钟短途可接受）；更晚还有 S5106 20:52 有票但回到酒店较晚",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc&fs=%E7%A6%BB%E5%A0%86%E5%85%AC%E5%9B%AD,INW&ts=%E7%8A%80%E6%B5%A6,XIW&date=2026-11-14"
+    },
+    {
+      "type": "train", "number": "S5081（都江堰站方案·备选）", "price": 10,
+      "route": "犀浦 07:49 → 都江堰 08:19",
+      "price_source": "12306-mcp 实时（2026-11-13 查询）",
+      "note": "二等座有票，但都江堰站距景区约4km，需打车¥10-15；仅当离堆公园站无票时考虑",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc&fs=%E7%8A%80%E6%B5%A6,XIW&ts=%E9%83%BD%E6%B1%9F%E5%A0%B0,DDW&date=2026-11-14"
+    },
+    {
+      "type": "train", "number": "D5110（返程·成都南下）", "price": 19,
+      "route": "都江堰 15:28 → 成都南 16:36",
+      "price_source": "12306-mcp 实时（2026-11-13 查询）",
+      "note": "二等座有票；成都南站距酒店仅6.8km，打车¥20-25 回酒店最快；适合不看夜景的早回方案（需从都江堰站发车）",
+      "booking_url": "https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc&fs=%E9%83%BD%E6%B1%9F%E5%A0%B0,DDW&ts=%E6%88%90%E9%83%BD%E5%8D%97,CNW&date=2026-11-14"
+    }
+  ],
+  "tickets": [
+    {
+      "name": "都江堰景区",
+      "price": 60,
+      "price_note": "11月1日起淡季价（旺季80元）；学生半价30元；65周岁及以上免票需预约激活",
+      "hours": "淡季 8:00-17:30，17:00 停售/检票",
+      "booking": "公众号『青城山都江堰』或美团/携程，实名预约刷身份证入园",
+      "price_source": "四川省中国青年旅行社官网（2026-10-30）+ 本地宝"
+    },
+    {
+      "name": "熊猫谷（可选）",
+      "price": 55,
+      "price_note": "60周岁及以上免票；每日限流需预约",
+      "hours": "冬季 8:00-17:30，16:30 停止入园（上午场 8:00-12:00 / 下午场 12:00-16:30）",
+      "booking": "公众号『熊猫谷』实名预约",
+      "price_source": "四川省中国青年旅行社官网（2026-10-30）"
+    },
+    {
+      "name": "南桥蓝眼泪（免费）",
+      "price": 0,
+      "price_note": "秋季亮灯约 18:00-19:00，最佳观赏位在天府源廊桥",
+      "price_source": "四川省中国青年旅行社官网（2026-10）"
+    },
+    {
+      "name": "景区观光车（可选）",
+      "price": 10,
+      "price_note": "单程¥10 / 往返¥15，离堆公园↔鱼嘴约1.2km",
+      "price_source": "本地宝攻略（2026-01）"
+    }
+  ],
+  "food": [
+    { "name": "赵卖面", "dish": "甜水面、红油水饺", "area": "灌县古城", "price": "¥10-15/碗" },
+    { "name": "太平张醪糟", "dish": "红糖醪糟粉子蛋", "area": "杨柳河街", "price": "¥15左右" },
+    { "name": "钟鸭子", "dish": "甜皮鸭（都江堰老字号）", "area": "北街/杨柳河", "price": "¥30+/半只" },
+    { "name": "文革葱葱卷", "dish": "薄皮卷萝卜丝蘸酸辣汁", "area": "杨柳河街", "price": "¥10左右" },
+    { "name": "老妈火锅粉 / 林记渣渣面", "dish": "本地人常去", "area": "杨柳河/西街", "price": "¥15-25" },
+    { "name": "尤兔头", "dish": "麻辣兔头（重口味必试）", "area": "灌县古城周边", "price": "¥10+/只" },
+    { "name": "叶婆婆豆浆馍馍 / 下面馆", "dish": "桑叶包豆浆米浆蒸制（📕小红书提及）", "area": "灌县古城", "price": "¥5-10/个" }
+  ],
+  "locations": [
+    { "name": "福朋喜来登酒店（起点）", "lat": 30.553116, "lng": 104.060351, "day": 1, "type": "hotel" },
+    { "name": "犀浦站", "lat": 30.757376, "lng": 103.972131, "day": 1, "type": "transport" },
+    { "name": "离堆公园站", "lat": 30.993627, "lng": 103.623916, "day": 1, "type": "transport" },
+    { "name": "仰天窝广场", "lat": 30.993722, "lng": 103.622850, "day": 1, "type": "attraction" },
+    { "name": "都江堰景区·秦堰楼（6号门入园）", "lat": 31.006703, "lng": 103.609572, "day": 1, "type": "attraction" },
+    { "name": "二王庙", "lat": 31.005773, "lng": 103.610210, "day": 1, "type": "attraction" },
+    { "name": "安澜索桥", "lat": 31.005429, "lng": 103.607773, "day": 1, "type": "attraction" },
+    { "name": "鱼嘴分水堤", "lat": 31.002710, "lng": 103.608990, "day": 1, "type": "attraction" },
+    { "name": "灌县古城·西街", "lat": 30.998081, "lng": 103.614538, "day": 1, "type": "food" },
+    { "name": "灌县古城", "lat": 30.998567, "lng": 103.620012, "day": 1, "type": "attraction" },
+    { "name": "南桥", "lat": 30.996316, "lng": 103.615948, "day": 1, "type": "attraction" },
+    { "name": "天府源廊桥（蓝眼泪最佳观赏位）", "lat": 30.995654, "lng": 103.619745, "day": 1, "type": "attraction" },
+    { "name": "都江堰站", "lat": 30.957160, "lng": 103.638391, "day": 1, "type": "transport" },
+    { "name": "熊猫谷（可选）", "lat": 30.962326, "lng": 103.587278, "day": 1, "type": "attraction" }
+  ],
+  "xhs_refs": [
+    { "title": "都江堰一日游超全攻略就看它！", "author": "小夏同学", "liked": "1.4万", "url": "https://www.xiaohongshu.com/explore/696a09e7000000000a02d949", "key_takeaway": "蓝眼泪冬季17:40亮灯、天黑后拍；19:38高铁返程完全来得及；暖光对焦→水面抓拍变蓝" },
+    { "title": "都江堰夜游！不花钱看蓝眼泪【附详细路线】", "author": "熊是是", "liked": "3415", "url": "https://www.xiaohongshu.com/explore/68fc3b63000000000303ac4a", "key_takeaway": "亮灯18:40左右、23:00关；观赏点位：天府源（效果好）+南桥；看蓝眼泪无需进景区；离堆公园站末班21:55" },
+    { "title": "我带pocket3去都江堰就是为这一刻的moment", "author": "东张西望到处跑", "liked": "2879", "url": "https://www.xiaohongshu.com/explore/693a41c3000000001e033bc7", "key_takeaway": "离堆公园站下车（不是都江堰站）；美食：葱葱卷/尤兔头/赵卖面/豆浆馍馍/太平张醪糟/下面馆" },
+    { "title": "成都→青城山前山→都江堰一日游攻略", "author": "喵余", "liked": "1万", "url": "https://www.xiaohongshu.com/explore/698b283a000000001503afae", "key_takeaway": "回程票一定要提前买，下午三点左右晚六七点的票就没了" }
+  ],
+  "source_footer": "车票：12306-mcp 实时查询（2026-11-13）· 门票：四川中青旅官网（2026-10-30/12）· 攻略：成都本地宝 + 去哪儿 UGC + 📕小红书实测（2026-11-13 检索）· 坐标：高德 Place API · 天气：天气网/中国天气网/Open-Meteo（2026-11-13）"
+}
