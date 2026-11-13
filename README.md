@@ -15,7 +15,8 @@ my-skills/
 │   ├── gitcode-pr-handler/
 │   └── gitcode-toolkit/  # 共享库，被上面 3 个引用，4 目录必须保持平级
 ├── travel-plans/         # 产出物：每次旅行规划的 HTML + 数据
-│   └── jeju-20260703/    #   济州岛 4天3晚 (2026.07.03-06)
+│   ├── jeju-20260703/    #   济州岛 4天3晚 (2026.07.03-06)
+│   └── dujiangyan-20261114/  #   都江堰一日游 (2026.11.14)
 ├── map-collections/      # 产出物：每次地点合集的数据 + 交付物
 │   └── xhs-board-6a52494f/  # 越南 91 地点（小红书36篇+抖音10条）
 ├── scripts/
@@ -54,6 +55,7 @@ opencode mcp auth nowah-travel       # 2. 一次性浏览器授权（首次必�
 |------|------|
 | `travel-plans/jeju-20260703` | [济州岛 4天3晚](https://stonechan00.github.io/my-skills/travel-plans/jeju-20260703/index.html) (2026.07.03–06) |
 | `travel-plans/jeju-20260703-v2` | [济州岛 4天3晚](https://stonechan00.github.io/my-skills/travel-plans/jeju-20260703-v2/index.html) (2026.07.03–06) |
+| `travel-plans/dujiangyan-20261114` | [都江堰一日游](https://stonechan00.github.io/my-skills/travel-plans/dujiangyan-20261114/index.html)（2026.11.14 · 成都⇄都江堰 · 12306实时车次+小红书实测） |
 | `map-collections/xhs-board-6a52494f` | [越南旅行地图 · 91 地点](https://stonechan00.github.io/my-skills/map-collections/xhs-board-6a52494f/vietnam-map.html)（小红书36篇+抖音10条 → 高德App收藏） |
 
 ## 初始化做了什么
